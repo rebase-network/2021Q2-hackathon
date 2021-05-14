@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.7.4;
 
-import "./interfaces/IPool.sol";
+import "./interfaces/IPointPool.sol";
 import "./libraries/@openzeppelin/contracts/math/SafeMath.sol";
 import "./libraries/@openzeppelin/contracts/token/erc20/SafeERC20.sol";
 import "./libraries/@openzeppelin/contracts/token/erc20/IERC20.sol";
@@ -57,17 +57,8 @@ contract PointPool is IPointPool, AcceptedCaller {
         );
     }
 
-    function getPool(address _token)
-        public
-        view
-        override
-        returns (
-            uint256
-        )
-    {
-        return (
-            pools[_token].balance
-        );
+    function getPool(address _token) public view override returns (uint256) {
+        return (pools[_token].balance);
     }
 
     function pause() public override onlyOwner returns (bool) {
@@ -86,12 +77,18 @@ contract PointPool is IPointPool, AcceptedCaller {
         override
         returns (uint256)
     {
-        return
-            pools[_token].persons[_person].pointStored.add(
-                pools[_token].persons[_person].balance.mul(
-                    block.number.sub(pools[_token].persons[_person].lastUpdateBlock)
-                )
-            );
+        if (pools[_token].persons[_person].balance > 0) {
+            return
+                pools[_token].persons[_person].pointStored.add(
+                    pools[_token].persons[_person].balance.mul(
+                        block.number.sub(
+                            pools[_token].persons[_person].lastUpdateBlock
+                        )
+                    )
+                );
+        } else {
+            return pools[_token].persons[_person].pointStored;
+        }
     }
 
     modifier _updatePerson(address _token, address _person) {
