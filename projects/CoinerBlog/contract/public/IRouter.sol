@@ -1,15 +1,20 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.7.4;
 
-interface IBlogDB {
-    event BlogCreated(
-        uint256 indexed blogId,
-        address indexed sender,
+interface IRouter {
+    event SendBlog(
+        address indexed person,
         address indexed group,
-        uint256 commentBlogId,
-        uint256 createDate
+        uint256 blogId
     );
 
+    function sendBlog(
+        address _group,
+        uint256 _commentBlogId,
+        string memory _content,
+        uint256 _typeNumber
+    ) external returns (bool);
+    
     function groupAddrs() external view returns (address[] memory);
 
     function getGroupBlogIds(address _group)
@@ -22,12 +27,12 @@ interface IBlogDB {
         uint256 _limit,
         uint256 _startIndex
     ) external view returns (uint256[] memory);
-
+    
     function getGroupBlogIdsLength(address _group)
         external
         view
         returns (uint256);
-
+        
     function getGroupPersons(address _group)
         external
         view
@@ -56,21 +61,13 @@ interface IBlogDB {
         view
         returns (address[] memory);
 
-    function blogsLength() external view returns (uint256);
+    function blogsLength()external view returns (uint256);
 
-    function createBlog(
-        address _person,
-        address _group,
-        uint256 _commentBlogId,
-        string memory _content,
-        uint256 _typeNumber
-    ) external returns (bool, uint256);
-
-    function getBlog(uint256 _blogId)
+    function getBlog(uint256 blogId)
         external
         view
         returns (
-            address,
+           address,
             address,
             string memory,
             uint256,

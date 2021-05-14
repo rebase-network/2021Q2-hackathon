@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.7.4;
 
-import "./libraries/AcceptedCaller.sol";
-import "./interfaces/IRouter.sol";
+import "./AcceptedCaller.sol";
+import "./IRouter.sol";
 
 contract Router is IRouter, AcceptedCaller {
     address public serviceAddr;

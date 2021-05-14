@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.7.4;
 
-import "./interfaces/IBlogDB.sol";
-import "./libraries/@openzeppelin/contracts/math/SafeMath.sol";
-import "./libraries/AcceptedCaller.sol";
+import "./IBlogDB.sol";
+import "./SafeMath.sol";
+import "./AcceptedCaller.sol";
 
 contract BlogDB is IBlogDB, AcceptedCaller {
     using SafeMath for uint256;

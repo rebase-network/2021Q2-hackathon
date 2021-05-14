@@ -14,6 +14,8 @@ interface IRouter {
         string memory _content,
         uint256 _typeNumber
     ) external returns (bool);
+    
+    function groupAddrs() external view returns (address[] memory);
 
     function getGroupBlogIds(address _group)
         external
@@ -30,8 +32,8 @@ interface IRouter {
         external
         view
         returns (uint256);
-
-    function getBlogPersons(address _group)
+        
+    function getGroupPersons(address _group)
         external
         view
         returns (address[] memory);
@@ -65,9 +67,11 @@ interface IRouter {
         external
         view
         returns (
-            address,
+           address,
             address,
             string memory,
+            uint256,
+            uint256[] memory,
             uint256,
             uint256
         );

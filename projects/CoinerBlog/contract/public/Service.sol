@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.7.4;
 
-import "./interfaces/IBlogDB.sol";
-import "./interfaces/IService.sol";
-import "./libraries/AcceptedCaller.sol";
+import "./IBlogDB.sol";
+import "./IService.sol";
+import "./AcceptedCaller.sol";
 
 contract Service is IService, AcceptedCaller {
     address public blogDBAddr;
