@@ -28,12 +28,7 @@ contract MesssageRouter is IRouter, AcceptedCaller {
     ) public override returns (bool) {
         IBlogService blogService = IBlogService(blogServiceAddr);
         (, uint256 blogId) =
-            blogService.sendBlog(
-                msg.sender,
-                _group,
-                _content,
-                _typeNumber
-            );
+            blogService.sendBlog(msg.sender, _group, _content, _typeNumber);
         emit SendBlog(msg.sender, _group, blogId);
         return true;
     }
@@ -103,8 +98,7 @@ contract MesssageRouter is IRouter, AcceptedCaller {
         uint256 _startIndex
     ) public view override returns (uint256[] memory) {
         IBlogDB blogDB = IBlogDB(blogDBAddr);
-        return
-            blogDB.getPersonBlogIdsByLimit(_person, _limit, _startIndex);
+        return blogDB.getPersonBlogIdsByLimit(_person, _limit, _startIndex);
     }
 
     function getPersonBlogIdsLength(address _person)
@@ -147,6 +141,18 @@ contract MesssageRouter is IRouter, AcceptedCaller {
         IBlogDB blogDB = IBlogDB(blogDBAddr);
         return blogDB.getBlog(_blogId);
     }
+
+    function getHotBlogIds(uint256 _limit, uint256 _startIndex)
+        public
+        view
+        returns (uint256[] memory)
+    {}
+
+    function getRecommendBlogIds(
+        address _person,
+        uint256 _limit,
+        uint256 _startIndex
+    ) public view returns (uint256[] memory) {}
 
     function isAccepted() public view returns (bool) {
         IAcceptedCaller blogService = IAcceptedCaller(blogServiceAddr);

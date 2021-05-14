@@ -38,7 +38,7 @@ contract BlogDB is IBlogDB, AcceptedCaller {
 
     address[] private _groupAddrs;
     address[] private _personAddrs;
-    uint256 private _blogsLength;
+    uint256 private _blogsLength=1;
 
 
     function groupAddrs() public view override returns (address[] memory) {
@@ -188,6 +188,7 @@ contract BlogDB is IBlogDB, AcceptedCaller {
    function createBlog(
         address _person,
         address _group,
+        uint256 _commentBlogId,
         string memory _content,
         uint256 _typeNumber
     ) public override onlyAcceptedCaller(msg.sender) returns (bool, uint256) {
@@ -200,6 +201,7 @@ contract BlogDB is IBlogDB, AcceptedCaller {
             _typeNumber,
             block.timestamp
         );
+
         emit BlogCreated(
             blogId,
             _person,
