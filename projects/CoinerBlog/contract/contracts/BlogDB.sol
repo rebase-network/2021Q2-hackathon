@@ -38,29 +38,10 @@ contract BlogDB is IBlogDB, AcceptedCaller {
 
     address[] private _groupAddrs;
     address[] private _personAddrs;
-    uint256 private _blogsLength=1;
-
+    uint256 private _blogsLength = 1;
 
     function groupAddrs() public view override returns (address[] memory) {
         return _groupAddrs;
-    }
-
-    function addGroupBlogId(
-        address _person,
-        address _group,
-        uint256 _blogId
-    ) public override onlyAcceptedCaller(msg.sender) returns (bool) {
-        if (groups[_group].seted == false) {
-            groups[_group].seted = true;
-            _groupAddrs.push(_group);
-        }
-        if (groups[_group].havePerson[_person] == false) {
-            groups[_group].havePerson[_person] = true;
-            groups[_group].persons.push(_person);
-        }
-        groups[_group].blogIds.push(_blogId);
-        emit AddGroupBlogId(_group, _blogId);
-        return true;
     }
 
     function getGroupBlogIds(address _group)
@@ -115,24 +96,6 @@ contract BlogDB is IBlogDB, AcceptedCaller {
         return _personAddrs;
     }
 
-    function addPersonBlogId(
-        address _group,
-        address _person,
-        uint256 _blogId
-    ) public override onlyAcceptedCaller(msg.sender) returns (bool) {
-        if (persons[_person].seted == false) {
-            persons[_person].seted = true;
-            _personAddrs.push(_person);
-        }
-        if (persons[_person].haveGroup[_group] == false) {
-            persons[_person].haveGroup[_group] = true;
-            persons[_person].groups.push(_group);
-        }
-        persons[_person].blogIds.push(_blogId);
-        emit AddPersonBlogId(_person, _blogId);
-        return true;
-    }
-
     function getPersonBlogIds(address _person)
         public
         view
@@ -182,36 +145,58 @@ contract BlogDB is IBlogDB, AcceptedCaller {
     }
 
     function blogsLength() public view override returns (uint256) {
-        return _blogsLength;
+        return _blogsLength - 1;
     }
 
-   function createBlog(
+    function createBlog(
         address _person,
         address _group,
+        uint256 _point,
         uint256 _commentBlogId,
         string memory _content,
         uint256 _typeNumber
     ) public override onlyAcceptedCaller(msg.sender) returns (bool, uint256) {
+        if (groups[_group].seted == false) {
+            groups[_group].seted = true;
+            _groupAddrs.push(_group);
+        }
+        if (groups[_group].havePerson[_person] == false) {
+            groups[_group].havePerson[_person] = true;
+            groups[_group].persons.push(_person);
+        }
+        if (groups[_group].seted == false) {
+            groups[_group].seted = true;
+            _groupAddrs.push(_group);
+        }
+        if (groups[_group].havePerson[_person] == false) {
+            groups[_group].havePerson[_person] = true;
+            groups[_group].persons.push(_person);
+        }
         uint256 blogId = _blogsLength;
         _blogsLength = _blogsLength.add(1);
         blogs[blogId] = Blog(
             _person,
             _group,
+            _commentBlogId,
+            [],
             _content,
             _typeNumber,
             block.timestamp
         );
-
+        if (_commentBlogId != 0) {
+            blogs[blogId].commentBlogIds.push(blogId);
+        }
+        groups[_group].blogIds.push(_blogId);
+        perosns[_person].blogIds.push(_blogId);
         emit BlogCreated(
             blogId,
             _person,
             _group,
-            _content,
-            _typeNumber,
+            commentBlogId,
             block.timestamp
         );
         return (true, blogId);
-    }  
+    }
 
     function getBlog(uint256 _blogId)
         public
@@ -222,6 +207,8 @@ contract BlogDB is IBlogDB, AcceptedCaller {
             address,
             string memory,
             uint256,
+            uint256[] memory,
+            uint256,
             uint256
         )
     {
@@ -229,6 +216,8 @@ contract BlogDB is IBlogDB, AcceptedCaller {
             blogs[_blogId].person,
             blogs[_blogId].group,
             blogs[_blogId].content,
+            blogs[_blogId].repostBlogId,
+            blogs[_blogId].commentBlogIds,
             blogs[_blogId].typeNumber,
             blogs[_blogId].createDate
         );

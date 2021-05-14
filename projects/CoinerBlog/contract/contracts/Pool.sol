@@ -46,7 +46,7 @@ contract Pool is PPool, AcceptedCaller {
         return _poolAddrs;
     }
 
-    function getMiner(address _token, address _miner)
+    function getPerson(address _token, address _miner)
         public
         view
         override
@@ -113,11 +113,22 @@ contract Pool is PPool, AcceptedCaller {
                 _token,
                 _person
             );
-            pools[_token].persons[_person].lastUpdateBlock=block.number;
+            pools[_token].persons[_person].lastUpdateBlock = block.number;
         }
         _;
     }
 
+    function usePersonPoint(address _token, address _person)
+        public
+        override
+        _updatePerson(_token, msg.sender)
+        _checkStart
+        returns (uint256)
+    {
+        uint256 point = pools[_token].miners[_person].pointStored;
+        pools[_token].miners[_person].pointStored = 0;
+        return point;
+    }
 
     function stakeToken(address _token, uint256 _amount)
         public
@@ -127,11 +138,7 @@ contract Pool is PPool, AcceptedCaller {
         returns (bool)
     {
         require(_amount > 0);
-        IERC20(_token).safeTransferFrom(
-            msg.sender,
-            address(this),
-            _amount
-        );
+        IERC20(_token).safeTransferFrom(msg.sender, address(this), _amount);
         pools[_token].balance = pools[_token].balance.add(_amount);
         pools[_token].miners[msg.sender].balance = pools[_token].miners[
             msg.sender

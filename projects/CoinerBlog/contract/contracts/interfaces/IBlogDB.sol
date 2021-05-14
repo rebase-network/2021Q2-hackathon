@@ -2,30 +2,15 @@
 pragma solidity >=0.7.4;
 
 interface IBlogDB {
-    event AddGroupBlogId(
-        address indexed group,
-        uint256 indexed blogId
-    );
-    event AddPersonBlogId(
-        address indexed person,
-        uint256 indexed blogId
-    );
     event BlogCreated(
         uint256 indexed blogId,
         address indexed sender,
         address indexed group,
-        string content,
-        uint256 typeNumber,
+        uint256 commentBlogId,
         uint256 createDate
     );
 
     function groupAddrs() external view returns (address[] memory);
-
-    function addGroupBlogId(
-        address _person,
-        address _group,
-        uint256 _blogId
-    ) external returns (bool);
 
     function getGroupBlogIds(address _group)
         external
@@ -49,12 +34,6 @@ interface IBlogDB {
         returns (address[] memory);
 
     function personAddrs() external view returns (address[] memory);
-
-    function addPersonBlogId(
-        address _group,
-        address _person,
-        uint256 _blogId
-    ) external returns (bool);
 
     function getPersonBlogIds(address _person)
         external
@@ -82,6 +61,8 @@ interface IBlogDB {
     function createBlog(
         address _person,
         address _group,
+        uint256 _point,
+        uint256 _commentBlogId,
         string memory _content,
         uint256 _typeNumber
     ) external returns (bool, uint256);
@@ -93,6 +74,8 @@ interface IBlogDB {
             address,
             address,
             string memory,
+            uint256,
+            uint256[] memory,
             uint256,
             uint256
         );
