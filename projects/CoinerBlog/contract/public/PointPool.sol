@@ -1,13 +1,13 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.7.4;
 
-import "./interfaces/IPool.sol";
-import "./libraries/@openzeppelin/contracts/math/SafeMath.sol";
-import "./libraries/@openzeppelin/contracts/token/erc20/SafeERC20.sol";
-import "./libraries/@openzeppelin/contracts/token/erc20/IERC20.sol";
-import "./libraries/AcceptedCaller.sol";
+import "./IPointPool.sol";
+import "./SafeMath.sol";
+import "./SafeERC20.sol";
+import "./IERC20.sol";
+import "./AcceptedCaller.sol";
 
-contract Pool is PPool, AcceptedCaller {
+contract PointPool is IPointPool, AcceptedCaller {
     using SafeMath for uint256;
     using SafeERC20 for IERC20;
 
@@ -19,13 +19,10 @@ contract Pool is PPool, AcceptedCaller {
 
     struct Pool {
         uint256 balance;
-        uint256 allPoint;
-        uint256 lastUpdateBlock;
         mapping(address => Person) persons;
         bool seted;
     }
 
-    uint256 public startBlock;
     bool public paused;
 
     mapping(address => Pool) pools;
@@ -33,20 +30,17 @@ contract Pool is PPool, AcceptedCaller {
     address[] private _poolAddrs;
 
     modifier _checkStart() {
-        require(block.number >= startBlock, "checkStart: not start!");
         require(paused == false, "checkStart: paused!");
         _;
     }
 
-    constructor() {
-        startBlock = block.number + (1 * 24 * 60 * 60) / 3;
-    }
+    constructor() {}
 
     function poolAddrs() public view override returns (address[] memory) {
         return _poolAddrs;
     }
 
-    function getPerson(address _token, address _miner)
+    function getPerson(address _token, address _person)
         public
         view
         override
@@ -57,9 +51,9 @@ contract Pool is PPool, AcceptedCaller {
         )
     {
         return (
-            pools[_token].miners[_miner].balance,
-            pools[_token].miners[_miner].pointStored,
-            pools[_token].miners[_miner].lastUpdateBlock
+            pools[_token].persons[_person].balance,
+            pools[_token].persons[_person].pointStored,
+            pools[_token].persons[_person].lastUpdateBlock
         );
     }
 
@@ -68,17 +62,11 @@ contract Pool is PPool, AcceptedCaller {
         view
         override
         returns (
-            uint256,
-            uint256,
-            uint256,
-            bool
+            uint256
         )
     {
         return (
-            pools[_token].balance,
-            pools[_token].allPoint,
-            pools[_token].lastUpdateBlock,
-            pools[_token].paused
+            pools[_token].balance
         );
     }
 
@@ -95,21 +83,20 @@ contract Pool is PPool, AcceptedCaller {
     function getPersonPoint(address _token, address _person)
         public
         view
+        override
         returns (uint256)
     {
         return
             pools[_token].persons[_person].pointStored.add(
                 pools[_token].persons[_person].balance.mul(
-                    pools[_token].persons[_person].lastUpdateBlock.sub(
-                        block.number
-                    )
+                    block.number.sub(pools[_token].persons[_person].lastUpdateBlock)
                 )
             );
     }
 
     modifier _updatePerson(address _token, address _person) {
         if (pools[_token].persons[_person].balance > 0) {
-            pools[_token].miners[_person].pointStored = getPersonPoint(
+            pools[_token].persons[_person].pointStored = getPersonPoint(
                 _token,
                 _person
             );
@@ -125,8 +112,8 @@ contract Pool is PPool, AcceptedCaller {
         _checkStart
         returns (uint256)
     {
-        uint256 point = pools[_token].miners[_person].pointStored;
-        pools[_token].miners[_person].pointStored = 0;
+        uint256 point = pools[_token].persons[_person].pointStored;
+        pools[_token].persons[_person].pointStored = 0;
         return point;
     }
 
@@ -140,7 +127,7 @@ contract Pool is PPool, AcceptedCaller {
         require(_amount > 0);
         IERC20(_token).safeTransferFrom(msg.sender, address(this), _amount);
         pools[_token].balance = pools[_token].balance.add(_amount);
-        pools[_token].miners[msg.sender].balance = pools[_token].miners[
+        pools[_token].persons[msg.sender].balance = pools[_token].persons[
             msg.sender
         ]
             .balance
@@ -155,15 +142,15 @@ contract Pool is PPool, AcceptedCaller {
         _updatePerson(_token, msg.sender)
         returns (bool)
     {
-        require(_amount <= pools[_token].miners[msg.sender].balance);
+        require(_amount <= pools[_token].persons[msg.sender].balance);
         pools[_token].balance = pools[_token].balance.sub(_amount);
-        pools[_token].miners[msg.sender].balance = pools[_token].miners[
+        pools[_token].persons[msg.sender].balance = pools[_token].persons[
             msg.sender
         ]
             .balance
             .sub(_amount);
         IERC20(_token).safeTransfer(msg.sender, _amount);
-        emit WithdrawLP(msg.sender, _token, _amount);
+        emit WithdrawToken(msg.sender, _token, _amount);
         return true;
     }
 
