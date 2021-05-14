@@ -61,7 +61,6 @@ interface IBlogDB {
     function createBlog(
         address _person,
         address _group,
-        uint256 _point,
         uint256 _commentBlogId,
         string memory _content,
         uint256 _typeNumber

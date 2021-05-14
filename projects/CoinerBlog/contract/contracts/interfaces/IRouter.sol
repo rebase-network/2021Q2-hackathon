@@ -10,6 +10,7 @@ interface IRouter {
 
     function sendBlog(
         address _group,
+        uint256 _commentBlogId,
         string memory _content,
         uint256 _typeNumber
     ) external returns (bool);

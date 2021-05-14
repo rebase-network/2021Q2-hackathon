@@ -16,6 +16,7 @@ contract Service is IService, AcceptedCaller {
     function sendBlog(
         address _person,
         address _group,
+        uint256 _commentBlogId,
         string memory _content,
         uint256 _typeNumber
     ) public override onlyAcceptedCaller(msg.sender) returns (bool,uint256) {
@@ -24,11 +25,10 @@ contract Service is IService, AcceptedCaller {
             blogDB.createBlog(
                 _person,
                 _group,
+                _commentBlogId,
                 _content,
                 _typeNumber
             );
-        blogDB.addGroupBlogId(_person,_group, blogId);
-        blogDB.addPersonBlogId(_group,_person, blogId);
         return (true,blogId);
     }
 

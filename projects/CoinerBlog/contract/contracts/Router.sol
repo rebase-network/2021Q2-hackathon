@@ -23,12 +23,19 @@ contract MesssageRouter is IRouter, AcceptedCaller {
 
     function sendBlog(
         address _group,
+        uint256 _commentBlogId,
         string memory _content,
         uint256 _typeNumber
     ) public override returns (bool) {
         IBlogService blogService = IBlogService(blogServiceAddr);
         (, uint256 blogId) =
-            blogService.sendBlog(msg.sender, _group, _content, _typeNumber);
+            blogService.sendBlog(
+                msg.sender,
+                _group,
+                _commentBlogId,
+                _content,
+                _typeNumber
+            );
         emit SendBlog(msg.sender, _group, blogId);
         return true;
     }
