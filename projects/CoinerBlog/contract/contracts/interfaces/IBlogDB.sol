@@ -1,17 +1,30 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.7.4;
 
-interface IRouter {
-    event SendBlog(
-        address indexed person,
+interface IBlogDB {
+    event AddGroupBlogId(
         address indexed group,
-        uint256 blogId
+        uint256 indexed blogId
+    );
+    event AddPersonBlogId(
+        address indexed person,
+        uint256 indexed blogId
+    );
+    event BlogCreated(
+        uint256 indexed blogId,
+        address indexed sender,
+        address indexed group,
+        string content,
+        uint256 typeNumber,
+        uint256 createDate
     );
 
-    function sendBlog(
+    function groupAddrs() external view returns (address[] memory);
+
+    function addGroupBlogId(
+        address _person,
         address _group,
-        string memory _content,
-        uint256 _typeNumber
+        uint256 _blogId
     ) external returns (bool);
 
     function getGroupBlogIds(address _group)
@@ -24,18 +37,24 @@ interface IRouter {
         uint256 _limit,
         uint256 _startIndex
     ) external view returns (uint256[] memory);
-    
+
     function getGroupBlogIdsLength(address _group)
         external
         view
         returns (uint256);
 
-    function getBlogPersons(address _group)
+    function getGroupPersons(address _group)
         external
         view
         returns (address[] memory);
 
     function personAddrs() external view returns (address[] memory);
+
+    function addPersonBlogId(
+        address _group,
+        address _person,
+        uint256 _blogId
+    ) external returns (bool);
 
     function getPersonBlogIds(address _person)
         external
@@ -58,9 +77,16 @@ interface IRouter {
         view
         returns (address[] memory);
 
-    function blogsLength()external view returns (uint256);
+    function blogsLength() external view returns (uint256);
 
-    function getBlog(uint256 blogId)
+    function createBlog(
+        address _person,
+        address _group,
+        string memory _content,
+        uint256 _typeNumber
+    ) external returns (bool, uint256);
+
+    function getBlog(uint256 _blogId)
         external
         view
         returns (
