@@ -1,4 +1,4 @@
-pragma solidity ^0.4.2;
+pragma solidity ^0.5.1;
 
 
 contract Betting {
@@ -13,15 +13,21 @@ contract Betting {
     }
 // The address of the player and => the user info
    mapping(address => Player) public playerInfo;
-   function() public payable {}
-  function Betting() public {
-      owner = msg.sender;
-      minimumBet = 100000000000000;
+//   function() public payable {}
+//   co() public {
+//       owner = msg.sender;
+//       minimumBet =
+//     }
+
+     constructor() public{
+        owner = msg.sender;
+        minimumBet = 100000000000000;
     }
-function kill() public {
-      if(msg.sender == owner) selfdestruct(owner);
+
+    function kill() public {
+    //   if(msg.sender == owner) selfdestruct(owner);
     }
-function checkPlayerExists(address player) public constant returns(bool){
+    function checkPlayerExists(address player) public view returns(bool){
       for(uint256 i = 0; i < players.length; i++){
          if(players[i] == player) return true;
       }
@@ -54,12 +60,12 @@ function checkPlayerExists(address player) public constant returns(bool){
     // Generates a number between 1 and 10 that will be the winner
     function distributePrizes(uint16 teamWinner) public {
       address[1000] memory winners;
+
       //We have to create a temporary in memory array with fixed size
       //Let's choose 1000
       uint256 count = 0; // This is the count for the array of winners
       uint256 LoserBet = 0; //This will take the value of all losers bet
       uint256 WinnerBet = 0; //This will take the value of all winners bet
-
       //We loop through the player array to check who selected the winner team
       for(uint256 i = 0; i < players.length; i++){
          address playerAddress = players[i];
@@ -86,13 +92,15 @@ function checkPlayerExists(address player) public constant returns(bool){
       //We loop through the array of winners, to give ethers to the winners
       for(uint256 j = 0; j < count; j++){
           // Check that the address in this fixed array is not empty
-         if(winners[j] != address(0))
+         if(winners[j] != address(0)){
             address add = winners[j];
             uint256 bet = playerInfo[add].amountBet;
             //Transfer the money to the user
-            winners[j].transfer(    (bet*(10000+(LoserBet*10000/WinnerBet)))/10000 );
+            /* winners[j].transfer((bet*(10000+(LoserBet*10000/WinnerBet)))/10000 ); */
+         }
+
       }
-      delete playerInfo[playerAddress]; // Delete all the players
+    //   delete playerInfo[playerAddress]; // Delete all the players
       players.length = 0; // Delete all the players array
       LoserBet = 0; //reinitialize the bets
       WinnerBet = 0;
