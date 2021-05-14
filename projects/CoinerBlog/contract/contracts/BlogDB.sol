@@ -26,6 +26,8 @@ contract BlogDB is IBlogDB, AcceptedCaller {
         address person;
         address group;
         string content;
+        uint256 repostBlogId;
+        uint256[] commentBlogIds;
         uint256 typeNumber;
         uint256 createDate;
     }
