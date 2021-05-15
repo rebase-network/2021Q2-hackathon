@@ -64,7 +64,7 @@ interface IBlogDB {
         uint256 _commentBlogId,
         string memory _content,
         uint256 _typeNumber
-    ) external returns (bool, uint256);
+    ) external returns (bool, uint256,uint256);
 
     function getBlog(uint256 _blogId)
         external

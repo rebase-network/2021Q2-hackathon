@@ -108,7 +108,7 @@ contract Recommend is IRecommend, AcceptedCaller {
         uint256 _commentBlogId,
         uint256 _point,
         uint256 _createDate
-    ) public override returns (bool) {
+    ) onlyAcceptedCaller(msg.sender) public override returns (bool) {
         channels[_channel].points[_blogId] = _point;
         blogs[_blogId].createDate = _createDate;
         if (_commentBlogId != 0) {

@@ -57,17 +57,8 @@ contract PointPool is IPointPool, AcceptedCaller {
         );
     }
 
-    function getPool(address _pool)
-        public
-        view
-        override
-        returns (
-            uint256
-        )
-    {
-        return (
-            pools[_pool].balance
-        );
+    function getPool(address _pool) public view override returns (uint256) {
+        return (pools[_pool].balance);
     }
 
     function pause() public override onlyOwner returns (bool) {
@@ -86,12 +77,18 @@ contract PointPool is IPointPool, AcceptedCaller {
         override
         returns (uint256)
     {
-        return
-            pools[_pool].persons[_person].pointStored.add(
-                pools[_pool].persons[_person].balance.mul(
-                    block.number.sub(pools[_pool].persons[_person].lastUpdateBlock)
-                )
-            );
+        if (pools[_pool].persons[_person].balance > 0) {
+            return
+                pools[_pool].persons[_person].pointStored.add(
+                    pools[_pool].persons[_person].balance.mul(
+                        block.number.sub(
+                            pools[_pool].persons[_person].lastUpdateBlock
+                        )
+                    )
+                );
+        } else {
+            return pools[_pool].persons[_person].pointStored;
+        }
     }
 
     modifier _updatePerson(address _pool, address _person) {
@@ -110,6 +107,7 @@ contract PointPool is IPointPool, AcceptedCaller {
         override
         _updatePerson(_pool, msg.sender)
         _checkStart
+        onlyAcceptedCaller(msg.sender)
         returns (uint256)
     {
         uint256 point = pools[_pool].persons[_person].pointStored;

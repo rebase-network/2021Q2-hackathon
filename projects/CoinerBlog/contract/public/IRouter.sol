@@ -63,7 +63,7 @@ interface IRouter {
 
     function blogsLength()external view returns (uint256);
 
-    function getBlog(uint256 blogId)
+    function getBlog(uint256 _blogId)
         external
         view
         returns (

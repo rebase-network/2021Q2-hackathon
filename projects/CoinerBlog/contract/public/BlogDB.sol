@@ -154,7 +154,7 @@ contract BlogDB is IBlogDB, AcceptedCaller {
         uint256 _commentBlogId,
         string memory _content,
         uint256 _typeNumber
-    ) public override onlyAcceptedCaller(msg.sender) returns (bool, uint256) {
+    ) public override onlyAcceptedCaller(msg.sender) returns (bool, uint256,uint256) {
         if (groups[_group].seted == false) {
             groups[_group].seted = true;
             _groupAddrs.push(_group);
@@ -174,6 +174,7 @@ contract BlogDB is IBlogDB, AcceptedCaller {
         uint256 blogId = _blogsLength;
         _blogsLength = _blogsLength.add(1);
         uint256 [] memory commentBlogIds;
+        uint256 createDate=block.timestamp;
         blogs[blogId] = Blog(
             _person,
             _group,
@@ -181,7 +182,7 @@ contract BlogDB is IBlogDB, AcceptedCaller {
             commentBlogIds,
             _content,
             _typeNumber,
-            block.timestamp
+            createDate
         );
         if (_commentBlogId != 0) {
             blogs[blogId].commentBlogIds.push(blogId);
@@ -193,9 +194,9 @@ contract BlogDB is IBlogDB, AcceptedCaller {
             _person,
             _group,
             _commentBlogId,
-            block.timestamp
+            createDate
         );
-        return (true, blogId);
+        return (true, blogId,createDate);
     }
 
     function getBlog(uint256 _blogId)
