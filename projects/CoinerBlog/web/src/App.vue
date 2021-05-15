@@ -3,9 +3,9 @@
     <div class="head-part" v-show="!hideHeadPart">
       <top-header @toUpdateWeibo="updateWeibo()"></top-header>
       <div class="tab-group">
-        <router-link to="/home" class="tab">首页</router-link>
-        <router-link to="/message" class="tab">消息</router-link>
-        <router-link to="/discovery" class="tab">发现</router-link>
+        <router-link to="/follow" class="tab">关注</router-link>
+        <router-link to="/home" class="tab">推荐</router-link>
+        <router-link to="/hot" class="tab">热门</router-link>
         <router-link to="/me" class="tab">我</router-link>
       </div>
     </div>
@@ -41,7 +41,7 @@ export default {
   watch: {
     '$route' (to, from) {
         // 用数组的索引标记路由的深度
-      const routerOrder = ['/home', '/message', '/discovery', '/me']
+      const routerOrder = ['/follow', '/home', '/hot', '/me']
       const toDepth = routerOrder.indexOf(to.path)
       const fromDepth = routerOrder.indexOf(from.path)
 

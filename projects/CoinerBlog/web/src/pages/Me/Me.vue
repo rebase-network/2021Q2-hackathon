@@ -13,11 +13,11 @@
           <i class="iconfont icon-right-arrow"></i>
         </section>
         </h3>
-        <p class="sub-text txt-s mct-d txt-cut">简介：春日游，杏花吹满头。</p>
+        <!-- <p class="sub-text txt-s mct-d txt-cut">简介：春日游，杏花吹满头。</p> -->
       </a>
-      <span class="plus-content">
+      <!-- <span class="plus-content">
           <i class="iconfont icon-right-arrow"></i>
-      </span>
+      </span> -->
     </div>
     <footer class="avatar-card-footer no-text-select">
       <a class="box-col able-to-active">
@@ -29,20 +29,20 @@
         <p>130</p>
         <p>关注</p>
       </a>
-      <i class="separate-line"></i>
+      <!-- <i class="separate-line"></i>
       <a class="box-col able-to-active">
         <p>26</p>
         <p>粉丝</p>
-      </a>
+      </a> -->
     </footer>
   </div>
   <div class="card-line-group rubberBand"
            :class="{'intro-highlighted': toHighlightIntroStat}">
-    <div class="intro-tooltip-wrapper caret-bottom"
+    <!-- <div class="intro-tooltip-wrapper caret-bottom"
              v-if="toShowStatIntro">
       <h2>看看这个项目的访问量吧~~</h2>
-    </div>
-    <section
+    </div> -->
+    <!-- <section
       class="card-line card-4"
       @click.prevent="openStatCard()">
       <a>
@@ -50,7 +50,7 @@
         <div class="content">统计</div>
         <i class="iconfont icon-right-arrow"></i>
       </a>
-    </section>
+    </section> -->
     <transition name="fade">
       <div
           class="statistics-card-wrapper"
@@ -94,7 +94,7 @@
       </div>
     </transition>
   </div>
-  <div class="card-line-group">
+  <!-- <div class="card-line-group">
     <section class="card-line card-4" v-ripple>
       <a>
         <i class="iconfont icon-level"></i>
@@ -102,15 +102,15 @@
         <i class="iconfont icon-right-arrow"></i>
       </a>
     </section>
-  </div>
+  </div> -->
   <div class="card-line-group">
-    <section class="card-line card-4" v-ripple>
+    <!-- <section class="card-line card-4" v-ripple>
       <a>
         <i class="iconfont icon-album"></i>
         <div class="content">我的相册<span class="mct-b txt-xs">(8)</span></div>
         <i class="iconfont icon-right-arrow"></i>
       </a>
-    </section>
+    </section> -->
     <section class="card-line card-4" v-ripple>
       <a>
         <i class="iconfont icon-collect"></i>
@@ -134,13 +134,13 @@
         <i class="iconfont icon-right-arrow"></i>
       </a>
     </section>
-    <section class="card-line card-4" v-ripple @click="showStatIntro()">
+    <!-- <section class="card-line card-4" v-ripple @click="showStatIntro()">
       <a>
         <i class="iconfont icon-t"></i>
         <div class="content">再次介绍</div>
         <i class="iconfont icon-right-arrow"></i>
       </a>
-    </section>
+    </section> -->
   </div>
 
   <transition name="fade">

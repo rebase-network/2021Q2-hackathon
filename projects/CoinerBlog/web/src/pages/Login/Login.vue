@@ -18,16 +18,16 @@
           </label>
         </p>
       </section>
-      <router-link to="/home" class="btn login-btn">首页</router-link>
+      <router-link to="/home" class="btn login-btn">登录</router-link>
       <!--<a href="./home" class="btn login-btn">登录</a>-->
-      <p class="third-part-login">
+      <!-- <p class="third-part-login">
         <a>第三方账号</a>
-      </p>
+      </p> -->
     </form>
-    <footer class="other-options">
+    <!-- <footer class="other-options">
       <a class="register">注册账号</a>
       <a class="forgot-password">忘记密码</a>
-    </footer>
+    </footer> -->
   </div>
 </div>
 </template>

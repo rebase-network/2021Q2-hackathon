@@ -1,20 +1,21 @@
 <!--
  * @Author: 33357
  * @Date: 2021-05-14 14:00:53
- * @LastEditTime: 2021-05-15 13:32:59
+ * @LastEditTime: 2021-05-15 14:15:50
  * @LastEditors: 33357
 -->
+
 <template>
   <div class="comment-window-container">
     <header>
       <div class="header-part left-header">
-        <span @click.prevent="closeCommentWindow()">×</span>
+        <span @click.prevent="closeSendWindow()">×</span>
       </div>
       <div class="middle-header">
         <span>{{title}}</span>
       </div>
       <div class="header-part right-header">
-        <button class="btn btn-sm btn-orange">发送</button>
+        <button class="btn btn-sm btn-orange">发布</button>
       </div>
     </header>
     <div class="comment-main-body input-wrapper">
@@ -35,13 +36,13 @@
 export default {
   data() {
     return {
-      title: '评论',
+      title: '微博',
       content: ''
     }
   },
   methods: {
-    closeCommentWindow() {
-      this.$emit('closeCommentWindow');
+    closeSendWindow() {
+      this.$emit('closeSendWindow');
     }
   }
 }

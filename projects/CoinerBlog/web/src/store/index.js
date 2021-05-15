@@ -1,3 +1,9 @@
+/*
+ * @Author: 33357
+ * @Date: 2021-05-14 14:00:53
+ * @LastEditTime: 2021-05-15 13:49:36
+ * @LastEditors: 33357
+ */
 import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex)
@@ -7,10 +13,10 @@ const OPEN_PICTURE_VIEWER = 'openPicViewer'
 const CLOSE_PICTURE_VIEWER = 'closePicViewer'
 
 //在发布环境下关闭严格模式，以避免性能损失
-const debug = process.env.NODE_ENV !== 'production'
+//const debug = process.env.NODE_ENV !== 'production'
 
 export default new Vuex.Store({
-  strict: debug,
+  //strict: debug,
   state: {
     switchPicViewer: false,
     viewTargetPicUrl: '',

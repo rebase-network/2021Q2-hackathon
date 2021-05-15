@@ -1,16 +1,11 @@
 /*
  * @Author: 33357
- * @Date: 2021-05-15 11:09:02
- * @LastEditTime: 2021-05-15 13:13:47
+ * @Date: 2021-05-15 13:11:11
+ * @LastEditTime: 2021-05-15 13:13:03
  * @LastEditors: 33357
  */
 
 export const abi = [
-  {
-    inputs: [],
-    stateMutability: "nonpayable",
-    type: "constructor",
-  },
   {
     anonymous: false,
     inputs: [
@@ -54,56 +49,6 @@ export const abi = [
       },
     ],
     name: "OwnershipTransferred",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: false,
-        internalType: "address",
-        name: "person",
-        type: "address",
-      },
-      {
-        indexed: false,
-        internalType: "address",
-        name: "token",
-        type: "address",
-      },
-      {
-        indexed: false,
-        internalType: "uint256",
-        name: "amount",
-        type: "uint256",
-      },
-    ],
-    name: "StakeToken",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: false,
-        internalType: "address",
-        name: "person",
-        type: "address",
-      },
-      {
-        indexed: false,
-        internalType: "address",
-        name: "token",
-        type: "address",
-      },
-      {
-        indexed: false,
-        internalType: "uint256",
-        name: "amount",
-        type: "uint256",
-      },
-    ],
-    name: "WithdrawToken",
     type: "event",
   },
   {
@@ -152,30 +97,9 @@ export const abi = [
     type: "function",
   },
   {
-    inputs: [
-      {
-        internalType: "address",
-        name: "_token",
-        type: "address",
-      },
-      {
-        internalType: "address",
-        name: "_person",
-        type: "address",
-      },
-    ],
-    name: "getPerson",
+    inputs: [],
+    name: "day",
     outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
       {
         internalType: "uint256",
         name: "",
@@ -186,19 +110,27 @@ export const abi = [
     type: "function",
   },
   {
-    inputs: [
+    inputs: [],
+    name: "getHotBlogIds",
+    outputs: [
       {
-        internalType: "address",
-        name: "_token",
-        type: "address",
-      },
-      {
-        internalType: "address",
-        name: "_person",
-        type: "address",
+        internalType: "uint256[]",
+        name: "",
+        type: "uint256[]",
       },
     ],
-    name: "getPersonPoint",
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_blogId",
+        type: "uint256",
+      },
+    ],
+    name: "getHotPoint",
     outputs: [
       {
         internalType: "uint256",
@@ -213,11 +145,82 @@ export const abi = [
     inputs: [
       {
         internalType: "address",
-        name: "_token",
+        name: "_channel",
         type: "address",
       },
+      {
+        internalType: "uint256",
+        name: "_limit",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_start",
+        type: "uint256",
+      },
     ],
-    name: "getPool",
+    name: "getRecommendBlogIds",
+    outputs: [
+      {
+        internalType: "uint256[]",
+        name: "",
+        type: "uint256[]",
+      },
+      {
+        internalType: "uint256[]",
+        name: "",
+        type: "uint256[]",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_channel",
+        type: "address",
+      },
+      {
+        internalType: "uint256",
+        name: "_blogId",
+        type: "uint256",
+      },
+    ],
+    name: "getRecommendPoint",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    name: "hotBlogIds",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "hotLength",
     outputs: [
       {
         internalType: "uint256",
@@ -261,45 +264,6 @@ export const abi = [
     type: "function",
   },
   {
-    inputs: [],
-    name: "pause",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
-    ],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "paused",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "poolAddrs",
-    outputs: [
-      {
-        internalType: "address[]",
-        name: "",
-        type: "address[]",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
     inputs: [
       {
         internalType: "address",
@@ -329,16 +293,31 @@ export const abi = [
     inputs: [
       {
         internalType: "address",
-        name: "_token",
+        name: "_channel",
         type: "address",
       },
       {
         internalType: "uint256",
-        name: "_amount",
+        name: "_blogId",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_commentBlogId",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_point",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_createDate",
         type: "uint256",
       },
     ],
-    name: "stakeToken",
+    name: "setBlog",
     outputs: [
       {
         internalType: "bool",
@@ -351,44 +330,15 @@ export const abi = [
   },
   {
     inputs: [],
-    name: "start",
+    name: "stepTime",
     outputs: [
       {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
-    ],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "_token",
-        type: "address",
-      },
-      {
-        internalType: "address",
-        name: "_to",
-        type: "address",
-      },
-      {
         internalType: "uint256",
-        name: "_amount",
+        name: "",
         type: "uint256",
       },
     ],
-    name: "transferAnyERC20Token",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
-    ],
-    stateMutability: "nonpayable",
+    stateMutability: "view",
     type: "function",
   },
   {
@@ -401,54 +351,6 @@ export const abi = [
     ],
     name: "transferOwnership",
     outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "_token",
-        type: "address",
-      },
-      {
-        internalType: "address",
-        name: "_person",
-        type: "address",
-      },
-    ],
-    name: "usePersonPoint",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "_token",
-        type: "address",
-      },
-      {
-        internalType: "uint256",
-        name: "_amount",
-        type: "uint256",
-      },
-    ],
-    name: "withdrawToken",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
-    ],
     stateMutability: "nonpayable",
     type: "function",
   },
