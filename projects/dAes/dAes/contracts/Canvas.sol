@@ -1,12 +1,14 @@
-pragma solidity ^0.8.0
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.0;
 
 import "./ERC721Ex.sol";
 import "./extensions/ICanvas.sol";
 
-contract GameItem is ERC721Ex, ICanvas{
+contract Canvas is ERC721Ex, ICanvas{
 
-    function claimPixel(address claimer, uin16 xAxis, uint16 yAxis)
-        public
+    function claim(address claimer, uin16 xAxis, uint16 yAxis)
+        public virtual override
         returns (uint256)
     {
         uint256 tokenId = _mappingPositionToTokenId(xAxis, yAxis);
@@ -56,7 +58,7 @@ contract GameItem is ERC721Ex, ICanvas{
         _canvas[tokenId_] = pixel;
     }
 
-     function getColor(uint16 xAxis_, uint16 yAxis_) external view override returns (uint8, uint8, uint8, uint8) {
+     function getColor(uint16 xAxis_, uint16 yAxis_) public view override returns (uint8, uint8, uint8, uint8) {
         RGBA color = RGBA(255, 255, 255, 10);
         uint256 tokenId = _mappingPositionToTokenId(xAxis_, yAxis_);
         if (_canvas[tokenId] != address(0)){

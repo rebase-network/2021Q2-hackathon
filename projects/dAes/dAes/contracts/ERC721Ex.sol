@@ -1,4 +1,6 @@
-pragma solidity ^0.8.0
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol";
@@ -20,10 +22,10 @@ contract ERC721Ex is Context, ERC165, IERC721, IERC721ExMetadata{
     string private _symbol;
 
     // Canvas's width
-    uint32 private _width;
+    uint16 private _width;
 
     // Canvas's height
-    uint32 private _height;
+    uint16 private _height;
 
     struct Pixel {
         uint8 R;
@@ -47,10 +49,7 @@ contract ERC721Ex is Context, ERC165, IERC721, IERC721ExMetadata{
     // Mapping from owner to operator approvals
     mapping (address => mapping (address => bool)) private _operatorApprovals;
 
-    /**
-     * @dev Initializes the contract by setting a `name` and a `symbol` to the token collection.
-     */
-    constructor (string memory name_, string memory symbol_, uin32 memory width_, uint32 memory height_) {
+    constructor (string memory name_, string memory symbol_, uint16 width_, uint16 height_) {
         _name = name_;
         _symbol = symbol_;
         _width = width_;
@@ -97,11 +96,11 @@ contract ERC721Ex is Context, ERC165, IERC721, IERC721ExMetadata{
         return _symbol;
     }
 
-    function width() public view virtual override returns (string memory) {
+    function width() public view virtual override returns (uint16) {
         return _width;
     }
 
-    function height() public view virtual override returns (string memory) {
+    function height() public view virtual override returns (uint16) {
         return _height;
     }
 
@@ -260,6 +259,7 @@ contract ERC721Ex is Context, ERC165, IERC721, IERC721ExMetadata{
         _beforeTokenTransfer(address(0), to, tokenId);
 
         _balances[to] += 1;
+        _canvas[tokenId] = RGBA(255, 255, 255, 10);
         _owners[tokenId] = to;
 
         emit Transfer(address(0), to, tokenId);

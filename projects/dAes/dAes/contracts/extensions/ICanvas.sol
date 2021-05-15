@@ -1,4 +1,6 @@
-pragma solidity ^0.8.0
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.0;
 
 interface ICanvas {
 
@@ -14,4 +16,8 @@ interface ICanvas {
      */
     function getColor(uint16 xAxis, uint16 yAxis) external view returns(uint8, uint8, uint8, uint8);
 
+    /**
+     * claim a token by position 
+     */
+    function claim(address claimer, uint16 xAxis, uint16 yAxis) external returns (uint256);
 }
