@@ -1,4 +1,4 @@
-pragma solidity ^0.5.1;
+pragma solidity ^0.6.0;
 
 
 contract Betting {
@@ -101,7 +101,7 @@ contract Betting {
 
       }
     //   delete playerInfo[playerAddress]; // Delete all the players
-      players.length = 0; // Delete all the players array
+      //players.length = 0; // Delete all the players array
       LoserBet = 0; //reinitialize the bets
       WinnerBet = 0;
       totalBetsOne = 0;

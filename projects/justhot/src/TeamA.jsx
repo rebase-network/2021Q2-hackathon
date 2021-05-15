@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import {Grid,Row,Col} from 'react-bootstrap';
+//import {Container,Row,Col} from 'react-bootstrap';
 import getWeb3 from './utils/getWeb3.js';
 import BettingContract from './contracts/Betting.json';
+import BetResultContract from './contracts/BetResult.json';
 import './App.css';
 
 
@@ -19,6 +20,7 @@ class TeamA extends Component {
     this.getAmount = this.getAmount.bind(this);
     this.Bet = this.Bet.bind(this);
     this.MakeWin = this.MakeWin.bind(this);
+    this.OnBetResult = this.OnBetResult.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
@@ -97,6 +99,7 @@ class TeamA extends Component {
     const Betting = contract(BettingContract);
     Betting.setProvider(this.state.web3.currentProvider);
     var BettingInstance;
+   
     this.state.web3.eth.getAccounts((error, accounts) => {
         Betting.deployed().then((instance) => {
           BettingInstance = instance
@@ -107,7 +110,38 @@ class TeamA extends Component {
         })
       })
   }
+  
+  OnBetResult(){
+    //alert("123");
+    const contract = require('truffle-contract');
+    const BetResult = contract(BetResultContract);
+    BetResult.setProvider(this.state.web3.currentProvider);
 
+    //BetResult.requestEthereumPrice();
+    console.log("-------------------------")
+    console.log(BetResult)
+
+    var BetResultInstance;
+    this.state.web3.eth.getAccounts((error, accounts) => {
+      console.log("00")
+     
+      BetResult.deployed().then((instance) => {
+          BetResultInstance = instance
+          BetResultInstance.AmountOne()
+          BetResultInstance.requestEthereumPrice()
+        
+        }).then((result) => {
+          console.log("11")
+          //BetResultInstance.requestEthereumPrice()
+          return BetResultInstance.distributePrizes(1, {from: accounts[0]})
+          
+        }).catch(() => {
+          console.log("222")
+          console.log(error)
+          console.log(accounts)
+        })
+      })
+  }
 
 
 
@@ -126,7 +160,8 @@ class TeamA extends Component {
             <button onClick={this.Bet}>Bet</button>
             <br/>
             <hr/>
-            <button onClick={this.MakeWin}> Make this team win</button>
+            { <button onClick={this.MakeWin}> Make this team win</button>}<br/><br/> 
+           {<button onClick={this.OnBetResult}> 读取ChainLink信息</button>} 
           </div>
         )
 

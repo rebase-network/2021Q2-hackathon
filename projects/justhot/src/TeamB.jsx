@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Grid,Row,Col} from 'react-bootstrap';
+//import {Grid,Row,Col} from 'react-bootstrap';
 import getWeb3 from './utils/getWeb3.js';
 import BettingContract from './contracts/Betting.json'
 import './App.css';
