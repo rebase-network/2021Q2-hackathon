@@ -1,8 +1,8 @@
 pragma solidity ^0.6.0;
 
 //import "https://github.com/smartcontractkit/chainlink/evm-contracts/src/v0.6/ChainlinkClient.sol";
-import "/Users/yhk/dev/web3/chainlink-develop/evm-contracts/src/v0.6/ChainlinkClient.sol";
-import "/Users/yhk/dev/web3/chainlink-develop/evm-contracts/src/v0.6/vendor/Ownable.sol";
+import "../chainlink-develop/evm-contracts/src/v0.6/ChainlinkClient.sol";
+import "../chainlink-develop/evm-contracts/src/v0.6/vendor/Ownable.sol";
 
 contract BetResult is ChainlinkClient, Ownable {
   	address constant private ORACLE = 0x83dA1beEb89Ffaf56d0B7C50aFB0A66Fb4DF8cB1;
