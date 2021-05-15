@@ -404,7 +404,7 @@ contract Canvas is Context, ERC165, IERC721, IERC721ExMetadata, ICanvas{
     }
 
     function _validPixel(Pixel memory pixel_) private returns (bool) {
-        return pixel_.A <= 10;
+        return pixel_.A <= 100;
     }
 
     function _mappingPositionToTokenId(uint16 xAxis_, uint16 yAxis_) private view returns (uint256) {
@@ -430,4 +430,18 @@ contract Canvas is Context, ERC165, IERC721, IERC721ExMetadata, ICanvas{
         Pixel memory color = _canvas[tokenId];
         return (color.R, color.G, color.B, color.A);
     }
+
+    // function lock(uint16 xAxis_, uint16 yAxis_) public {
+    //     uint256 tokenId = _mappingPositionToTokenId(xAxis_, yAxis_); 
+    //     require(_exists(tokenId), "ERC721: lock nonexistent token");
+        
+    //     address owner = Canvas.ownerOf(tokenId);
+
+    //     require(_msgSender() == owner , "need owner to lock"); 
+    //     _lock(xAxis_, yAxis_);
+    // }
+
+    // function _lock(uint16 xAxis_, uint16 yAxis_) internal virtual {
+
+    // }
 }
