@@ -13,11 +13,11 @@ const cardInfo = () => import('../components/cardInfo.vue')
 const updateSd = () => import('../components/updateSuccessed.vue')
 const fusing = () => import('../components/fusing.vue')
 const fusionEnd = () => import('../components/fusionEnd.vue')
-const business = () => import('../components/business.vue')
-const buyInfo = () => import('../components/buyInfo.vue')
+// const business = () => import('../components/business.vue')
+// const buyInfo = () => import('../components/buyInfo.vue')
 const buyEnd = () => import('../components/buyEnd.vue')
-const sellInfo = () => import('../components/sellInfo.vue')
-const sellEnd = () => import('../components/sellEnd.vue')
+// const sellInfo = () => import('../components/sellInfo.vue')
+// const sellEnd = () => import('../components/sellEnd.vue')
 const giveUp = () => import('../components/giveUp.vue')
 const giveUpInfo = () => import('../components/giveUpInfo.vue')
 const editEnd = () => import('../components/editEnd.vue')
@@ -68,25 +68,17 @@ export default new VueRouter({
       component: fusionEnd,
     },
     {
-      path: '/business',
-      component: business,
-    },
-    {
-      path: '/buyInfo',
-      component: buyInfo,
-    },
-    {
       path: '/buyEnd',
       component: buyEnd,
     },
-    {
-      path: '/sellInfo',
-      component: sellInfo,
-    },
-    {
-      path: '/sellEnd',
-      component: sellEnd,
-    },
+    // {
+    //   path: '/sellInfo',
+    //   component: sellInfo,
+    // },
+    // {
+    //   path: '/sellEnd',
+    //   component: sellEnd,
+    // },
     {
       path: '/giveUp',
       component: giveUp,
