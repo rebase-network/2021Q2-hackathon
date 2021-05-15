@@ -27,7 +27,7 @@ interface IPointPool {
 
     function start() external returns (bool);
     
-    function usePersonPoint(address _pool, address _person) external returns (uint256);
+    function usePersonPoint(address _pool, address _person) external returns (bool,uint256);
 
     function getPersonPoint(address _pool,address _person) external view returns (uint256);
 

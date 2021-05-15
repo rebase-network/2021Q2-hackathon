@@ -108,11 +108,11 @@ contract PointPool is IPointPool, AcceptedCaller {
         _updatePerson(_pool, msg.sender)
         _checkStart
         onlyAcceptedCaller(msg.sender)
-        returns (uint256)
+        returns (bool,uint256)
     {
         uint256 point = pools[_pool].persons[_person].pointStored;
         pools[_pool].persons[_person].pointStored = 0;
-        return point;
+        return (true,point);
     }
 
     function stakeToken(address _pool, uint256 _amount)
