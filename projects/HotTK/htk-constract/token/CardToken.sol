@@ -13,7 +13,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
  * @title The Three Kingdoms Hero Card Token (721)
  *
  * @author Bit Lighthouse. Ace
- * AT: 2021-3-28 | VERSION: v1.0.3
+ * AT: 2021-5-15 | VERSION: v1.0.3
  */
 contract CardToken is ERC721, Member, Utils {
     using SafeMath for uint256;
