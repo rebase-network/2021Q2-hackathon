@@ -1,7 +1,7 @@
 <!--
  * @Author: 33357
  * @Date: 2021-05-15 13:38:11
- * @LastEditTime: 2021-05-15 13:44:49
+ * @LastEditTime: 2021-05-15 20:33:51
  * @LastEditors: 33357
 -->
 <template>
@@ -14,16 +14,16 @@
       v-if="showCommentWindow"
       @closeCommentWindow="closeCommentWindow"></comment-window>
 
-    <div class="content-tip no-text-select" v-show="noNew">
+    <!-- <div class="content-tip no-text-select" v-show="noNew">
       <span>这会儿还没有新微博，等会再来刷刷看吧(｡･ω･｡)！</span>
-    </div>
-    <div class="top-tip" v-if="hasTopTip">
+    </div> -->
+    <!-- <div class="top-tip" v-if="hasTopTip">
       <a class="to-top-tip">
         <i class="iconfont icon-hot"></i>
         <p class="top-tip-content txt-cut">{{topTip.text}}<i class="iconfont icon-right-arrow"></i></p>
       </a>
-    </div>
-    <div class="card" v-for="(item,index) in weiboContent.card_group">
+    </div> -->
+    <div class="card" v-for="(item,index) in weiboContent.card_group" :key="index">
       <div class="card-main">
         <header class="card-header">
           <div class="header-bg" v-if="typeof item.mblog.cardid!=='undefined'"></div>
@@ -33,16 +33,16 @@
               <i class="iconfont" :class="calculateVerifiedClass(item.mblog.user.verified_type)"></i>
             </div>
           </a>
-          <div class="user-info">
+          <!-- <div class="user-info">
             <a :href="item.mblog.user.profile_url" class="user-name txt-l txt-cut">{{item.mblog.user.screen_name}}</a>
             <div class="publish-data txt-xs">
               <span class="publish-created-at">{{item.mblog.created_at}}</span>
               <span class="publish-source">来自{{item.mblog.source}}</span>
             </div>
-          </div>
-          <a class="card-operate">
+          </div> -->
+          <!-- <a class="card-operate">
             <i class="iconfont icon-down-arrow"></i>
-          </a>
+          </a> -->
         </header>
         <section class="card-body">
           <p class="default-content" v-html="item.mblog.text"></p>
@@ -57,13 +57,13 @@
               <a :href="item.mblog.retweeted_status.user.profile_url"
                  class="retweet-user">@{{item.mblog.retweeted_status.user.screen_name}}</a>：{{item.mblog.retweeted_status.text}}
           </p>
-            <div v-if="item.mblog.retweeted_status.pics.length===1" class="single-pic">
+            <!-- <div v-if="item.mblog.retweeted_status.pics.length===1" class="single-pic">
               <img :src="item.mblog.retweeted_status.pics[0].url"
                    @click="openPicViewer(item.mblog.retweeted_status.pics[0].url)">
-            </div>
-            <ul v-if="item.mblog.retweeted_status.pics.length>=2" class="pic-list">
+            </div> -->
+            <!-- <ul v-if="item.mblog.retweeted_status.pics.length>=2" class="pic-list">
               <li v-for="(eachPic,index) in item.mblog.retweeted_status.pics"><img :src=eachPic.url></li>
-            </ul>
+            </ul> -->
           </div>
         </section>
       </div>

@@ -1,7 +1,7 @@
 /*
  * @Author: 33357
  * @Date: 2021-05-15 11:02:36
- * @LastEditTime: 2021-05-15 17:11:34
+ * @LastEditTime: 2021-05-15 20:03:31
  * @LastEditors: 33357
  */
 import detectEthereumProvider from "@metamask/detect-provider";
@@ -105,6 +105,14 @@ export class web3Provider {
       );
       return res;
     },
+    getPersonBlogIdsLength: async (_person) => {
+      const res = await this.autoTry(
+        this.router.methods.getPersonBlogIdsLength,
+        [_person],
+        true
+      );
+      return Number(res);
+    },
   };
 
   recommendFunc = {
@@ -149,7 +157,7 @@ export class web3Provider {
       return res;
     },
 
-    getErc20Symbol: async (contractAddress) => {
+    getSymbol: async (contractAddress) => {
       const Erc20Contract = new this.web3.eth.Contract(
         ERC20.abi,
         contractAddress
@@ -158,7 +166,7 @@ export class web3Provider {
       return res;
     },
 
-    getErc20Decimals: async (contractAddress) => {
+    getDecimals: async (contractAddress) => {
       const Erc20Contract = new this.web3.eth.Contract(
         ERC20.abi,
         contractAddress

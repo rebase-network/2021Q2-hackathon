@@ -1,7 +1,7 @@
 <!--
  * @Author: 33357
  * @Date: 2021-05-14 14:00:53
- * @LastEditTime: 2021-05-15 14:15:50
+ * @LastEditTime: 2021-05-15 19:10:09
  * @LastEditors: 33357
 -->
 
@@ -12,84 +12,178 @@
         <span @click.prevent="closeSendWindow()">×</span>
       </div>
       <div class="middle-header">
-        <span>{{title}}</span>
+        <span>{{ title }}</span>
       </div>
       <div class="header-part right-header">
-        <button class="btn btn-sm btn-orange">发布</button>
+        <button
+          :loading="buttonLoad"
+          class="btn btn-sm btn-orange"
+          @click="send"
+          data-am-loading="{spinner: 'circle-o-notch', loadingText: '加载中...', resetText: '加载过了'}"
+        >
+          发布
+        </button>
       </div>
     </header>
     <div class="comment-main-body input-wrapper">
-      <textarea name="main-textarea"
-                id="main-input-textarea"
-                cols="30"
-                rows="10"
-                placeholder="Say Hello..."
-                :value="content"></textarea>
+      <textarea
+        name="main-textarea"
+        id="main-input-textarea"
+        cols="30"
+        rows="10"
+        placeholder="Say Hello..."
+        v-model="content"
+      ></textarea>
     </div>
-    <!--<footer>-->
-      <!--<div>This is footer.</div>-->
-    <!--</footer>-->
+    <footer>
+      <ul class="box">
+        <li
+          v-for="(value, key) in $store.state.tokenList"
+          :class="{ checked: key == group }"
+          :key="key"
+          @click="changeList(key)"
+        >
+          {{ value.symbol }}
+        </li>
+      </ul>
+    </footer>
   </div>
 </template>
 
 <script>
+import { show } from "../../const/func";
+
 export default {
+  props: {
+    commentBlogId: {
+      type: Number,
+      default: 0,
+    },
+  },
   data() {
     return {
-      title: '微博',
-      content: ''
-    }
+      title: "微博",
+      content: "",
+      group: Object.keys(this.$store.state.tokenList)[0],
+      buttonLoad: false,
+    };
   },
   methods: {
+    changeList(address) {
+      this.group = address; //this指向app
+    },
     closeSendWindow() {
-      this.$emit('closeSendWindow');
-    }
-  }
-}
+      this.$emit("closeSendWindow");
+    },
+    async send() {
+      try {
+        this.buttonLoad = true;
+        await this.$store.state.web3.routerFunc.sendBlog(
+          this.group,
+          this.commentBlogId,
+          this.content,
+          0,
+          (args) => {
+            if (args.status == "success" || args.status == "error") {
+              this.buttonLoad = false;
+              show(args.message);
+              this.$emit("closeSendWindow");
+            }
+          }
+        );
+      } catch (error) {
+        show(error);
+      }
+    },
+  },
+};
 </script>
 
 <style scoped lang="stylus">
-.comment-window-container
-  background-color #fff
+.comment-window-container {
+  background-color: #fff;
   position: fixed;
-  top 0
-  left 0
-  bottom 0
-  right 0
-  z-index: 999
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+}
 
-header
-  box-sizing border-box
+header {
+  box-sizing: border-box;
   width: 100%;
   height: 48px;
-  line-height: 16px
-  padding: .65625rem .6rem;
+  line-height: 16px;
+  padding: 0.65625rem 0.6rem;
   text-align: center;
   display: flex;
-  justify-content space-between
+  justify-content: space-between;
   align-items: center;
-  .header-part
-    flex 1
-  .left-header
-    font-size: 26px;
-    text-align left
-  .right-header
-    text-align: right
 
-#main-input-textarea
-  border none
-  outline none
+  .header-part {
+    flex: 1;
+  }
+
+  .left-header {
+    font-size: 26px;
+    text-align: left;
+  }
+
+  .right-header {
+    text-align: right;
+  }
+}
+
+#main-input-textarea {
+  border: none;
+  outline: none;
   resize: none;
   width: 100%;
   font-size: 1rem;
-  margin-top: .65625rem;
+  margin-top: 0.65625rem;
+}
 
-.comment-main-body
-  /*overflow-y: auto;*/
-  padding: 0 .6rem;
-  -webkit-overflow-scrolling:touch;
+.comment-main-body {
+  /* overflow-y: auto; */
+  padding: 0 0.6rem;
+  -webkit-overflow-scrolling: touch;
+}
 
-footer
+footer {
   text-align: center;
+}
+</style>
 
+<style type="text/css">
+body {
+  margin: 0;
+}
+ul {
+  padding: 0;
+  list-style: none;
+  margin: 150px 150px;
+}
+li {
+  width: 80px;
+  height: 50px;
+  display: inline-block;
+  border-radius: 8px;
+  border: 1px #000 solid;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  margin-left: 5px;
+}
+li:hover {
+  background-color: #0cf;
+  color: #fff;
+  border: 1px #fff solid;
+}
+li.checked {
+  background-color: #0cf;
+  color: #fff;
+  border: 1px #fff solid;
+}
 </style>

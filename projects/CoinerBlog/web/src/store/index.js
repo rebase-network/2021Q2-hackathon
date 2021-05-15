@@ -1,12 +1,13 @@
 /*
  * @Author: 33357
  * @Date: 2021-05-14 14:00:53
- * @LastEditTime: 2021-05-15 15:20:57
+ * @LastEditTime: 2021-05-15 20:22:10
  * @LastEditors: 33357
  */
 import Vue from "vue";
 import Vuex from "vuex";
 import { web3Provider } from "../web3/web3Provider";
+import { tokenList } from "../const/tokenList";
 Vue.use(Vuex);
 
 //使用常量替代 Mutation 事件类型，多人协作的大型项目中，这会很有帮助。
@@ -25,7 +26,10 @@ export default new Vuex.Store({
     isBodyScrollDisabled: false,
     web3: new web3Provider(),
     walletAddress: "",
-    name:'',
+    name: "",
+    tokenList: {},
+    follows: [],
+    blogs: {},
   },
   mutations: {
     [OPEN_PICTURE_VIEWER](state, payload) {
@@ -52,18 +56,47 @@ export default new Vuex.Store({
       state.isBodyScrollDisabled = true;
       document.body.classList.add("scroll-disabled");
     },
-    setWeb3(state, web3) {
-      state.web3 = web3;
-    },
-    setWalletAddress(state, walletAddress) {
-      state.walletAddress = walletAddress;
-    },
   },
   actions: {
-    async login({state}) {
+    async login({ state }) {
       state.walletAddress = await state.web3.getWeb3();
-      state.name=state.walletAddress.substring(0,6)+'...'+state.walletAddress.substring(36);
+      state.name =
+        state.walletAddress.substring(0, 6) +
+        "..." +
+        state.walletAddress.substring(36);
       return true;
+    },
+    async getBlog({ state }, blogId) {
+      Vue.set(state.blogs, blogId, await state.web3.routerFunc.getBlog(blogId));
+    },
+    async getTokenList({ state }) {
+      tokenList.forEach(async (token) => {
+        const balance = await state.web3.erc20Func.getBalance(
+          state.walletAddress,
+          token.address
+        );
+        if (balance > 0) {
+          const res = await Promise.all([
+            state.web3.erc20Func.getName(token.address),
+            state.web3.erc20Func.getSymbol(token.address),
+            state.web3.erc20Func.getDecimals(token.address),
+          ]);
+          console.log({
+            address: token.address,
+            name: res[0],
+            symbol: res[1],
+            decimals: res[2],
+            balance: balance,
+          });
+          Vue.set(state.tokenList, token.address, {
+            address: token.address,
+            name: res[0],
+            symbol: res[1],
+            decimals: res[2],
+            balance: balance,
+          });
+        }
+      });
     },
   },
 });

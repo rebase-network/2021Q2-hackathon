@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import {show} from '../../const/func'
 export default {
   data() {
     return {
@@ -43,10 +44,11 @@ export default {
     async login(){
       try {
         if(await this.$store.dispatch('login')){
-           this.$router.push('/home');
+            this.$store.dispatch('getTokenList')
+            this.$router.push('/home');
         }
       } catch (error) {
-        window.alert(error);
+        show(error);
       }
     }
   }

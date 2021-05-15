@@ -17,12 +17,12 @@
     <div class="content-tip no-text-select" v-show="noNew">
       <span>这会儿还没有新微博，等会再来刷刷看吧(｡･ω･｡)！</span>
     </div>
-    <div class="top-tip" v-if="hasTopTip">
+    <!-- <div class="top-tip" v-if="hasTopTip">
       <a class="to-top-tip">
         <i class="iconfont icon-hot"></i>
         <p class="top-tip-content txt-cut">{{topTip.text}}<i class="iconfont icon-right-arrow"></i></p>
       </a>
-    </div>
+    </div> -->
     <div class="card" v-for="(item,index) in weiboContent.card_group">
       <div class="card-main">
         <header class="card-header">
