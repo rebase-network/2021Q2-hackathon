@@ -9,7 +9,7 @@ import "./Manager.sol";
  * @title Administrator & Contract 's Members
  *
  * @author Bit Lighthouse. Ace
- * AT: 2021-3-28 | VERSION: v1.0.2
+ * AT: 2021-5-14 | VERSION: v1.0.2
  */
 abstract contract Member is Owner {
     // authority's manager
