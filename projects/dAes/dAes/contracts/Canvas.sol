@@ -10,8 +10,12 @@ contract GameItem is ERC721Ex, ICanvas{
         returns (uint256)
     {
         uint256 tokenId = _mappingPositionToTokenId(xAxis, yAxis);
-        _mint(claimer, tokenId);
-        return tokenId;
+        if (tokenId != address(0)) {
+            _mint(claimer, tokenId);
+            return tokenId;
+        } else {
+            return 0;
+        }
     }
 
     function _overflowXAxis(uint16 xAxis_) private returns (bool) {
