@@ -9,7 +9,8 @@
         </div>
         <img src="../assets/head/head.png" class="head-img" />
         <div class="head-left">
-          <img src="../assets/img/8.png" class="head-img" />
+          <!-- <img src="../assets/img/8.png" class="head-img" /> -->
+          麻辣三国
         </div>
 
         <div class="head-right" @click="noticeBtn()">
@@ -458,6 +459,9 @@ export default {
   left: 10px;
   width: 75px;
   height: 90%;
+  line-height: 60px;
+  color: #d8be97;
+  font-weight: 700;
 }
 .head-right {
   position: absolute;
