@@ -1,7 +1,7 @@
 /*
  * @Author: 33357
  * @Date: 2021-05-15 11:02:36
- * @LastEditTime: 2021-05-15 16:19:39
+ * @LastEditTime: 2021-05-15 17:11:34
  * @LastEditors: 33357
  */
 import detectEthereumProvider from "@metamask/detect-provider";
@@ -57,19 +57,172 @@ export class web3Provider {
   }
 
   pointPoolFunc = {
-    stakeToken: async (_pool, _amount) => {},
-    withdrawToken: async (_pool, _amount) => {},
-    getPersonPoint: async (_pool, _person) => {}
+    stakeToken: async (_pool, _amount, change) => {
+      await this.transaction(
+        this.pointPool.methods.stakeToken,
+        [_pool, _amount],
+        change
+      );
+    },
+    withdrawToken: async (_pool, _amount, change) => {
+      await this.transaction(
+        this.pointPool.methods.withdrawToken,
+        [_pool, _amount],
+        change
+      );
+    },
+    getPersonPoint: async (_pool, _person) => {
+      const res = await this.autoTry(
+        this.pointPool.methods.getPersonPoint,
+        [_pool, _person],
+        true
+      );
+      return Number(res);
+    },
   };
 
   routerFunc = {
-    sendBlog: async (_group, _commentBlogId, _content, _typeNumber) => {},
-    getPersonBlogIds: async (_person) => {},
-    getBlog: async (_blogId) => {}
+    sendBlog: async (_group, _commentBlogId, _content, _typeNumber, change) => {
+      await this.transaction(
+        this.router.methods.sendBlog,
+        [_group, _commentBlogId, _content, _typeNumber],
+        change
+      );
+    },
+    getPersonBlogIds: async (_person) => {
+      const res = await this.autoTry(
+        this.router.methods.getPersonBlogIds,
+        [_person],
+        true
+      );
+      return res;
+    },
+    getBlog: async (_blogId) => {
+      const res = await this.autoTry(
+        this.router.methods.getBlog,
+        [_blogId],
+        true
+      );
+      return res;
+    },
   };
 
   recommendFunc = {
-    getHotBlogIds: async () => {},
-    getRecommendBlogIds: async (_channel, _limit, _start) => {}
+    getHotBlogIds: async () => {
+      const res = await this.autoTry(
+        this.recommend.methods.getHotBlogIds,
+        [],
+        true
+      );
+      return res;
+    },
+    getRecommendBlogIds: async (_channel, _limit, _start) => {
+      const res = await this.autoTry(
+        this.recommend.methods.getRecommendBlogIds,
+        [_channel, _limit, _start],
+        true
+      );
+      return res;
+    },
   };
+
+  erc20Func = {
+    getBalance: async (walletAddress, contractAddress) => {
+      const Erc20Contract = new this.web3.eth.Contract(
+        ERC20.abi,
+        contractAddress
+      );
+      const res = await this.autoTry(
+        Erc20Contract.methods.balanceOf,
+        [walletAddress],
+        true
+      );
+      return Number(res);
+    },
+
+    getName: async (contractAddress) => {
+      const Erc20Contract = new this.web3.eth.Contract(
+        ERC20.abi,
+        contractAddress
+      );
+      const res = await this.autoTry(Erc20Contract.methods.name, [], true);
+      return res;
+    },
+
+    getErc20Symbol: async (contractAddress) => {
+      const Erc20Contract = new this.web3.eth.Contract(
+        ERC20.abi,
+        contractAddress
+      );
+      const res = await this.autoTry(Erc20Contract.methods.symbol, [], true);
+      return res;
+    },
+
+    getErc20Decimals: async (contractAddress) => {
+      const Erc20Contract = new this.web3.eth.Contract(
+        ERC20.abi,
+        contractAddress
+      );
+      const res = await this.autoTry(Erc20Contract.methods.decimals, [], true);
+      return Number(res);
+    },
+  };
+
+  async transaction(func, args, change) {
+    return new Promise((resolve, reject) => {
+      func(...args)
+        .send({ from: this.walletAddress })
+        .on("transactionHash", function (hash) {
+          change({ message: "等待确认", status: "loading2", hash: hash });
+        })
+        .on("receipt", function (receipt) {
+          change({ message: "发送成功", status: "success" });
+          resolve({ receipt });
+        })
+        .on("error", function (error, receipt) {
+          change({ message: "发送失败", status: "error" });
+          reject(error);
+        });
+    });
+  }
+
+  async autoTry(fun, args, isCall = false, notErr = null) {
+    return new Promise(async (resolve, reject) => {
+      let err;
+      let time = 30;
+      let _time = new Date().getTime();
+      for (let i = 0; i < time; i++) {
+        try {
+          let res;
+          if (isCall) {
+            res = await fun(...args).call();
+          } else {
+            res = await fun(...args);
+          }
+          resolve(res);
+          break;
+        } catch (error) {
+          err = error;
+          if (notErr) {
+            if (JSON.parse(err.message.substring(25)).message == notErr) {
+              break;
+            }
+          }
+          if (i === time - 1) {
+            console.log("autoTry", args, i, err, new Date().getTime() - _time);
+            reject(err);
+            break;
+          }
+          await this.sleep(100);
+          console.log("autoTry", args, i, err, new Date().getTime() - _time);
+          _time = new Date().getTime();
+          continue;
+        }
+      }
+    });
+  }
+
+  sleep(time) {
+    return new Promise((resolve) => setTimeout(resolve, time));
+  }
 }

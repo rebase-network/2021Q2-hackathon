@@ -7,7 +7,7 @@
       </a>
       <a class="avatar-card-content txt-cut">
         <h3 class="txt-s mct-a txt-cut">
-          帅到被人砍___
+          {{$store.state.name}}
           <section class="vip-icon-block">
           <i class="iconfont icon-crown"></i>
           <i class="iconfont icon-right-arrow"></i>

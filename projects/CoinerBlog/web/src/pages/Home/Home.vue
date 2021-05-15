@@ -8,16 +8,16 @@
       v-if="showCommentWindow"
       @closeCommentWindow="closeCommentWindow"></comment-window>
 
-    <div class="content-tip no-text-select" v-show="noNew">
+    <!-- <div class="content-tip no-text-select" v-show="noNew">
       <span>这会儿还没有新微博，等会再来刷刷看吧(｡･ω･｡)！</span>
-    </div>
-    <div class="top-tip" v-if="hasTopTip">
+    </div> -->
+    <!-- <div class="top-tip" v-if="hasTopTip">
       <a class="to-top-tip">
         <i class="iconfont icon-hot"></i>
         <p class="top-tip-content txt-cut">{{topTip.text}}<i class="iconfont icon-right-arrow"></i></p>
       </a>
-    </div>
-    <div class="card" v-for="(item,index) in weiboContent.card_group">
+    </div> -->
+    <div class="card" v-for="(item,index) in weiboContent.card_group" :key="index">
       <div class="card-main">
         <header class="card-header">
           <div class="header-bg" v-if="typeof item.mblog.cardid!=='undefined'"></div>
@@ -34,9 +34,9 @@
               <span class="publish-source">来自{{item.mblog.source}}</span>
             </div>
           </div>
-          <a class="card-operate">
+          <!-- <a class="card-operate">
             <i class="iconfont icon-down-arrow"></i>
-          </a>
+          </a> -->
         </header>
         <section class="card-body">
           <p class="default-content" v-html="item.mblog.text"></p>

@@ -1,7 +1,7 @@
 /*
  * @Author: 33357
  * @Date: 2021-05-15 11:09:02
- * @LastEditTime: 2021-05-15 13:13:47
+ * @LastEditTime: 2021-05-15 16:37:53
  * @LastEditors: 33357
  */
 
@@ -454,4 +454,4 @@ export const abi = [
   },
 ];
 
-export const address = "";
+export const address = "0xce03EBb3393BB3b8c917E954B6bD994f84b7A864";
