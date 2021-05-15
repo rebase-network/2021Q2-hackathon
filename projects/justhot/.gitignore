@@ -31,3 +31,4 @@ package-lock.json
 .solhint.json
 pkg
 pkg/*
+build/
