@@ -14,7 +14,7 @@ interface ICanvas {
     /**
      * get color from a position 
      */
-    function getColor(uint16 xAxis, uint16 yAxis) external view returns(uint8, uint8, uint8, uint8);
+    function getColor(uint16 xAxis, uint16 yAxis) external returns(uint8, uint8, uint8, uint8);
 
     /**
      * claim a token by position 

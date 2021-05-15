@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.0
+pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 
@@ -23,10 +23,10 @@ interface IERC721ExMetadata is IERC721 {
     /**
      * @dev Returns the painting's witdh
      */
-    function width() external view return (uint16);
+    function width() external view returns (uint16);
 
     /**
      * @dev Returns the painting's height
      */
-    function height() external view return (uint16);
+    function height() external view returns (uint16);
 }
