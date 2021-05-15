@@ -8,7 +8,7 @@ import "./Owner.sol";
  * @title Authority Of Administrator & Contract
  *
  * @author Bit Lighthouse. Ace
- * AT: 2021-3-28 | VERSION: v1.0.2
+ * AT: 2021-5-14 | VERSION: v1.0.2
  */
 contract Manager is Owner {
     // member of administrator or contract
