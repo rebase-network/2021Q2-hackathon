@@ -3,6 +3,8 @@ pragma solidity >=0.7.4;
 
 import "./libraries/AcceptedCaller.sol";
 import "./interfaces/IRouter.sol";
+import "./interfaces/IBlogDB.sol";
+import "./interfaces/IService.sol";
 
 contract Router is IRouter, AcceptedCaller {
     address public serviceAddr;
