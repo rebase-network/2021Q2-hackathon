@@ -142,10 +142,15 @@
                         <div class="info-text-c">我的背包</div>
                         <img src="../assets/img/2.png" class="head-img" />
                       </div>
-                      <div class="info-btn-box11" @click="pullDown">
-                        <!-- 我的背包 -->
+                      <!-- <div class="info-btn-box11" @click="pullDown">
+                   
                         <div class="info-text-c">领取金条</div>
                         <img src="../assets/img/2.png" class="head-img" />
+                      </div> -->
+                      <div class="info-btn-box11" @click="pullDown1">
+                        <!-- 我的背包 -->
+                        <div class="info-text-c">领取金条</div>
+                        <img src="../assets/img/4.png" class="head-img" />
                       </div>
                     </div>
                   </div>
@@ -157,14 +162,14 @@
                   <div class="home-banner-box1">
                     <img src="../assets/img/59.png" class="head-img" />
                     <div class="info-btn">
-                      <div class="info-btn-box2" @click="ShopBtn">
+                      <!-- <div class="info-btn-box2" @click="ShopBtn">
                         <div class="info-text-c">进入市场</div>
                         <img src="../assets/img/2.png" class="head-img" />
-                      </div>
-                      <!-- <div class="info-btn-box2">
+                      </div> -->
+                      <div class="info-btn-box2" @click="ShopBtn1">
                         <div class="info-text-c">进入市场</div>
                         <img src="../assets/img/4.png" class="head-img" />
-                      </div> -->
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -444,7 +449,7 @@ export default {
   },
   components: {
     popUpView,
-    noticeModelView
+    noticeModelView,
     // homeListview
   },
   async mounted() {
@@ -497,7 +502,7 @@ export default {
       // );
       await this.$getWbe3.MttbalanceOf(USDKTokens, this.account, (res) => {
         // console.log(res);
-        var num = res / 10000000000;
+        var num = this.Web3.utils.fromWei(res);
         this.currencyList[1].num = parseFloat(num).toFixed(2);
       });
       await this.Web3.eth.getBalance(this.account).then((res) => {
@@ -555,8 +560,8 @@ export default {
       // });
       await this.$getWbe3.getTotalTrade(Shopcontract, "USDK", (res) => {
         // console.log(res, 10000);
-        this.transaction = parseFloat(res[0]) / 10000000000;
-        this.transactionOne = parseFloat(res[1]) / 10000000000;
+        this.transaction = this.Web3.utils.fromWei(res[0]);
+        this.transactionOne = this.Web3.utils.fromWei(res[1]);
       });
       await this.$getWbe3.getTotalValueLock(OktMortgage, (res) => {
         //获取OKT TVL
@@ -592,7 +597,7 @@ export default {
 
       this.$getWbe3.getTotalTrade(Mttcontract, "USDK", (res) => {
         // console.log(res, "qwe222");
-        this.nover = parseFloat(res) / 10000000000;
+        this.nover = this.Web3.utils.fromWei(res);
       });
       var vueq = parseFloat(this.nover) + parseFloat(this.transaction);
       this.nover2 = vueq * 0.2;
@@ -623,6 +628,13 @@ export default {
         this.Rewards = parseFloat(this.Rewards).toFixed(2);
       });
       // await this.getRewards();
+    },
+    pullDown1() {
+      Toast({
+        message: "敬请期待···",
+        position: "middle",
+        duration: 1000,
+      });
     },
     async fatherMethod(e) {
       if (e) {
@@ -670,8 +682,15 @@ export default {
     backpackBtn() {
       this.$router.push("/backpack");
     },
-    ShopBtn() {
-      this.$router.push("/business");
+    // ShopBtn() {
+    //   this.$router.push("/business");
+    // },
+    ShopBtn1() {
+      Toast({
+        message: "敬请期待···",
+        position: "middle",
+        duration: 1000,
+      });
     },
     noticeModelBtn() {
       this.noticeshow = false;

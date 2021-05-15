@@ -124,7 +124,7 @@
             </div>
             <div class="store-info">
               <div class="store-info-cont">
-                <div class="home-cont-h-l">
+                <div class="home-cont-h-l23">
                   <div class="home-cont-h-t">卡包信息</div>
                   <img src="../assets/img/3.png" class="notice-img" />
                 </div>
@@ -282,7 +282,7 @@ export default {
       contract = this.$Fun.USDKTokens();
       await this.$getWbe3.MttbalanceOf(contract, this.account, (res) => {
         // console.log(res, 989);
-        var RTToverage = res / 10000000000;
+        var RTToverage = this.Web3.utils.fromWei(res);
         this.RTToverage = parseFloat(RTToverage).toFixed(2);
         // this.currencyList[0].num = this.RTToverage;
       });
@@ -436,7 +436,7 @@ export default {
         this.account,
         (res) => {
           // console.log(res, 989);
-          var RTToverage = res / 10000000000;
+          var RTToverage = this.Web3.utils.fromWei(res);
           this.RTToverage = parseFloat(RTToverage).toFixed(2);
           // this.currencyList[0].num = this.RTToverage;
         }
@@ -714,6 +714,11 @@ header {
   margin: auto;
 }
 .home-cont-h-l {
+  width: 100px;
+  height: 20px;
+  position: relative;
+}
+.home-cont-h-l23 {
   width: 100px;
   height: 20px;
   position: relative;

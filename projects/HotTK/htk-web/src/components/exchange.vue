@@ -423,7 +423,7 @@ export default {
           this.account,
           (res) => {
             // console.log(res, 989);
-            var RTToverage = res / 10000000000;
+            var RTToverage = this.Web3.utils.fromWei(res);
             this.RTToverage = parseFloat(RTToverage).toFixed(2);
             // this.currencyList[0].num = this.RTToverage;
           }
