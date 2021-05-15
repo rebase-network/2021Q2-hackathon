@@ -1,11 +1,12 @@
 /*
  * @Author: 33357
  * @Date: 2021-05-15 11:02:36
- * @LastEditTime: 2021-05-15 15:12:25
+ * @LastEditTime: 2021-05-15 16:19:39
  * @LastEditors: 33357
  */
 import detectEthereumProvider from "@metamask/detect-provider";
 import Web3 from "web3";
+import * as ERC20 from "./contracts/erc20";
 import * as Router from "./contracts/router";
 import * as PointPool from "./contracts/pointPool";
 import * as Recommend from "./contracts/recommend";
@@ -38,7 +39,7 @@ export class web3Provider {
           PointPool.abi,
           PointPool.address
         );
-        this.pointPool = new this.web3.eth.Contract(
+        this.recommend = new this.web3.eth.Contract(
           Recommend.abi,
           Recommend.address
         );
@@ -54,4 +55,21 @@ export class web3Provider {
       throw new Error("请使用支持web3的浏览器打开");
     }
   }
+
+  pointPoolFunc = {
+    stakeToken: async (_pool, _amount) => {},
+    withdrawToken: async (_pool, _amount) => {},
+    getPersonPoint: async (_pool, _person) => {}
+  };
+
+  routerFunc = {
+    sendBlog: async (_group, _commentBlogId, _content, _typeNumber) => {},
+    getPersonBlogIds: async (_person) => {},
+    getBlog: async (_blogId) => {}
+  };
+
+  recommendFunc = {
+    getHotBlogIds: async () => {},
+    getRecommendBlogIds: async (_channel, _limit, _start) => {}
+  };
 }

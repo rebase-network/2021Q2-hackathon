@@ -52,6 +52,14 @@ contract Service is IService, AcceptedCaller {
         if (blogDB.isAcceptedCaller(address(this)) == false) {
             return false;
         }
+        IAcceptedCaller pointPool = IAcceptedCaller(pointPoolAddr);
+        if (pointPool.isAcceptedCaller(address(this)) == false) {
+            return false;
+        }
+        IAcceptedCaller recommend = IAcceptedCaller(recommendAddr);
+        if (recommend.isAcceptedCaller(address(this)) == false) {
+            return false;
+        }
         return true;
     }
 }
