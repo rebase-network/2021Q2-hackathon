@@ -1,35 +1,16 @@
-# 编号 1
+编号 1
 
-
-
-## 队名
-
-CryptoKittes
-
-
+队名：比特灯塔（idateal）
 
 队员：
+阳阳，项目管理
+UI：唐艳
+曾帅：主要合约
+殷皓镭：合约
+李科磊：主要前端
+陈椰超：前端
 
-Frozen Rebase的码农一名 sdfsadfsdf https://github.com/xrdavies
-
-Harry Rebase的码农一名 asdfasdf https://github.com/harry
-
-
-
-
-
-## 作品信息
-
-阿水淀粉撒地方撒的
-
-撒的发水淀粉撒地方
-
-
-
-
+作品信息
+《富甲三国》
 
 Github: https://github.com/cryptokitties/
-
-
-
-
