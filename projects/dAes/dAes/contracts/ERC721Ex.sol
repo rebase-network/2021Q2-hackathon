@@ -9,12 +9,9 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165.sol";
 import "./extensions/IERC721ExMetadata.sol";
 
-contract ERC721Ex is Context, ERC165, IERC721{
+contract ERC721Ex is Context, ERC165, IERC721, IERC721ExMetadata{
     using Address for address;
     using Strings for uint256;
-
-    event Color(address indexed operator, uint16 indexed xAxis, uint16 indexed yAxis, uint8 r, uint8 g, uint8 b, uint8 a);
-
 
     // Token name
     string private _name;
@@ -375,53 +372,4 @@ contract ERC721Ex is Context, ERC165, IERC721{
      * To learn more about hooks, head to xref:ROOT:extending-contracts.adoc#using-hooks[Using Hooks].
      */
     function _beforeTokenTransfer(address from, address to, uint256 tokenId) internal virtual { }
-
-    function _overflowXAxis(uint16 xAxis_) private returns (bool) {
-        if (xAxis_ >= _width) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    function _overflowYAxis(uint16 yAxis_) private returns (bool) {
-        if (yAxis_ >= _height) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    function _validRGBA(RGBA pixel_) private returns (bool) {
-        return pixel_.A <= 10;
-    }
-
-    function _mappingPositionToTokenId(uint16 xAxis_, uint16 yAxis_) private returns (uint256) {
-        require(!_overflowXAxis(xAxis_), "X axis overflow");
-        require(!_overflowYAxis(yAxis), "Y axis overflow");
-        return xAxis_ + yAxis_ * _width;
-    }
-
-    function setColor(uint16 xAxis_, uint16 yAxis_, uint8 r_, uint8 g_, uint8 b_, uint8 a_) public virtual override {
-        uint256 tokenId = _mappingPositionToTokenId(xAxis_, yAxis_);
-        _color(tokenId, r_, g_, b_, a_);
-        emit Color(_msgSender(), xAxis_, yAxis_, r_, g_, b_, a_);
-    }
-
-    function _color(uint256 tokenId_, uint8 r_, uint8 g_, uint8 b_, uint8 a_) internal virtual {
-        RGBA pixel = RGBA(r_, g_, b_, a_);
-        require(_validRGBA(pixel), "invalid rgba string");
-        _canvas[tokenId_] = pixel;
-    }
-
-     function getColor(uint16 xAxis_, uint16 yAxis_) public view virtual override returns (RGBA memory) {
-        RGBA defaultColor = RGBA(255, 255, 255, 10);
-        uint256 tokenId = _mappingPositionToTokenId(xAxis_, yAxis_);
-        if (_canvas[tokenId] == address(0)){
-            return defaultColor;
-        } else {
-            return _canvas[tokenId];
-        }
-    }
-
 }
