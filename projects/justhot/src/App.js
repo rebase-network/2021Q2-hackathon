@@ -4,7 +4,7 @@ import './App.css';
 
 
 import getWeb3 from './utils/getWeb3.js';
-import {Grid,Row,Col} from 'react-bootstrap';
+import {Container,Row,Col} from 'react-bootstrap';
 import TeamA from './TeamA.jsx';
 import TeamB from './TeamB.jsx';
 
@@ -48,7 +48,7 @@ class App extends Component {
         Your Wallet address is {this.state.address}
         </div>
         {/*We define a grid*/}
-        <Grid>
+        <Container>
           {/*corresponding to class="row"*/}
           <Row>
             {/* we define the two columns. The bootstrap grid is divided by 12
@@ -56,7 +56,7 @@ class App extends Component {
             <Col xs={6} sm={6}><TeamA /> {/*We will import Team A component here */}</Col>
             <Col xs={6} sm={6}><TeamB /></Col>
           </Row>
-        </Grid>
+        </Container>
 
       </div>
     );
