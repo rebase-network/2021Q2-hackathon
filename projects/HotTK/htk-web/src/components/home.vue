@@ -453,11 +453,11 @@ export default {
     // homeListview
   },
   async mounted() {
-    var cloneTime = localStorage.getItem("cloneTime");
-    if (!cloneTime) {
-      // this.$router.push("/notice");
-      this.noticeshow = true;
-    }
+    // var cloneTime = localStorage.getItem("cloneTime");
+    // if (!cloneTime) {
+  
+    //   this.noticeshow = true;
+    // }
     await this.$getWbe3.Init(
       (addr) => {
         //得到相应的钱包地址
@@ -478,13 +478,13 @@ export default {
     async getInfoHome() {
       let Mttcontract = this.$Fun.MttToken();
       let Shopcontract = this.$Fun.CardShop();
-      let Morcontract = this.$Fun.Mortgage();
+      // let Morcontract = this.$Fun.Mortgage();
       //  let contract = await this.$Fun.HeroCard();
       let Detailcontract = await this.$Fun.CardDetail();
       let Cardcontract = this.$Fun.CardToken();
       let Rttcontract = this.$Fun.RttToken();
       let USDKTokens = this.$Fun.USDKTokens();
-      let OktMortgage = this.$Fun.OktTokens();
+      // let OktMortgage = this.$Fun.OktTokens();
       // let r = 1000;
       // await this.$getWbe3.getTokenIds(
       //   Detailcontract,
@@ -563,29 +563,29 @@ export default {
         this.transaction = this.Web3.utils.fromWei(res[0]);
         this.transactionOne = this.Web3.utils.fromWei(res[1]);
       });
-      await this.$getWbe3.getTotalValueLock(OktMortgage, (res) => {
-        //获取OKT TVL
-        // console.log(res, 999952223);
-        this.tvl = this.Web3.utils.fromWei(res);
-      });
+      // await this.$getWbe3.getTotalValueLock(OktMortgage, (res) => {
+      //   //获取OKT TVL
+      //   // console.log(res, 999952223);
+      //   this.tvl = this.Web3.utils.fromWei(res);
+      // });
 
-      await this.$getWbe3.getTokenAPY(Morcontract, "RttToken", (res) => {
-        // console.log(res, "RttToken");
-        this.apy = res;
-      });
-      await this.$getWbe3.getTokenAPY(Morcontract, "USDK", (res) => {
-        // console.log(res, "USDK");
-        this.apy1 = res;
-      });
-      await this.$getWbe3.getTokenAPY2(OktMortgage, (res) => {
-        // console.log(res, "OKT");
-        // console.log(res, "llll");
-        this.apy2 = res;
-      });
-      var u =
-        parseFloat(this.apy) + parseFloat(this.apy1) + parseFloat(this.apy2);
-      this.apy3 = u / 3;
-      this.apy3 = parseFloat(this.apy3).toFixed(2);
+      // await this.$getWbe3.getTokenAPY(Morcontract, "RttToken", (res) => {
+      //   // console.log(res, "RttToken");
+      //   this.apy = res;
+      // });
+      // await this.$getWbe3.getTokenAPY(Morcontract, "USDK", (res) => {
+      //   // console.log(res, "USDK");
+      //   this.apy1 = res;
+      // });
+      // await this.$getWbe3.getTokenAPY2(OktMortgage, (res) => {
+      //   // console.log(res, "OKT");
+      //   // console.log(res, "llll");
+      //   this.apy2 = res;
+      // });
+      // var u =
+      //   parseFloat(this.apy) + parseFloat(this.apy1) + parseFloat(this.apy2);
+      // this.apy3 = u / 3;
+      // this.apy3 = parseFloat(this.apy3).toFixed(2);
       // this.$getWbe3.getCardTurnover(Shopcontract, (res) => {
       //   console.log(res);
       //   this.nover = res;
