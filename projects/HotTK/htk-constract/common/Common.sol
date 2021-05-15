@@ -11,7 +11,7 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
  * @title The Three Kingdoms Common
  *
  * @author Bit Lighthouse. Ace
- * AT: 2021-3-28 | VERSION: v1.0.2
+ * AT: 2021-5-15 | VERSION: v1.0.2
  */
 abstract contract Common is Member {
     CardToken public _cardt;
