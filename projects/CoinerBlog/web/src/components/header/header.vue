@@ -1,13 +1,15 @@
 <!--
  * @Author: 33357
  * @Date: 2021-05-14 14:00:53
- * @LastEditTime: 2021-05-15 15:21:15
+ * @LastEditTime: 2021-05-15 23:28:16
  * @LastEditors: 33357
 -->
 <template>
   <div class="header">
     <div class="user-and-group">
-      <p class="user-title txt-cut">{{$store.state.name}}</p>
+      <p class="user-title txt-cut">
+        {{ formatName($store.state.walletAddress) }}
+      </p>
       <!-- <i class="iconfont icon-down-arrow"></i> -->
     </div>
     <send-window
@@ -33,15 +35,17 @@
 
 <script>
 import sendWindow from "../../components/sendWindow/sendWindow.vue";
+import { formatName } from "../../const/func";
+
 export default {
   // name: "header",
   data() {
     return {
-      showSendWindow: false
+      showSendWindow: false,
     };
   },
   components: {
-    "send-window": sendWindow
+    "send-window": sendWindow,
   },
   methods: {
     updateContent() {
@@ -50,13 +54,16 @@ export default {
     closeSendWindow() {
       // this.allowBgScroll();
       this.showSendWindow = false;
-    }
+    },
+    formatName(str) {
+      return formatName(str);
+    },
   },
   computed: {
     pageName() {
       return this.$route.name;
-    }
-  }
+    },
+  },
 };
 </script>
 

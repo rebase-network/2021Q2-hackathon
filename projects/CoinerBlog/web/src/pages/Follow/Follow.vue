@@ -1,7 +1,7 @@
 <!--
  * @Author: 33357
  * @Date: 2021-05-15 13:38:11
- * @LastEditTime: 2021-05-15 20:53:58
+ * @LastEditTime: 2021-05-15 23:41:39
  * @LastEditors: 33357
 -->
 <template>
@@ -14,94 +14,90 @@
       :commentBlogId="commentBlogId"
     ></send-window>
 
-    <!-- <div class="content-tip no-text-select" v-show="noNew">
-      <span>这会儿还没有新微博，等会再来刷刷看吧(｡･ω･｡)！</span>
-    </div> -->
-    <!-- <div class="top-tip" v-if="hasTopTip">
-      <a class="to-top-tip">
-        <i class="iconfont icon-hot"></i>
-        <p class="top-tip-content txt-cut">{{topTip.text}}<i class="iconfont icon-right-arrow"></i></p>
-      </a>
-    </div> -->
-    <div
-      class="card"
-      v-for="(item, index) in weiboContent.card_group"
-      :key="index"
-    >
-      <div class="card-main">
-        <header class="card-header">
-          <div
+    <div class="card" v-for="(item, index) in followBlogIds" :key="index">
+      <div v-if="$store.state.blogs[item] !== undefined">
+        <div class="card-main">
+          <header class="card-header">
+            <!-- <div
             class="header-bg"
             v-if="typeof item.mblog.cardid !== 'undefined'"
-          ></div>
-          <a class="avatar" :href="item.mblog.user.profile_url">
-            <div class="avatar-wrapper border-around-1px">
-              <img
-                class="avatar-img"
-                :src="item.mblog.user.profile_image_url"
-              />
-              <i
-                class="iconfont"
-                :class="calculateVerifiedClass(item.mblog.user.verified_type)"
-              ></i>
+          ></div> -->
+            <a class="avatar">
+              <div class="avatar-wrapper border-around-1px">
+                <img
+                  class="avatar-img"
+                  v-if="$store.state.avatars[$store.state.blogs[item].person]"
+                  :src="$store.state.avatars[$store.state.blogs[item].person]"
+                />
+                <!-- <i
+                  class="iconfont"
+                  :class="calculateVerifiedClass(item.mblog.user.verified_type)"
+                ></i> -->
+              </div>
+            </a>
+            <div class="user-info">
+              <a class="user-name txt-l txt-cut">{{
+                formatName($store.state.blogs[item].person)
+              }}</a>
+              <div class="publish-data txt-xs">
+                <span class="publish-created-at">{{
+                  formatTime($store.state.blogs[item].createDate)
+                }}</span>
+                <span
+                  class="publish-source"
+                  v-if="$store.state.tokenList[$store.state.blogs[item].group]"
+                  >来自{{
+                    " " +
+                    $store.state.tokenList[$store.state.blogs[item].group]
+                      .symbol
+                  }}</span
+                >
+              </div>
             </div>
-          </a>
-          <div class="user-info">
-            <a :href="item.mblog.user.profile_url" class="user-name txt-l txt-cut">{{item.mblog.user.screen_name}}</a>
-            <div class="publish-data txt-xs">
-              <span class="publish-created-at">{{item.mblog.created_at}}</span>
-            </div>
-          </div> 
-          <a class="card-operate">
-            <i class="iconfont icon-down-arrow"></i>
-          </a> 
-        </header>
-        <section class="card-body">
-          <p class="default-content" v-html="item.mblog.text"></p>
-          <div class="retweet" v-if="item.mblog.retweeted_status !== undefined">
+          </header>
+          <section class="card-body">
+            <p
+              class="default-content"
+              v-html="$store.state.blogs[item].content"
+            ></p>
+            <div class="retweet" v-if="$store.state.blogs[item].repostBlogId !== 0">
             <p>
               <a
-                :href="item.mblog.retweeted_status.user.profile_url"
                 class="retweet-user"
-                >@{{ item.mblog.retweeted_status.user.screen_name }}</a
-              >：{{ item.mblog.retweeted_status.text }}
+                >@{{  formatName($store.state.blogs[$store.state.blogs[item].repostBlogId].person) }}</a
+              >：{{ $store.state.blogs[$store.state.blogs[item].repostBlogId].content }}
             </p>
           </div>
-        </section>
-      </div>
-      <footer
-        class="card-footer border-1px border-top-1px txt-s no-text-select"
-      >
-        <a class="forward" @click.prevent="openSendWindow(item.blogId)">
-          <i class="iconfont icon-forward"></i>
-          {{ item.mblog.reposts_count }}
-        </a>
-        <i class="separate-line"></i>
-        <a class="comment" @click.prevent="openSendWindow(item.blogId)">
-          <i class="iconfont icon-comment"></i>
-          {{ item.mblog.comments_count }}
-        </a>
-        <i class="separate-line"></i>
-        <a
-          class="like"
-          @click.prevent="likeIt($event, item)"
-          :class="{ liked: item.mblog.favorited === true }"
+          </section>
+        </div>
+        <footer
+          class="card-footer border-1px border-top-1px txt-s no-text-select"
         >
-          <i class="iconfont icon-like"></i>
-          {{ item.mblog.attitudes_count }}
-        </a>
-      </footer>
-    </div>
-    <transition
-      name="like"
-      v-on:before-enter="beforeLikeEnter"
-      v-on:enter="likeEnter"
-      v-on:after-enter="afterLikeEnter"
-    >
-      <div class="like-animation-wrapper" v-show="showLikeAnimationWrapper">
-        <i class="iconfont icon-like"></i>
+          <a class="forward" @click.prevent="openSendWindow(item)">
+            <i class="iconfont icon-forward"></i>
+            {{ $store.state.blogs[item].commentBlogIds.length }}
+          </a>
+          <i class="separate-line"></i>
+          <a
+            class="like"
+            @click.prevent="likeIt($event, item)"
+            :class="{ liked: $store.state.favorites.indexOf(item) !== -1 }"
+          >
+            <i class="iconfont icon-like"></i>
+          </a>
+        </footer>
       </div>
-    </transition>
+      <transition
+        name="like"
+        v-on:before-enter="beforeLikeEnter"
+        v-on:enter="likeEnter"
+        v-on:after-enter="afterLikeEnter"
+      >
+        <div class="like-animation-wrapper" v-show="showLikeAnimationWrapper">
+          <i class="iconfont icon-like"></i>
+        </div>
+      </transition>
+    </div>
     <loading v-show="bottomIsLoading"></loading>
     <div
       class="content-tip no-text-select"
@@ -117,6 +113,7 @@
 <script>
 import loading from "../../components/loading/loading.vue";
 import sendWindow from "../../components/sendWindow/sendWindow.vue";
+import { formatTime, formatName } from "../../const/func";
 
 export default {
   name: "follow",
@@ -126,7 +123,6 @@ export default {
       hasTopTip: false,
       topTip: {},
       weiboContent: {},
-      showPicViewer: this.$store.state.switchPicViewer,
       pagePos: 0,
       topIsLoading: true,
       bottomIsLoading: false,
@@ -138,7 +134,9 @@ export default {
         pageY: 0,
       },
       showSendWindow: false,
-      commentBlogId:0,
+      commentBlogId: 0,
+      followBlogIds: [],
+      favorites: this.$store.state.favorites,
     };
   },
   components: {
@@ -168,10 +166,40 @@ export default {
           this.topIsLoading = false;
         }, 600);
       });
-
+    this.getFollowBlogIds();
     this.addScrollEvent();
   },
   methods: {
+    formatTime(date) {
+      return formatTime(date);
+    },
+    formatName(date) {
+      return formatName(date);
+    },
+
+    async getFollowBlogIds() {
+      const arr = [
+        this.$store.state.walletAddress,
+        ...this.$store.state.follows,
+      ];
+      arr.forEach(async (address) => {
+        const res = await this.$store.state.web3.routerFunc.getPersonBlogIds(
+          address
+        );
+        if (res.length != 0) {
+          res.forEach(async (blogId) => {
+            this.$store.dispatch("getBlog", blogId);
+          });
+          this.followBlogIds.push(...res);
+          this.updateFollowBlogIds();
+        }
+      });
+    },
+    updateFollowBlogIds() {
+      this.followBlogIds.sort((a, b) => {
+        return b - a;
+      });
+    },
     calculateVerifiedClass: function (verifiedType) {
       let tempOutcome = "";
       switch (verifiedType) {
@@ -287,8 +315,8 @@ export default {
       // 保存点击位置，用于设置动画块的起始位置：
       this.clickedLikeBtnPos.pageX = e.pageX - parseInt(window.scrollX);
       this.clickedLikeBtnPos.pageY = e.pageY - parseInt(window.scrollY);
-
-      if (item.mblog.favorited === false) {
+      const index = this.$store.state.favorites.indexOf(item);
+      if (index === -1) {
         //显示点赞动画：
         this.showLikeAnimationWrapper = true;
         // 点赞数+1，并设置为已经赞了的状态
@@ -296,19 +324,9 @@ export default {
           如果对象是响应式的，确保属性被创建后也是响应式的，
           同时 **“触发视图更新” **。
           这个方法主要用于避开 Vue 不能检测属性被添加的限制。*/
-        this.$set(
-          item.mblog,
-          "attitudes_count",
-          item.mblog.attitudes_count + 1
-        );
-        this.$set(item.mblog, "favorited", true);
+        this.$store.state.favorites.push(item);
       } else {
-        this.$set(
-          item.mblog,
-          "attitudes_count",
-          item.mblog.attitudes_count - 1
-        );
-        this.$set(item.mblog, "favorited", false);
+        this.$store.state.favorites.splice(index, 1);
       }
     },
     beforeLikeEnter(el) {
@@ -349,13 +367,15 @@ export default {
     openSendWindow(blogId) {
       /*TODO:BUG Prevent scrolling when overlaid. (Headache!!!)
         Read the 23 in ../../notes/Summary-of-experience for detail.*/
-      this.commentBlogId=blogId;
+      this.commentBlogId = Number(blogId);
+      console.log(this.commentBlogId)
       this.preventBgScroll();
       this.showSendWindow = true;
     },
     closeSendWindow() {
       this.allowBgScroll();
       this.showSendWindow = false;
+      this.getFollowBlogIds();
     },
   },
   computed: {

@@ -1,7 +1,7 @@
 <!--
  * @Author: 33357
  * @Date: 2021-05-14 14:00:53
- * @LastEditTime: 2021-05-15 19:10:09
+ * @LastEditTime: 2021-05-15 21:51:05
  * @LastEditors: 33357
 -->
 
@@ -162,7 +162,7 @@ body {
 ul {
   padding: 0;
   list-style: none;
-  margin: 150px 150px;
+  margin: 80px 80px;
 }
 li {
   width: 80px;

@@ -3,11 +3,11 @@
     <div class="profile-card card">
       <div class="avatar-card border-1px border-bottom-1px" v-ripple>
         <a class="card-avatar">
-          <img src="../../../static/img/avatar/my-weibo-avatar.jpg" />
+          <img v-if="$store.state.avatars[$store.state.walletAddress]" :src="$store.state.avatars[$store.state.walletAddress]" />
         </a>
         <a class="avatar-card-content txt-cut">
           <h3 class="txt-s mct-a txt-cut">
-            {{ $store.state.name }}
+            {{ formatName($store.state.walletAddress) }}
             <section class="vip-icon-block">
               <i class="iconfont icon-crown"></i>
               <i class="iconfont icon-right-arrow"></i>
@@ -161,7 +161,7 @@
 
 <script>
 let TWEEN = window.TWEEN;
-import { show } from "../../const/func";
+import { show ,formatName} from "../../const/func";
 export default {
   name: "me",
   data() {
@@ -215,6 +215,9 @@ export default {
     },
   },
   methods: {
+    formatName(str){
+      return formatName(str)
+    },
     changeNum() {
       this.statisticsData.totalVisit = Math.random() * (9999 - 10) + 10;
     },

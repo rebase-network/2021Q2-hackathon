@@ -1,7 +1,7 @@
 /*
  * @Author: 33357
  * @Date: 2021-05-15 11:02:36
- * @LastEditTime: 2021-05-15 20:03:31
+ * @LastEditTime: 2021-05-15 22:23:33
  * @LastEditors: 33357
  */
 import detectEthereumProvider from "@metamask/detect-provider";
@@ -103,7 +103,15 @@ export class web3Provider {
         [_blogId],
         true
       );
-      return res;
+      return {
+        person: res[0],
+        group: res[1],
+        content: res[2],
+        repostBlogId: Number(res[3]),
+        commentBlogIds: res[4],
+        typeNumber: Number(res[5]),
+        createDate: new Date(res[6] * 1000),
+      };
     },
     getPersonBlogIdsLength: async (_person) => {
       const res = await this.autoTry(
