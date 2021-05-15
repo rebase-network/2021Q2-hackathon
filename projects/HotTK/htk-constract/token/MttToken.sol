@@ -14,7 +14,7 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
  * QUANTITIES: 200 MILLION | DECIMALS: 18
  *
  * @author Bit Lighthouse. Ace
- * AT: 2021-3-28 | VERSION: v1.0.2
+ * AT: 2021-5-15 | VERSION: v1.0.2
  */
 contract MttToken is ERC20, BaseMortage {
     using SafeMath for uint256;
