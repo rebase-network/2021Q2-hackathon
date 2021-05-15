@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+  background-color:#BEBBD6
+}
+
+.header{
+  min-height: 73px;
+  width:100%;
+  background-color: #2E2A4D;
+}
