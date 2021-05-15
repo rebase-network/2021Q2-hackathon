@@ -1,7 +1,7 @@
 <!--
  * @Author: 33357
  * @Date: 2021-05-14 14:00:53
- * @LastEditTime: 2021-05-15 21:51:05
+ * @LastEditTime: 2021-05-16 00:12:46
  * @LastEditors: 33357
 -->
 
@@ -16,7 +16,6 @@
       </div>
       <div class="header-part right-header">
         <button
-          :loading="buttonLoad"
           class="btn btn-sm btn-orange"
           @click="send"
           data-am-loading="{spinner: 'circle-o-notch', loadingText: '加载中...', resetText: '加载过了'}"
@@ -65,7 +64,7 @@ export default {
       title: "微博",
       content: "",
       group: Object.keys(this.$store.state.tokenList)[0],
-      buttonLoad: false,
+      loading: true,
     };
   },
   methods: {
@@ -77,7 +76,7 @@ export default {
     },
     async send() {
       try {
-        this.buttonLoad = true;
+        this.loading = true;
         await this.$store.state.web3.routerFunc.sendBlog(
           this.group,
           this.commentBlogId,
@@ -85,7 +84,7 @@ export default {
           0,
           (args) => {
             if (args.status == "success" || args.status == "error") {
-              this.buttonLoad = false;
+              this.loading = false;
               show(args.message);
               this.$emit("closeSendWindow");
             }
