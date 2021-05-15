@@ -542,11 +542,11 @@ export default {
           this.allMtt = this.web3.utils.fromWei(res);
           this.allMtt = parseFloat(this.allMtt).toFixed(2);
         });
-      let Mttcontract = await this.$Fun.MttToken();
-      await this.$getWbe3.getTotalValueLockE(Mttcontract, "RttToken", (res) => {
-        //console.log(res,8888);
-        this.ValueLock = this.web3.utils.fromWei(res);
-      });
+     // let Mttcontract = await this.$Fun.MttToken();
+      // await this.$getWbe3.getTotalValueLockE(Mttcontract, "RttToken", (res) => {
+      //   //console.log(res,8888);
+      //   this.ValueLock = this.web3.utils.fromWei(res);
+      // });
       // await this.m3tFun.methods
       //   .totalSupply()
       //   .call()
