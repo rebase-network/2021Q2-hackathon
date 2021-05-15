@@ -1,3 +1,9 @@
+/*
+ * @Author: 33357
+ * @Date: 2021-05-14 14:00:53
+ * @LastEditTime: 2021-05-15 14:49:51
+ * @LastEditors: 33357
+ */
 // http://eslint.org/docs/user-guide/configuring
 
 module.exports = {
@@ -29,6 +35,8 @@ module.exports = {
     'spaced-comment':0,
     "indent": 0,
     "one-var": 0,
-    "quotes": 0
+    // "quotes": 0,
+    // 'eol-last': 0,
+    // 'semi': ['error', 'always'],
   }
 }

@@ -1,13 +1,13 @@
 <!--
  * @Author: 33357
  * @Date: 2021-05-14 14:00:53
- * @LastEditTime: 2021-05-15 14:22:31
+ * @LastEditTime: 2021-05-15 15:21:15
  * @LastEditors: 33357
 -->
 <template>
   <div class="header">
     <div class="user-and-group">
-      <p class="user-title txt-cut">帅到被人砍___</p>
+      <p class="user-title txt-cut">{{$store.state.name}}</p>
       <!-- <i class="iconfont icon-down-arrow"></i> -->
     </div>
     <send-window

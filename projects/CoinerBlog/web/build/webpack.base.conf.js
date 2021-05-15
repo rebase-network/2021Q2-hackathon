@@ -1,3 +1,9 @@
+/*
+ * @Author: 33357
+ * @Date: 2021-05-14 14:00:53
+ * @LastEditTime: 2021-05-15 15:01:56
+ * @LastEditors: 33357
+ */
 var path = require('path')
 var utils = require('./utils')
 var config = require('../config')
@@ -27,15 +33,15 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.(js|vue)$/,
-        loader: 'eslint-loader',
-        enforce: 'pre',
-        include: [resolve('src'), resolve('test')],
-        options: {
-          formatter: require('eslint-friendly-formatter')
-        }
-      },
+      // {
+      //   test: /\.(js|vue)$/,
+      //   loader: 'eslint-loader',
+      //   enforce: 'pre',
+      //   include: [resolve('src'), resolve('test')],
+      //   options: {
+      //     formatter: require('eslint-friendly-formatter')
+      //   }
+      // },
       {
         test: /\.vue$/,
         loader: 'vue-loader',

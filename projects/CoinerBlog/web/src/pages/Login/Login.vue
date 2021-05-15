@@ -3,10 +3,10 @@
   <!--<h1 v-title>登录-vue-weibo</h1>-->
   <div class="container">
     <header class="avatar">
-      <img src="../../../static/img/avatar/my-weibo-avatar.jpg">
+      <img src="../../../static/img/favicon-min.jpg">
     </header>
     <form class="login-form">
-      <section class="login-input-wrapper">
+      <!-- <section class="login-input-wrapper">
         <p>
           <label for="loginName">
             <i class="iconfont">用户名：</i><input type="text" id="loginName" value="帅到被人砍___">
@@ -17,8 +17,9 @@
             <i class="iconfont">密码：</i><input type="password" id="loginPassword" value="帅到被人砍___">
           </label>
         </p>
-      </section>
-      <router-link to="/home" class="btn login-btn">登录</router-link>
+      </section> -->
+      <div class="btn login-btn" @click="login">登录</div>
+      <!-- <router-link to="/home" class="btn login-btn">登录</router-link> -->
       <!--<a href="./home" class="btn login-btn">登录</a>-->
       <!-- <p class="third-part-login">
         <a>第三方账号</a>
@@ -33,7 +34,23 @@
 </template>
 
 <script>
-
+export default {
+  data() {
+    return {
+    }
+  },
+  methods: {
+    async login(){
+      try {
+        if(await this.$store.dispatch('login')){
+           this.$router.push('/home');
+        }
+      } catch (error) {
+        window.alert(error);
+      }
+    }
+  }
+}
 </script>
 
 <style scoped lang="stylus">
