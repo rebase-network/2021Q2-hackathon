@@ -379,7 +379,7 @@ contract Canvas is Context, ERC165, IERC721, IERC721ExMetadata, ICanvas{
         returns (uint256)
     {
         uint256 tokenId = _mappingPositionToTokenId(xAxis, yAxis);
-        if (_owners[tokenId] != address(0)) {
+        if (_owners[tokenId] == address(0)) {
             _mint(claimer, tokenId);
             return tokenId;
         } else {
