@@ -387,7 +387,7 @@ contract Canvas is Context, ERC165, IERC721, IERC721ExMetadata, ICanvas{
         }
     }
 
-    function _overflowXAxis(uint16 xAxis_) private returns (bool) {
+    function _overflowXAxis(uint16 xAxis_) private view returns (bool) {
         if (xAxis_ >= _width) {
             return true;
         } else {
@@ -395,7 +395,7 @@ contract Canvas is Context, ERC165, IERC721, IERC721ExMetadata, ICanvas{
         }
     }
 
-    function _overflowYAxis(uint16 yAxis_) private returns (bool) {
+    function _overflowYAxis(uint16 yAxis_) private view returns (bool) {
         if (yAxis_ >= _height) {
             return true;
         } else {
@@ -407,7 +407,7 @@ contract Canvas is Context, ERC165, IERC721, IERC721ExMetadata, ICanvas{
         return pixel_.A <= 10;
     }
 
-    function _mappingPositionToTokenId(uint16 xAxis_, uint16 yAxis_) private returns (uint256) {
+    function _mappingPositionToTokenId(uint16 xAxis_, uint16 yAxis_) private view returns (uint256) {
         require(!_overflowXAxis(xAxis_), "X axis overflow");
         require(!_overflowYAxis(yAxis_), "Y axis overflow");
         return xAxis_ + yAxis_ * _width;
@@ -425,13 +425,9 @@ contract Canvas is Context, ERC165, IERC721, IERC721ExMetadata, ICanvas{
         _canvas[tokenId_] = Pixel(r_, g_, b_, a_);
     }
 
-     function getColor(uint16 xAxis_, uint16 yAxis_) public override returns (uint8, uint8, uint8, uint8) {
+     function getColor(uint16 xAxis_, uint16 yAxis_) public view override returns (uint8, uint8, uint8, uint8) {
         uint256 tokenId = _mappingPositionToTokenId(xAxis_, yAxis_);
-        if (_owners[tokenId] != address(0)){
-            Pixel memory color = _canvas[tokenId];
-            return (color.R, color.G, color.B, color.A);
-        } else {
-            return (255, 255, 255, 10);
-        }
+        Pixel memory color = _canvas[tokenId];
+        return (color.R, color.G, color.B, color.A);
     }
 }
