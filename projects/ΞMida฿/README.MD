@@ -10,4 +10,10 @@
 
 ## 作品信息
 
-基于智能合约，实现一个去中心化的投资组合管理。
+作品名称：*DeBalance Finance*
+
+[https://github.com/cd-mida/dtb](https://github.com/cd-mida/dtb)
+
+DeBalance Finance 是一款基于动态调仓策略的去中心化的数字资产理财平台。
+
+DeBalance 和市面上已有的很多Defi产品一样，都是为用户创造被动价值从而满足其理财需求，如Yearn机枪池、Aave借贷以及Uniswap流动性奖励等等。
