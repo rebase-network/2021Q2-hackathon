@@ -2,9 +2,9 @@
 ΞMida฿
 
 ## 队员：
-- Rock 产品
-- Bear UI
+- Bear  UI
 - Corki 前端
+- Otis  前端
 - Ryan  合约
 - Sundy 后端
 
