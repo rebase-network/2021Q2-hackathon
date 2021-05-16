@@ -6,7 +6,7 @@
 
 ## 队员：
 
-0xMiracle_(六，六)   产品经理
+0xMiracle_(六，六)   产品经理 https://github.com/Multimyst
 K                   技术全栈 https://github.com/nomadalex
 
 ## 作品信息
