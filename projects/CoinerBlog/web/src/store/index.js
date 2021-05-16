@@ -1,7 +1,7 @@
 /*
  * @Author: 33357
  * @Date: 2021-05-14 14:00:53
- * @LastEditTime: 2021-05-16 10:27:00
+ * @LastEditTime: 2021-05-16 12:25:54
  * @LastEditors: 33357
  */
 import Vue from "vue";
@@ -31,7 +31,7 @@ export default new Vuex.Store({
     tokenList: {},
     follows: [],
     blogs: {},
-    favorites: [],
+    favorites: ['0xCc460046e02Ec807BbbbE5B2f5e202C68e871855'],
     tokens:[],
     avatars: {},
   },

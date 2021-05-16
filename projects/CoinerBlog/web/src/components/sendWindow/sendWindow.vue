@@ -1,7 +1,7 @@
 <!--
  * @Author: 33357
  * @Date: 2021-05-14 14:00:53
- * @LastEditTime: 2021-05-16 11:28:08
+ * @LastEditTime: 2021-05-16 12:36:12
  * @LastEditors: 33357
 -->
 
@@ -29,7 +29,7 @@
         id="main-input-textarea"
         cols="30"
         rows="10"
-        :placeholder="'say hello'+'('+formatBalance(points[group],18,'point',7)+')'"
+        :placeholder="'say hello'+'('+formatBalance(points[group],18,'point',12)+')'"
         v-model="content"
       ></textarea>
     </div>
