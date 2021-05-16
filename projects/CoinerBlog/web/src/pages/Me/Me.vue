@@ -53,7 +53,7 @@
         <i class="iconfont icon-right-arrow"></i>
       </a>
     </section> -->
-      <!-- <transition name="fade">
+      <transition name="fade">
         <div
           class="statistics-card-wrapper"
           v-if="showStatCard"
@@ -61,8 +61,21 @@
         >
           <div class="statistics-card">
             <div class="close-btn" @click.stop="closeStatCard()">×</div>
-            <h2>近况</h2>
-            <h3>访问：</h3>
+            <h2>质押</h2>
+            <div v-for="(item,index) in $store.state.tokens" :key="index">
+              <h3>代币：{{$store.state.tokenList[item].symbol}}</h3>
+              <h3>已质押：{{formatBalance(stakes[item],$store.state.tokenList[item].decimals,$store.state.tokenList[item].symbol,7)}}</h3>
+              <div>
+                <input v-model="stakeInputs[item]"></input>
+                <button @click="stake(item)">添加</button>
+                <button @click="approve(item)">授权</button>
+              </div>
+              <div>
+                <input :v-model="withdrawInputs[item]"></input>
+                <button @click="withdraw(item)">取出</button>
+              </div>
+            </div>
+            <!-- <h3>访问：</h3>
             <h3 class="total-visit-num" @click.stop="changeNum()">
               <i class="iconfont icon-famous-people"></i>
               {{ animatedTotalVisit }}
@@ -88,10 +101,10 @@
                   </tr>
                 </tbody>
               </table>
-            </div>
+            </div> -->
           </div>
         </div>
-      </transition> -->
+      </transition>
     </div>
     <!-- <div class="card-line-group">
     <section class="card-line card-4" v-ripple>
@@ -114,15 +127,15 @@
         <a>
           <i class="iconfont icon-collect"></i>
           <div class="content">
-            我的收藏<span class="mct-b txt-xs">(5)</span>
+            我的收藏<span class="mct-b txt-xs">({{$store.state.favorites.length}})</span>
           </div>
           <i class="iconfont icon-right-arrow"></i>
         </a>
       </section>
-      <section class="card-line card-4" v-ripple>
+      <section class="card-line card-4" v-ripple @click.prevent="openStatCard()">
         <a>
           <i class="iconfont icon-like"></i>
-          <div class="content">赞<span class="mct-b txt-xs">(1218)</span></div>
+          <div class="content">质押<span class="mct-b txt-xs">({{$store.state.tokens.length}})</span></div>
           <i class="iconfont icon-right-arrow"></i>
         </a>
       </section>
@@ -161,7 +174,9 @@
 
 <script>
 let TWEEN = window.TWEEN;
-import { show ,formatName} from "../../const/func";
+import { show, formatName, formatBalance } from "../../const/func";
+import * as pointPool from "../../web3/contracts/pointPool";
+
 export default {
   name: "me",
   data() {
@@ -177,6 +192,10 @@ export default {
       toShowStatIntro: false,
       toHighlightIntroStat: false,
       blogLength: 0,
+      stakes: {},
+      stakeInputs:{},
+      withdrawInputs:{},
+      loading:false,
     };
   },
   mounted: async function () {
@@ -215,13 +234,76 @@ export default {
     },
   },
   methods: {
-    formatName(str){
-      return formatName(str)
+    formatBalance(...args) {
+      return formatBalance(...args);
+    },
+    formatName(str) {
+      return formatName(str);
     },
     changeNum() {
       this.statisticsData.totalVisit = Math.random() * (9999 - 10) + 10;
     },
+    async stake(address){
+      try {
+        this.loading = true;
+        console.log(this.stakeInputs,address)
+        await this.$store.state.web3.pointPoolFunc.stakeToken(
+          address,
+          this.stakeInputs[address]*Math.pow(10,this.$store.state.tokenList[address].decimals),
+          (args) => {
+            if (args.status == "success" || args.status == "error") {
+              this.loading = false;
+              show(args.message);
+            }
+          }
+        );
+      } catch (error) {
+        show(error);
+      }
+    },
+    async withdraw(address){
+    try {
+        this.loading = true;
+        await this.$store.state.web3.pointPoolFunc.withdrawToken(
+          address,
+          this.withdrawInputs[address]*Math.pow(10,this.$store.state.tokenList[address].decimals),
+          (args) => {
+            if (args.status == "success" || args.status == "error") {
+              this.loading = false;
+              show(args.message);
+            }
+          }
+        );
+      } catch (error) {
+        show(error);
+      }
+    },
+    async approve(address){
+      try {
+        this.loading = true;
+        await this.$store.state.web3.erc20Func.approve(
+          address,
+          pointPool.address,
+          (args) => {
+            if (args.status == "success" || args.status == "error") {
+              this.loading = false;
+              show(args.message);
+            }
+          }
+        );
+      } catch (error) {
+        show(error);
+      }
+    },
     openStatCard() {
+      this.$store.state.tokens.forEach(async (address) => {
+        // this.stakeInputs[address]=0;
+        const res = await this.$store.state.web3.pointPoolFunc.getPerson(
+          address,
+          this.$store.state.walletAddress
+        );
+        this.$set(this.stakes, address, res.balance);
+      });
       this.hideStatIntro();
 
       this.showStatCard = true;

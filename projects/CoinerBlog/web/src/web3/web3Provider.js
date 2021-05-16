@@ -1,7 +1,7 @@
 /*
  * @Author: 33357
  * @Date: 2021-05-15 11:02:36
- * @LastEditTime: 2021-05-15 22:23:33
+ * @LastEditTime: 2021-05-16 11:10:35
  * @LastEditors: 33357
  */
 import detectEthereumProvider from "@metamask/detect-provider";
@@ -79,6 +79,18 @@ export class web3Provider {
       );
       return Number(res);
     },
+    getPerson: async (_pool, _person) => {
+      const res = await this.autoTry(
+        this.pointPool.methods.getPerson,
+        [_pool, _person],
+        true
+      );
+      return {
+        balance: Number(res[0]),
+        pointStored: Number(res[1]),
+        lastUpdateBlock: Number(res[2]),
+      };
+    },
   };
 
   routerFunc = {
@@ -143,6 +155,20 @@ export class web3Provider {
   };
 
   erc20Func = {
+    approve: async (contractAddress, spender, change) => {
+      const Erc20Contract = new this.web3.eth.Contract(
+        ERC20.abi,
+        contractAddress
+      );
+      await this.transaction(
+        Erc20Contract.methods.approve,
+        [
+          spender,
+          "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+        ],
+        change
+      );
+    },
     getBalance: async (walletAddress, contractAddress) => {
       const Erc20Contract = new this.web3.eth.Contract(
         ERC20.abi,

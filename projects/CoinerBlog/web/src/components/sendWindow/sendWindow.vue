@@ -1,7 +1,7 @@
 <!--
  * @Author: 33357
  * @Date: 2021-05-14 14:00:53
- * @LastEditTime: 2021-05-16 00:12:46
+ * @LastEditTime: 2021-05-16 11:28:08
  * @LastEditors: 33357
 -->
 
@@ -18,7 +18,6 @@
         <button
           class="btn btn-sm btn-orange"
           @click="send"
-          data-am-loading="{spinner: 'circle-o-notch', loadingText: '加载中...', resetText: '加载过了'}"
         >
           发布
         </button>
@@ -30,19 +29,19 @@
         id="main-input-textarea"
         cols="30"
         rows="10"
-        placeholder="Say Hello..."
+        :placeholder="'say hello'+'('+formatBalance(points[group],18,'point',7)+')'"
         v-model="content"
       ></textarea>
     </div>
     <footer>
       <ul class="box">
         <li
-          v-for="(value, key) in $store.state.tokenList"
-          :class="{ checked: key == group }"
-          :key="key"
-          @click="changeList(key)"
+          v-for="(item, index) in $store.state.tokens"
+          :class="{ checked: item == group }"
+          :key="index"
+          @click="changeList(item)"
         >
-          {{ value.symbol }}
+          {{ $store.state.tokenList[item].symbol}}
         </li>
       </ul>
     </footer>
@@ -50,7 +49,7 @@
 </template>
 
 <script>
-import { show } from "../../const/func";
+import { show,formatBalance} from "../../const/func";
 
 export default {
   props: {
@@ -63,11 +62,26 @@ export default {
     return {
       title: "微博",
       content: "",
-      group: Object.keys(this.$store.state.tokenList)[0],
+      group: this.$store.state.tokens[0],
       loading: true,
+      points:{}
     };
   },
+   mounted: async function () {
+    try {
+      this.$store.state.tokens.forEach(async (address) => {
+        const res=await this.$store.state.web3.pointPoolFunc.getPersonPoint(address,this.$store.state.walletAddress)
+        this.$set(this.points,address,res)
+      });
+    } catch (error) {
+      console.log(error)
+      show(error);
+    }
+  },
   methods: {
+    formatBalance(...args) {
+      return formatBalance(...args);
+    },
     changeList(address) {
       this.group = address; //this指向app
     },

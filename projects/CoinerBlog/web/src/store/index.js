@@ -1,7 +1,7 @@
 /*
  * @Author: 33357
  * @Date: 2021-05-14 14:00:53
- * @LastEditTime: 2021-05-15 23:32:08
+ * @LastEditTime: 2021-05-16 10:27:00
  * @LastEditors: 33357
  */
 import Vue from "vue";
@@ -32,6 +32,7 @@ export default new Vuex.Store({
     follows: [],
     blogs: {},
     favorites: [],
+    tokens:[],
     avatars: {},
   },
   mutations: {
@@ -93,6 +94,7 @@ export default new Vuex.Store({
           token.address
         );
         if (balance > 0) {
+          state.tokens.push(web3Utils.toChecksumAddress(token.address))
           const res = await Promise.all([
             state.web3.erc20Func.getName(token.address),
             state.web3.erc20Func.getSymbol(token.address),

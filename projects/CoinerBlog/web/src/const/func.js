@@ -1,7 +1,7 @@
 /*
  * @Author: 33357
  * @Date: 2021-05-15 17:53:31
- * @LastEditTime: 2021-05-15 23:28:37
+ * @LastEditTime: 2021-05-16 11:05:24
  * @LastEditors: 33357
  */
 
@@ -41,3 +41,19 @@ export const web3Utils = {
     return web3.utils.isAddress(str);
   },
 };
+
+export function formatBalance(balance, decimals, symbol, effNum) {
+  return getEffectiveNumber(balance / Math.pow(10, decimals), effNum) + ' ' + symbol;
+};
+
+export function getEffectiveNumber(number, effNum) {
+  if (number > Math.pow(10, effNum)) {
+    return Math.floor(number);
+  } else {
+    if (number.toString().length > effNum) {
+      return number.toFixed(effNum);
+    } else {
+      return number;
+    }
+  }
+}
