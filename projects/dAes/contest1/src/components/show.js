@@ -4,8 +4,13 @@ import InputColor from 'react-input-color';
 import  {CountdownCircleTimer } from 'react-countdown-circle-timer'
 import React, { useState ,useContext } from 'react';
 import {Web3Context} from "../App.js";
-//import Claim from './artifacts/contracts/Greeter.sol/Greeter.json'
 
+//import Claim from './artifacts/contracts/Greeter.sol/Greeter.json'
+const v =['#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#50514d', '#50514d', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#50514d', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#50514d', '#50514d', '#50514d', '#50514d', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#1bb86b', '#50514d', '#50514d', '#50514d', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#ffffff', '#ffffff', '#50514d', '#50514d', '#50514d', '#50514d', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#50514d', '#50514d', '#50514d', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#50514d', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#50514d', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#50514d', '#50514d', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#50514d', '#50514d', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#50514d', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#a2a49f', '#50514d', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#50514d', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#50514d', '#50514d', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#50514d', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#50514d', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#a2a49f', '#50514d', '#ffffff', '#ffffff', '#ffffff', '#50514d', '#50514d', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#50514d', '#a2a49f', '#ffffff', '#ffffff', '#ffffff', '#50514d', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#50514d', '#50514d', '#50514d', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#50514d', '#50514d', '#ffffff', '#50514d', '#50514d', '#50514d', '#ffffff', '#ffffff', '#50514d', '#50514d', '#50514d', '#50514d', '#ffffff', '#ffffff', '#50514d', '#50514d', '#50514d', '#50514d', '#ffffff', '#ffffff', '#50514d', '#50514d', '#50514d', '#50514d', '#50514d', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#50514d', '#50514d', '#50514d', '#50514d', '#50514d', '#ffffff', '#ffffff', '#ffffff', '#50514d', '#50514d', '#50514d', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#50514d', '#50514d', '#50514d', '#ffffff', '#ffffff', '#50514d', '#50514d', '#50514d', '#50514d', '#50514d', '#50514d', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#50514d', '#50514d', '#50514d', '#50514d', '#50514d', '#50514d', '#50514d', '#ffffff', '#ffffff', '#facDC7', '#facDC7', '#facDC7', '#ffffff', '#ffffff', '#50514d', '#74eefd', '#74eefd', '#74eefd', '#facDC7', '#facDC7', '#facDC7', '#ffffff', '#ffffff', '#50514d', '#50514d', '#50514d', '#50514d', '#50514d', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#50514d', '#50514d', '#50514d', '#50514d', '#50514d', '#50514d', '#50514d', '#a2a49f', '#ffffff', '#ffffff', '#facDC7', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#74eefd', '#74eefd', '#74eefd', '#ffffff', '#facDC7', '#ffffff', '#ffffff', '#a2a49f', '#50514d', '#50514d', '#50514d', '#50514d', '#50514d', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#50514d', '#50514d', '#50514d', '#50514d', '#50514d', '#50514d', '#50514d', '#50514d', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#74eefd', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b', '#1bb86b']    
+const v1=[]
+const shuffleIndex = [...Array(720).keys()].sort(function() {
+    return .5 - Math.random();
+})
 
 /* 用户染色 setcolor 函数然后就染色    getcolor */
 
@@ -21,12 +26,21 @@ function Board(props){
     const cols = props.cols
     const [visible,setVisible] = useState(false)
     const [colors, setColors] = useState(Array(rows*cols).fill('#FFFFFF'))
+    //const [colors, setColors] = useState(v)
     const [choosei,setChoosei]=useState(0)
     const [chooser,setChooser]=useState(0)
     const [choosec,setChoosec]=useState(0)
     const [org,setOrg]=useState('#FFFFFF')  
     const [lock,setLock]=useState(Array(rows*cols).fill(false))
     //var show_board=[]
+   /* function painting(){
+        [...Array(720).keys()].forEach((i)=>{setTimeout(()=>{const colors1=colors.slice();
+            //console.log('第几个',chooser*cols+choosec,chooser,choosec)
+            colors1[shuffleIndex[i]] = v[shuffleIndex[i]];
+            setColors(colors1);setColors()},1000*i)})
+
+    }*/
+
     function lockUp(index){
         const lock1=lock.slice();
         
@@ -52,11 +66,13 @@ function Board(props){
         }
 
     }
+
     function restart(){
         /*保存现在数据发送*/
         setColors(Array(rows*cols).fill('#FFFFFF'))
         setLock(Array(rows*cols).fill(false))
     }
+
     function handleClick(r,j){
 
         console.log('点击',r,j,visible)
@@ -130,12 +146,13 @@ function Board(props){
                 </div>
             </div>
              <div className='right'>
+                 
                 <CountdownCircleTimer
                 isPlaying
-                duration={360}
-                colors={[["#004777", 0.33], ["#F7B801", 0.33], ["#A30000"]]}
+                duration={20}
+                colors={[["#8b9df3", 0.6], ["#e49366", 0.2], ["#83d8bb"]]}
                // onComplete={() =>{ restart();return [true, 1000]}}
-                onComplete={() =>{ return [true, 1000]}}
+                onComplete={() =>{setColors(v);return [true, 1000]}}
                 >
                     {renderTime}
                 </CountdownCircleTimer> 
@@ -159,24 +176,30 @@ function Box(props){
     //console.log('--------------',props.color)
     //console.log(props.id ,'box key')
     return (
-        <div  className='box' style={{backgroundColor:props.color , borderColor:(props.choosei===props.id) ? "#154de8 " : props.color}} onClick={()=>{props.onClick()}}></div>
+        <div  className='box' style={{backgroundColor:props.color , borderColor:(props.choosei===props.id) ? "#677cdd" : props.color}} onClick={()=>{props.onClick()}}></div>
     )
 }
 
 function ChoosePanel(props){
+    
     const visible= props.visible
     const changeColor=props.changeColor
     const {web3,network}=  useContext(Web3Context);
     const {r,c,cols,close,org,lockUp,colors}= props.index
-    console.log(web3,network)
-    //const address = '合约地址'
+    window.test=web3
+    //console.log(web3,network,'33333111')
+    const address = '0xb69bA4Ddd867e3fFee30cbD2Db592f55916596Ca'
     //实例化合约
     //const abi = require('abi地址')
     //window.myContract = new web3.eth.Contract(claim.abi,address)
+    console.log(web3)
     
     //window.defaultAccount = web3.eth.accounts[0].toLowerCase()
-    const purchase = () => {
-        window.myContract.methods.claim(window.defaultAccount,c,r ).send({from:window.defaultAccount})
+    console.log(window.defaultAccount )
+    const purchase = async () => {
+        const account=await web3.eth.getAccounts()
+        console.log(account)
+       /* window.myContract.methods.claim(window.defaultAccount,c,r ).send({from:account[0]})
         .on('transactionHash',(transactionHash)=>{
           console.log('transactionHash',transactionHash)
         })
@@ -193,7 +216,7 @@ function ChoosePanel(props){
           console.log({ error: error, receipt: receipt });
           changeColor(org);
           close()
-        })
+        })*/
       }
     
     //console.log('index',props.index,r)
@@ -225,7 +248,7 @@ function ChoosePanel(props){
             <div className='btn' onClick={()=>{console.log('gggg',org);changeColor(org);close()}}>Cancle</div>
             </div>
             
-            <div className='btn1' onClick={()=>{purchase()}}>Purchase</div>
+            <div className='btn1'  title = {`purchase and you will get the token of the box in [${c},${r}]`} onClick={()=>{purchase()}}>Purchase</div>
         </div>
     )
 }
