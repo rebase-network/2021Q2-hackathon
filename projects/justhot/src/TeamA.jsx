@@ -14,7 +14,8 @@ class TeamA extends Component {
       web3: '',
       Amount: '',
       InputAmount: '',
-      weiConversion : 1000000000000000000
+      weiConversion : 1000000000000000000,
+      BetResult:0
     }
 
     this.getAmount = this.getAmount.bind(this);
@@ -124,22 +125,18 @@ class TeamA extends Component {
     var BetResultInstance;
     this.state.web3.eth.getAccounts((error, accounts) => {
       console.log("00")
-     
       BetResult.deployed().then((instance) => {
-          BetResultInstance = instance
-          BetResultInstance.AmountOne()
-          BetResultInstance.requestEthereumPrice()
-        
-        }).then((result) => {
-          console.log("11")
-          //BetResultInstance.requestEthereumPrice()
-          return BetResultInstance.distributePrizes(1, {from: accounts[0]})
-          
-        }).catch(() => {
-          console.log("222")
-          console.log(error)
-          console.log(accounts)
+        BetResultInstance = instance
+      }).then((result) => {
+        //Calling the GetChainLinkResulet function of the smart-contract
+        return BetResultInstance.GetChainLinkResulet()
+      }).then((result) => {
+        console.log(result.c)
+        this.setState({
+          BetResult : result.c 
         })
+       
+      });
       })
   }
 
@@ -150,6 +147,7 @@ class TeamA extends Component {
           <div>
             <h3>Team A</h3>
             <h4> Total amount : {this.state.Amount} ETH</h4>
+            <h4> Bet Reuslt : {this.state.BetResult} </h4>
             <hr/>
             <h5> Enter an amount to bet</h5>
             <div className="input-group">
