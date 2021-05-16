@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract AnkiToken is Ownable, ERC20 {
-    constructor(string symbols) public ERC20("MockToken", symbols) {
+    constructor(string memory symbols) public ERC20("MockToken", symbols) {
     }
 
     function mint(address owner, uint256 v) external onlyOwner {
