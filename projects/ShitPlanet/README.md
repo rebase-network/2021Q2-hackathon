@@ -1,6 +1,17 @@
 # ShitPlanet
 
-Created by Kasperrsky Team
+Created by Kasperrsky(卡巴斯基) Team
+
+
+## Product
+
+- [App Websites](https://shitplanet.world/)
+
+## Community
+
+- [Telegram](https://t.me/shitplanet)
+- [Discord](https://discord.com/invite/pfWmc6m2) 
+- [Twitter](https://twitter.com/shitplanetsaver)
 
 ## Description
 - [Project Introduction](https://github.com/ShitPlanet/ShitPlanet/blob/main/README.md)
