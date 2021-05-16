@@ -21,4 +21,4 @@ PR: https://shimo.im/presentation/dPkpKQbgWEC9ZzqO/
 
 相关体验币领取及领取步骤请加群
 
-http://47.108.205.145/info.jpg
+<img src="http://47.108.205.145/info.jpg" />
