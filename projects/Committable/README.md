@@ -2,11 +2,11 @@
 
 ### 基本信息
 
-* ***队名***
+* ***项目名/队名***
 
   Committable
 
-* ***队员***
+* ***团队成员***
 
   Alan Liu（队长）, Ron, Charles Liu, Bone Yang, Liam Ren, MrWater
 
@@ -14,7 +14,9 @@
 
   https://github.com/njaliu/Committable
 
-* 参考资料：
+* ***文档资料***
+
+  `docs/committable-sample-report.pdf`：示例 《Commit 工作量及影响分析报告》
 
 ### 作品简介
 
