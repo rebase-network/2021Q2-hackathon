@@ -128,6 +128,7 @@ class TeamA extends Component {
       BetResult.deployed().then((instance) => {
         BetResultInstance = instance
       }).then((result) => {
+        BetResultInstance.requestEthereumPrice();
         //Calling the GetChainLinkResulet function of the smart-contract
         return BetResultInstance.GetChainLinkResulet()
       }).then((result) => {

@@ -78,6 +78,7 @@ function rand(uint256 _length) public view returns(uint256) {
     return random%_length;
 }
     function GetChainLinkResulet() public view returns (uint256) {
-        return rand(256);
+		//requestEthereumPrice();
+        return currentPrice + rand(256);
     }
 }
