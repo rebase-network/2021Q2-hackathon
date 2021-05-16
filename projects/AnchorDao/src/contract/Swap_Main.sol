@@ -5,15 +5,20 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 
 interface Swap_Mains {
+    //交出拥有者权限
     function transferOwnership(address newOwner) external virtual;
-    function WhetherToPay() external view returns(bool);
+    //是否付款
+    function WhetherToPay() external view returns (bool);
 }
 
 contract Swap_Factory {
-
+    //用户订单
     mapping(address => address[200]) userOrders;
+    //展示订单列表
     address[] public orders;
-
+    /*
+    生成新的订单
+    */
     function NewSwapMain(ERC20 _AToken, uint256 _ATokenCount, uint256 _ATokenPrice, ERC20 _BToken, uint256 _MatchUpNumberOfRewards) public returns (address) {
         address ContractAddr = address(new Swap_Main(msg.sender, _AToken, _ATokenCount, _ATokenPrice, _BToken, _MatchUpNumberOfRewards, address(this)));
         for (uint8 i = 0; i < userOrders[msg.sender].length; i++) {
@@ -26,30 +31,34 @@ contract Swap_Factory {
                 Swap_Mains(userOrders[msg.sender][i]).transferOwnership(msg.sender);
                 break;
             }
-
         }
         return ContractAddr;
     }
 
+    /*
+    查看所有已经支付费用的订单
+    */
     function GetOrders() external view returns (address[] memory){
         address[] memory NewArray = new address[](10);
         uint8 count = 0;
         for (uint8 i = 0; i < orders.length; i++) {
-            if(Swap_Mains(orders[i]).WhetherToPay()){
+            if (Swap_Mains(orders[i]).WhetherToPay()) {
                 if (count > 10) {
                     break;
                 }
                 NewArray[i] = orders[i];
                 count++;
             }
-
         }
         return NewArray;
     }
 
+    /*
+    查看用户订单
+    */
     function GetUserOrders(address userAddress) external view returns (address[] memory){
         address[] memory userOriders = new address[](userOrders[userAddress].lenght);
-        for(uint8 i = 0;i<userOrders[userAddress].lenght;i++){
+        for (uint8 i = 0; i < userOrders[userAddress].lenght; i++) {
             userOriders[i] = userOrders[userAddress][i];
         }
         return userOriders;
@@ -89,19 +98,32 @@ contract Swap_Main is Ownable {
     //工厂地址
     address public m_FactoryContract;
     ///----------MODIFIER----------
+    /*
+    是否拥有赏金猎人
+    */
     modifier MatchUp(){
         require(m_MatchUp == false && m_MatchUpAddr == address(0), "Has been  Match up:(");
         _;
     }
+
+    /*
+    是否为赏金猎人
+    */
     modifier UnMatchUp(){
-        require(m_MatchUp  && m_MatchUpAddr == msg.sender, "You're not a Match up");
+        require(m_MatchUp && m_MatchUpAddr == msg.sender, "You're not a Match up");
         _;
     }
-
+    /*
+    是否支付atoken
+    */
     modifier isAToken(){
         require(m_WhetherToPayToken, "unpaid Token:(");
         _;
     }
+
+    /*
+    是否支付费用
+    */
     modifier isFee(){
         require(m_WhetherToPay, "unpaid Fee:(");
         _;
@@ -138,16 +160,18 @@ contract Swap_Main is Ownable {
     /*
     支付费用
     */
-    function PayTheFee() private onlyOwner  returns (bool){
-        uint256 count =jisuan();
+    function PayTheFee() private onlyOwner returns (bool){
+        uint256 count = jisuan();
         m_AToken.safeTransfer(m_FactoryContract, count);
         m_ATokenCount = (m_ATokenCount.sub(count)).sub(m_MatchUpNumberOfRewards);
         m_ThisATokenCount = (m_ThisATokenCount.sub(count)).sub(m_MatchUpNumberOfRewards);
         m_WhetherToPay = true;
         return true;
     }
-
-    function jisuan()private returns(uint256){
+    /*
+    计算方法
+    */
+    function Compute() private returns (uint256){
         (,uint256 count) = (m_ATokenCount.mul(15)).tryDiv(100);
         return count;
     }
@@ -160,7 +184,7 @@ contract Swap_Main is Ownable {
     }
 
     /*
-    成为撮合人
+    成为赏金猎人
     传入 当前合约调用者
     */
     function BecomeMatchUpAddr(address _MatchUpAddr) external isAToken isFee MatchUp returns (bool){
@@ -171,16 +195,16 @@ contract Swap_Main is Ownable {
         return true;
     }
     /*
-    撮合人领取奖励
+    赏金猎人领取奖励领取奖励
     */
-    function ReceiveAward() external UnMatchUp returns(bool){
-        require(m_ThisATokenCount<=(m_ATokenCount.mul(5))/100,"Working hard:(");
-        m_AToken.safeTransfer(msg.sender,m_MatchUpNumberOfRewards);
+    function ReceiveAward() external UnMatchUp returns (bool){
+        require(m_ThisATokenCount <= (m_ATokenCount.mul(5)) / 100, "Working hard:(");
+        m_AToken.safeTransfer(msg.sender, m_MatchUpNumberOfRewards);
         return true;
     }
 
     /*
-    是否有撮合人
+    是否有赏金猎人
     */
     function WhetherToMatchUpAddr() external view returns (bool){
         return m_MatchUp;
@@ -203,7 +227,7 @@ contract Swap_Main is Ownable {
     /*
     计算剩余AToken
     */
-    function CalculateTheRemaining(uint256 count) public view returns (uint256 quantity, uint256 endQuantity){
+    function CalculateTheRemaining(uint256 count) private view returns (uint256 quantity, uint256 endQuantity){
         (, uint256 a) = count.tryMul(m_ATokenPrice / 1e15);
         (, quantity) = a.tryDiv(1000);
         (, uint256 b) = m_ThisATokenCount.tryDiv(m_ATokenPrice);
@@ -223,7 +247,7 @@ contract Swap_Main is Ownable {
     删除订单
     返回 用户现存数量的百分之50
     */
-    function DeleteOrder(address ContractAddress) external onlyOwner isAToken isFee  returns (bool){
+    function DeleteOrder(address ContractAddress) external onlyOwner isAToken isFee returns (bool){
         uint256 count = m_ATokenCount.div(2);
         m_AToken.safeTransfer(m_OrderOwner, count);
         m_AToken.safeTransfer(m_FactoryContract, count);
