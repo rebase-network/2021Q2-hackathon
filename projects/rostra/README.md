@@ -2,7 +2,7 @@
 
 ## 队名
 
-rostra
+Rostra
 
 队员：
 
@@ -16,3 +16,7 @@ rostra
 Rostra 是一个 DAS（Decentralized Autonomous School，去中心化自治学校），致力于为未来的学校构建基础设施，让教育为人服务。
 
 Github: [https://github.com/luckyyang/rostra](https://github.com/luckyyang/rostra)
+
+Rostra 演示幻灯片：
+
+链接: https://pan.baidu.com/s/1OeHIArkaH3Fw5bD1tzRHPA 提取码: g4v1
