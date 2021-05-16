@@ -4,15 +4,17 @@
 
 ## 队名
 
-CryptoKittes
+fintech 先锋
 
 
 
 队员：
 
-Frozen Rebase的码农一名 sdfsadfsdf https://github.com/xrdavies
+子艺 
+云帆
+DD
+新星 https://github.com/uababa
 
-Harry Rebase的码农一名 asdfasdf https://github.com/harry
 
 
 
@@ -20,15 +22,13 @@ Harry Rebase的码农一名 asdfasdf https://github.com/harry
 
 ## 作品信息
 
-阿水淀粉撒地方撒的
-
-撒的发水淀粉撒地方
+保单委托抵押和收益
 
 
 
 
+Github: 
 
-Github: https://github.com/cryptokitties/
-
+https://github.com/uubaba/insurDao
 
 
