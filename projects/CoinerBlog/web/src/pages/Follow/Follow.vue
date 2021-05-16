@@ -1,7 +1,7 @@
 <!--
  * @Author: 33357
  * @Date: 2021-05-15 13:38:11
- * @LastEditTime: 2021-05-15 23:41:39
+ * @LastEditTime: 2021-05-16 13:47:01
  * @LastEditors: 33357
 -->
 <template>
@@ -36,7 +36,8 @@
               </div>
             </a>
             <div class="user-info">
-              <a class="user-name txt-l txt-cut">{{
+              <a class="user-name txt-l txt-cut"
+              v-if="$store.state.blogs[item]">{{
                 formatName($store.state.blogs[item].person)
               }}</a>
               <div class="publish-data txt-xs">
@@ -60,14 +61,24 @@
               class="default-content"
               v-html="$store.state.blogs[item].content"
             ></p>
-            <div class="retweet" v-if="$store.state.blogs[item].repostBlogId !== 0">
-            <p>
-              <a
-                class="retweet-user"
-                >@{{  formatName($store.state.blogs[$store.state.blogs[item].repostBlogId].person) }}</a
-              >：{{ $store.state.blogs[$store.state.blogs[item].repostBlogId].content }}
-            </p>
-          </div>
+            <div
+              class="retweet"
+              v-if="$store.state.blogs[item].repostBlogId !== 0"
+            >
+              <p v-if="$store.state.blogs[$store.state.blogs[item].repostBlogId]">
+                <a class="retweet-user"
+                  >@{{
+                    formatName(
+                      $store.state.blogs[$store.state.blogs[item].repostBlogId]
+                        .person
+                    )
+                  }}</a
+                >：{{
+                  $store.state.blogs[$store.state.blogs[item].repostBlogId]
+                    .content
+                }}
+              </p>
+            </div>
           </section>
         </div>
         <footer
@@ -178,10 +189,14 @@ export default {
     },
 
     async getFollowBlogIds() {
-      const arr = [
-        this.$store.state.walletAddress,
-        ...this.$store.state.follows,
-      ];
+      let arr;
+      if (
+        this.$store.state.follows.indexOf(this.$store.state.walletAddress) == -1
+      ) {
+        arr = [this.$store.state.walletAddress, ...this.$store.state.follows];
+      } else {
+        arr = this.$store.state.follows;
+      }
       arr.forEach(async (address) => {
         const res = await this.$store.state.web3.routerFunc.getPersonBlogIds(
           address
@@ -189,9 +204,11 @@ export default {
         if (res.length != 0) {
           res.forEach(async (blogId) => {
             this.$store.dispatch("getBlog", blogId);
+            if (this.followBlogIds.indexOf(blogId) == -1) {
+              this.followBlogIds.push(blogId);
+              this.updateFollowBlogIds();
+            }
           });
-          this.followBlogIds.push(...res);
-          this.updateFollowBlogIds();
         }
       });
     },
@@ -368,7 +385,7 @@ export default {
       /*TODO:BUG Prevent scrolling when overlaid. (Headache!!!)
         Read the 23 in ../../notes/Summary-of-experience for detail.*/
       this.commentBlogId = Number(blogId);
-      console.log(this.commentBlogId)
+      console.log(this.commentBlogId);
       this.preventBgScroll();
       this.showSendWindow = true;
     },

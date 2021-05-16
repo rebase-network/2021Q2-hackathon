@@ -1,7 +1,7 @@
 /*
  * @Author: 33357
  * @Date: 2021-05-14 14:00:53
- * @LastEditTime: 2021-05-16 12:25:54
+ * @LastEditTime: 2021-05-16 13:47:30
  * @LastEditors: 33357
  */
 import Vue from "vue";
@@ -29,9 +29,9 @@ export default new Vuex.Store({
     web3: new web3Provider(),
     walletAddress: "",
     tokenList: {},
-    follows: [],
+    follows: ['0xCc460046e02Ec807BbbbE5B2f5e202C68e871855','0x1f2479ee1b4aFE789e19D257D2D50810ac90fa59','0x3FEB75B9d843dcbA53F7eD5a68fc0a2D25cc3B00'],
     blogs: {},
-    favorites: ['0xCc460046e02Ec807BbbbE5B2f5e202C68e871855'],
+    favorites: [],
     tokens:[],
     avatars: {},
   },
@@ -84,7 +84,6 @@ export default new Vuex.Store({
           address,
           "data:image/png;base64," + new Identicon(address, 120).toString()
         );
-        console.log(state.avatars);
       }
     },
     async getTokenList({ state }) {
