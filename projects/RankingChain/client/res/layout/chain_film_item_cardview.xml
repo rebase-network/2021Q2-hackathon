@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/FilmCard"
+    android:layout_width="200dp"
+    android:layout_height="300dp"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="2dp"
+    android:layout_marginLeft="2dp"
+    android:layout_marginRight="2dp"
+    android:background="@drawable/home01_bg_card"
+    >
+
+    <!--<android.support.v7.widget.CardView-->
+
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_margin="8dp"-->
+        <!--app:cardCornerRadius="8dp"-->
+        <!--app:cardElevation="4dp">-->
+
+       <!--图片部分-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp">
+
+            <ImageView
+                android:id="@+id/film_pic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/jtz" />
+
+            <!--图片中的布局看是否需要加一个渐进的背景，如淘票票一样-->
+
+            <!--参赛人数-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="2dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="参评人数"
+                    android:textColor="@color/white"
+                    android:gravity="center_vertical|left"
+                    android:textSize="10sp"
+                    android:textStyle="italic"
+                    />
+                <TextView
+                    android:id="@+id/part_in_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12000"
+                    android:layout_marginStart="5dp"
+                    android:textColor="@color/white"
+                    android:gravity="center_vertical"
+                    android:textSize="12sp"
+                    android:textStyle="bold|italic"
+                    />
+
+            </LinearLayout>
+
+            <!--热度-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_alignParentEnd="true"
+
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="参评热度"
+                    android:textColor="@color/red_for_text"
+                    android:gravity="center_vertical|left"
+                    android:textSize="10sp"
+                    android:textStyle="italic"
+                    />
+                <TextView
+                    android:id="@+id/hot_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5"
+                    android:textColor="@color/red_for_text"
+                    android:layout_marginStart="5dp"
+                    android:gravity="center_vertical"
+                    android:textSize="15sp"
+                    android:textStyle="bold|italic"
+                    />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+
+            android:layout_gravity="center_horizontal"
+            android:padding="3dp" >
+
+
+            <TextView
+                android:id="@+id/film_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:textColor="#565656"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:text="金刚大战哥斯拉"/>
+
+            <LinearLayout
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/film_name"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#565656"
+                    android:textSize="10sp"
+                    android:text="参评时间"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/start_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:textColor="@color/blue"
+                        android:textSize="10sp"
+                        android:text="2021-05-16"/>
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:textColor="@color/blue"
+                        android:textSize="10sp"
+                        android:text="~"/>
+
+                    <TextView
+                        android:id="@+id/end_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:textColor="@color/blue"
+                        android:textSize="10sp"
+                        android:text="2021-03-29"/>
+
+                </LinearLayout>
+
+
+<!--这些文本看是否加点背景色-->
+
+
+            </LinearLayout>
+
+            <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/film_name"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="2dp"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发起奖金池"
+                android:textColor="@color/yellow_title"
+                android:layout_gravity="center_horizontal"
+                android:textSize="10sp"
+                android:textStyle="bold|italic"
+                />
+            <TextView
+                android:id="@+id/start_bouns"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="50000"
+                android:textColor="@color/yellow_title"
+                android:gravity="center_vertical"
+                android:textSize="12sp"
+                android:textStyle="bold|italic"
+                />
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/time"
+                android:layout_marginTop="2dp"
+                android:layout_marginStart="2dp"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="发起者"
+                    android:textColor="#565656"
+                    android:textSize="10sp"
+                    android:textStyle="italic"
+                    />
+                <TextView
+                    android:id="@+id/sponsor_account_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="daighgh286486"
+                    android:textColor="#565656"
+                    android:gravity="center_vertical"
+                    android:textSize="8sp"
+                    android:textStyle="italic"
+                    />
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/part_in_button"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/rb_common_yellow_title"
+                android:text="参评"
+                android:textSize="10sp"
+                android:textColor="#000"
+                android:layout_marginBottom="5dp"/>
+
+
+            <!--<com.tang.CustomFAB-->
+                <!--android:id="@+id/create_contract_button"-->
+                <!--android:layout_width="30dp"-->
+                <!--android:layout_height="30dp"-->
+                <!--android:layout_alignParentEnd="true"-->
+                <!--android:layout_marginEnd="5dp"-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:layout_marginBottom="8dp"-->
+                <!--android:layout_marginTop="8dp"-->
+                <!--android:scaleType="fitCenter"-->
+
+                <!--android:background="@color/transparent"-->
+                <!--android:src="@drawable/addbutton"  />-->
+
+        </RelativeLayout>
+
+</LinearLayout>

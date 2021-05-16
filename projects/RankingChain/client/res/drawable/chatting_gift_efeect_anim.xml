@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:apk="http://schemas.android.com/apk/res/android" apk:oneshot="false">
+    <item apk:drawable="@drawable/chatting_gift_efeect_anim_1" apk:duration="200" />
+    <item apk:drawable="@drawable/chatting_gift_efeect_anim_2" apk:duration="200" />
+    <item apk:drawable="@drawable/chatting_gift_efeect_anim_3" apk:duration="200" />
+    <item apk:drawable="@drawable/chatting_gift_efeect_anim_4" apk:duration="200" />
+</animation-list>

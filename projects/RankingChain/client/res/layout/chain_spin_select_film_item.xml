@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="5dp">
+
+    <!--图片暂时不考虑，后面可以加上图片使用户体验更好-->
+
+    <!--<ImageView-->
+        <!--android:id="@+id/img_icon"-->
+        <!--android:layout_width="48dp"-->
+        <!--android:layout_height="48dp"-->
+        <!--android:src="@mipmap/iv_lol_icon1" />-->
+
+    <TextView
+        android:id="@+id/txt_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:text="金刚大战哥斯拉"
+        android:textSize="16sp" />
+
+</LinearLayout>

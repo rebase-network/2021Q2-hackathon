@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  通用类DataLoadableActivity中使用的option菜单布局文件。
+ -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:title="返回" android:id="@+id/newspaper_list_menu_back"></item>
+	<!--<item android:title="退出程序" android:id="@+id/newspaper_list_menu_exit"></item>-->
+</menu>

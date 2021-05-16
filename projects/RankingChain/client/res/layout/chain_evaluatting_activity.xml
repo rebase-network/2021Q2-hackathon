@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/evaluatting_title">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="正在进行评价"
+            android:textSize="15sp"
+            android:textStyle="italic"
+            android:typeface="monospace"
+            android:textColor="@color/brack"
+            android:scaleType="centerCrop" />
+        <!--<Button-->
+            <!--android:id="@+id/teamchat_teaminfo_teamNameBtn"-->
+            <!--style="@style/settings_item_bg_group_top_2019"-->
+            <!--android:text="团队基本信息" />-->
+        <!--<ImageView-->
+            <!--android:id="@+id/teamchat_teambasicinfo_Btn"-->
+            <!--android:layout_width="30dp"-->
+            <!--android:layout_height="25dp"-->
+            <!--android:layout_gravity="right|center_vertical"-->
+            <!--android:layout_marginRight="17dp"-->
+            <!--android:src="@drawable/common_list_item_rightarrow_small_selector" />-->
+
+    </RelativeLayout>
+
+    <!--<android.support.v7.widget.RecyclerView-->
+        <!--android:id="@+id/Evaluate_Film_RecycleView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--app:layout_behavior="@string/appbar_scrolling_view_behavior" />-->
+    <!--可以滑动的Item添加-->
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/Evaluate_Film_RecycleView"
+        android:layout_below="@+id/evaluatting_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <com.tang.CustomFAB
+        android:id="@+id/create_contract_button"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="8dp"
+       android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="fitCenter"
+
+        android:background="@color/transparent"
+        android:src="@drawable/addbutton"  />
+    <!--android:scaleX="1.2"-->
+    <!--android:scaleY="1.2"-->
+
+
+
+</RelativeLayout>

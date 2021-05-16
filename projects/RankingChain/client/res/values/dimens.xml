@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+    <dimen name="small">5dp</dimen>
+    <dimen name="medium">10dp</dimen>
+    <dimen name="normal">15dp</dimen>
+    <dimen name="large">20dp</dimen>
+    <dimen name="xlarge">25dp</dimen>
+    <dimen name="xxlarge">30dp</dimen>
+
+    <!-- text size -->
+    <dimen name="text_size_35">35sp</dimen>
+    <dimen name="text_size_34">34sp</dimen>
+    <dimen name="text_size_33">33sp</dimen>
+    <dimen name="text_size_32">32sp</dimen>
+    <dimen name="text_size_31">31sp</dimen>
+    <dimen name="text_size_30">30sp</dimen>
+    <dimen name="text_size_29">29sp</dimen>
+    <dimen name="text_size_28">28sp</dimen>
+    <dimen name="text_size_26">26sp</dimen>
+    <dimen name="text_size_25">25sp</dimen>
+    <dimen name="text_size_24">24sp</dimen>
+    <dimen name="text_size_23">23sp</dimen>
+    <dimen name="text_size_22">22sp</dimen>
+    <dimen name="text_size_21">21sp</dimen>
+    <dimen name="text_size_20">20sp</dimen>
+    <dimen name="text_size_19">19sp</dimen>
+    <dimen name="text_size_18">18sp</dimen>
+    <dimen name="text_size_17">17sp</dimen>
+    <dimen name="text_size_16">16sp</dimen>
+    <dimen name="text_size_15">15sp</dimen>
+    <dimen name="text_size_14">14sp</dimen>
+    <dimen name="text_size_13">13sp</dimen>
+    <dimen name="text_size_12">12sp</dimen>
+    <dimen name="text_size_11">11sp</dimen>
+    <dimen name="text_size_10">10sp</dimen>
+    <dimen name="text_size_9">9sp</dimen>
+    <dimen name="text_size_8">8sp</dimen>
+    <dimen name="text_size_7">7sp</dimen>
+
+
+
+    <dimen name="action_button_size">72dp</dimen>
+    <dimen name="action_button_content_margin">16dp</dimen>
+    <dimen name="action_button_margin">12dp</dimen>
+    <dimen name="action_menu_radius">96dp</dimen>
+
+    <dimen name="sub_action_button_size">36dp</dimen>
+    <dimen name="sub_action_button_content_margin">6dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!--住按钮大小-->
+    <dimen name="red_action_button_size">50dp</dimen>
+    <dimen name="red_action_button_margin">48dp</dimen>
+
+    <dimen name="red_action_button_content_size">16dp</dimen>
+    <dimen name="red_action_button_content_margin">36dp</dimen>
+
+    <!--按照圆形弹出的半径大小-->
+    <dimen name="red_action_menu_radius">105dp</dimen>
+
+    <!--弹出的子按钮大小-->
+    <dimen name="blue_sub_action_button_size">60dp</dimen>
+    <dimen name="blue_sub_action_button_content_margin">0dp</dimen>
+
+    <dimen name="radius_large">120dp</dimen>
+    <dimen name="radius_small">30dp</dimen>
+    <dimen name="radius_medium">72dp</dimen>
+
+
+    <dimen name="layout_corner">7.0dip</dimen>
+
+    <!-- GreenDroid UI Tool -->
+    <dimen name="gd_arrow_offset">5dp</dimen>
+    <!-- mobily 二期字体 -->
+    <dimen name="m00_font_size_64pt">42.7sp</dimen>
+    <dimen name="m00_font_size_36pt">24sp</dimen>
+    <dimen name="m00_font_size_30pt">20sp</dimen>
+    <dimen name="m00_font_size_28pt">18.7sp</dimen>
+    <dimen name="m00_font_size_26pt">17.3sp</dimen>
+    <dimen name="m00_font_size_24pt">16sp</dimen>
+    <dimen name="m00_font_size_22pt">14.7sp</dimen>
+    <dimen name="m00_font_size_20pt">13.3sp</dimen>
+    <dimen name="m00_font_size_18pt">12.0sp</dimen>
+    <dimen name="m00_font_size_16pt">10.7sp</dimen>
+    <dimen name="m00_font_size_15pt">10sp</dimen>
+    <dimen name="m00_font_size_14pt">9.3sp</dimen>
+
+    <!-- mobily 二期统一的边间距 -->
+    <dimen name="m00_main_padding_length">6.7dp</dimen>
+    <dimen name="m00_main_list_item_divider_height">6.7dp</dimen>
+
+    <dimen name="m00_home_tab_height">40.7dp</dimen>
+    <dimen name="m00_home_tab_arrow_margin_bottom">2dp</dimen>
+
+    <dimen name="m00_category_tab_height">40.7dp</dimen>
+
+    <dimen name="m00_home_tab_sep_height">30dp</dimen>
+    <dimen name="m00_home_tab_sep_margin_bottom">2dp</dimen>
+
+    <!-- home中 choice的图片高度-->
+    <dimen name="m00_home_featured_icon_height">100dp</dimen>
+    <dimen name="m00_home_featured_content_height">26dp</dimen>
+
+    <!-- load more 20 按钮margin -->
+    <dimen name="m00_btn_load_20_more_margin">15dp</dimen>
+    <dimen name="m00_btn_load_20_more_padding">3dp</dimen>
+
+    <!-- 热词列表高度 -->
+    <dimen name="m03_search_hotword_list_item_height">43.3dp</dimen>
+
+    <!-- 位置 -->
+    <dimen name="m01_arrow_length">25dp</dimen>
+    <dimen name="m00_bottom_menu_height">55.5dp</dimen>
+    <dimen name="m00_title_bar_height">76.7dp</dimen>
+    <dimen name="m06_screen_shot_width">148dp</dimen>
+    <dimen name="m06_screen_shot_item_width">133.3dp</dimen>
+    <dimen name="m06_screen_shot_item_left_width">14.7dp</dimen>
+    <dimen name="m06_screen_shot_height">218.7dp</dimen>
+    <dimen name="m06_app_slider_width">80dp</dimen>
+
+    <dimen name="m06_screen_shot_view_padding_width">5dp</dimen>
+    <!-- detail screenshot height -->
+    <dimen name="m06_descript_title_height">34.7dp</dimen>
+    <dimen name="m06_descript_sub_view_height">130dp</dimen>
+    <dimen name="m06_screen_shot_view_height">294.7dp</dimen>
+    <dimen name="m06_relevant_view_height">110dp</dimen>
+
+    <dimen name="m06_comment_height">270dp</dimen>
+    <dimen name="m06_btn_leave_comment_height">44dp</dimen>
+    <dimen name="m06_comment_list_item_height">65dp</dimen>
+    <dimen name="m06_load_more_height">58dp</dimen>
+    <dimen name="m06_load_data_failed_height">300dp</dimen>
+
+    <dimen name="m06_price_max_width">40dp</dimen>
+    <dimen name="m06_confirmation_dialog_width">220dp</dimen>
+
+    <dimen name="m06_radio_button_padding">18dp</dimen>
+
+    <!-- 对话框的最小宽度 -->
+    <dimen name="m00_alert_dialog_min_width">300dp</dimen>
+
+    <!-- credit card margin-->
+    <dimen name="m06_credit_card_cvv_margin">78dp</dimen>
+
+
+
+
+    <dimen name="buttonCornerSize">2.0dip</dimen>
+    <dimen name="largePadding">16.0dip</dimen>
+
+    <dimen name="normalButtonHeight">48.0dip</dimen>
+    <dimen name="normalButtonWidth">80.0dip</dimen>
+
+    <dimen name="bigButtonTextSize">18.0dip</dimen>
+    <dimen name="normalButtonTextSize">16.0dip</dimen>
+    <dimen name="smallButtonTextSize">14.0dip</dimen>
+
+    <dimen name="small_margin">4dp</dimen>
+    <dimen name="normal_margin">8dp</dimen>
+    <dimen name="big_margin">16dp</dimen>
+</resources>

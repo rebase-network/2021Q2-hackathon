@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 列表item背景之顶部图 -->
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true" android:drawable="@color/common_list_bg_custom_selected_bg" />
+    <item android:state_focused="true" android:drawable="@color/common_list_bg_custom_selected_bg" />
+    <item android:state_pressed="true" android:drawable="@color/common_list_bg_custom_selected_bg" />
+    <item android:drawable="@color/white" />
+</selector>

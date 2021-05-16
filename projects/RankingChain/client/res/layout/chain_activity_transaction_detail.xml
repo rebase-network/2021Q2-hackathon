@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="0dp">
+
+        <LinearLayout
+            android:id="@+id/lly_back"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/back_button"
+                android:layout_width="25dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_back" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="收款码"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:id="@+id/rl_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/share_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="分享"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </RelativeLayout>
+    <!--<include layout="@layout/common_toolbar" />-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_margin="16dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/amount"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:text="@string/subtitle_from"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:id="@+id/from"
+                android:textSize="12sp"
+                android:textIsSelectable="true"
+                android:textAppearance="?attr/textAppearanceListItemSmall"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginBottom="@dimen/normal_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="0xABC"
+                />
+            <TextView
+                android:text="@string/subtitle_to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:id="@+id/to"
+                android:textSize="12sp"
+                android:textIsSelectable="true"
+                android:textAppearance="?attr/textAppearanceListItemSmall"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginBottom="@dimen/normal_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="0xABC"
+                />
+            <TextView
+                android:text="@string/subtitle_gas_fee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:id="@+id/gas_fee"
+                android:textSize="12sp"
+                android:textAppearance="?attr/textAppearanceListItemSmall"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginBottom="@dimen/normal_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="0.000044"
+                />
+            <TextView
+                android:text="@string/subtitle_transaction_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:id="@+id/txn_hash"
+                android:textSize="12sp"
+                android:textAppearance="?attr/textAppearanceListItemSmall"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginBottom="@dimen/normal_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="0xABC"
+                />
+
+            <TextView
+                android:text="@string/subtitle_transaction_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                android:id="@+id/txn_time"
+                android:textSize="12sp"
+                android:textAppearance="?attr/textAppearanceListItemSmall"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginBottom="@dimen/normal_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="September 4, 2018 at 2:32:12 PM"
+                />
+
+            <TextView
+                android:text="@string/subtitle_block_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:id="@+id/block_number"
+                android:textSize="12sp"
+                android:textAppearance="?attr/textAppearanceListItemSmall"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginBottom="@dimen/normal_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="4238793"
+                />
+            <Button
+                android:id="@+id/more_detail"
+                android:text="@string/action_more_details"
+                android:clickable="true"
+                android:focusable="true"
+                android:autoLink="web"
+                android:linksClickable="true"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
