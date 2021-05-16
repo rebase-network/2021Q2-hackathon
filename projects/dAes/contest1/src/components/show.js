@@ -181,7 +181,7 @@ function Box(props){
 }
 
 function ChoosePanel(props){
-    
+    const [params,setParams]=useState([])
     const visible= props.visible
     const changeColor=props.changeColor
     const { web3 } =  useContext(Web3Context);
@@ -221,7 +221,26 @@ function ChoosePanel(props){
           close()
         })
       }
-    
+      const sendColor = async () => {
+        const account=await web3.eth.getAccounts()
+        console.log(account)
+        window.myContract.methods.setColor(c,r, ...params ).send({from:account[0]})
+        .on('transactionHash',(transactionHash)=>{
+          console.log('transactionHash',transactionHash)
+        })
+        .on('confirmation',(confirmationNumber,receipt)=>{
+          console.log({ confirmationNumber: confirmationNumber, receipt: receipt });
+            
+        })
+        .on('receipt',(receipt)=>{
+          console.log({ receipt: receipt })
+        })
+        .on('error',(error,receipt)=>{
+          console.log({ error: error, receipt: receipt });
+          changeColor(org);
+          close()
+        })
+      }
     //console.log('index',props.index,r)
     //const originalColor 
     const cc=colors.slice()
@@ -230,6 +249,9 @@ function ChoosePanel(props){
     function handelChange(color){
        // console.log(111111,color)
        // console.log('zuoseqi',color)
+        setParams([color.r,color.g,color.b,color.a])
+        
+        console.log(color,'yanssssss')
         var signal=changeColor(color.hex)
         if (signal){
         close()}
@@ -247,7 +269,7 @@ function ChoosePanel(props){
             />
             </div>
             <div className='flex-row12'>
-            <div className='btn' onClick={()=>{ close()}}>Confirm</div>
+            <div className='btn' onClick={()=>{ sendColor();close()}}>Confirm</div>
             <div className='btn' onClick={()=>{console.log('gggg',org);changeColor(org);close()}}>Cancle</div>
             </div>
             
