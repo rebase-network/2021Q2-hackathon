@@ -116,12 +116,12 @@ contract AnkiMaster is Ownable {
         emit Withdraw(msg.sender, _amount);
     }
 
-    function inputWord(bytes32 _prev, string memory word) external returns (bool) {
+    function inputWord(string memory word) external returns (bool) {
         UserInfo storage user = _userInfos[msg.sender];
         require(user.curLevel != 0, "Not playing");
 
         WordDictInfo storage dict = _wordDictInfos[user.curLevel-1];
-        bytes32 r = keccak256(abi.encodePacked(_prev, word));
+        bytes32 r = keccak256(abi.encodePacked(dict.hashs[user.curProgress-1], word));
         if (r == dict.hashs[user.curProgress]) {
             emit InputWordResult(msg.sender, user.curLevel, user.curProgress, true);
 
