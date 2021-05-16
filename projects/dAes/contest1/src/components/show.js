@@ -184,22 +184,25 @@ function ChoosePanel(props){
     
     const visible= props.visible
     const changeColor=props.changeColor
-    const {web3,network}=  useContext(Web3Context);
+    const { web3 } =  useContext(Web3Context);
     const {r,c,cols,close,org,lockUp,colors}= props.index
-    window.test=web3
-    //console.log(web3,network,'33333111')
-    const address = '0xb69bA4Ddd867e3fFee30cbD2Db592f55916596Ca'
+    window.test = web3
+    const contractAddress = '0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512'
     //实例化合约
-    //const abi = require('abi地址')
-    //window.myContract = new web3.eth.Contract(claim.abi,address)
+    const abi = require("../abi").default
+    window.myContract = new web3.eth.Contract(abi, contractAddress)
     console.log(web3)
+    // web3.eth.getAccounts((_, accounts) => {
+    //     window.defaultAccount = accounts[0];
+    //     console.log(window.defaultAccount);
+    //   })
     
-    //window.defaultAccount = web3.eth.accounts[0].toLowerCase()
+    // window.defaultAccount = web3.eth.accounts[0].toLowerCase()
     console.log(window.defaultAccount )
     const purchase = async () => {
         const account=await web3.eth.getAccounts()
         console.log(account)
-       /* window.myContract.methods.claim(window.defaultAccount,c,r ).send({from:account[0]})
+        window.myContract.methods.claim(account[0],c,r ).send({from:account[0]})
         .on('transactionHash',(transactionHash)=>{
           console.log('transactionHash',transactionHash)
         })
@@ -216,7 +219,7 @@ function ChoosePanel(props){
           console.log({ error: error, receipt: receipt });
           changeColor(org);
           close()
-        })*/
+        })
       }
     
     //console.log('index',props.index,r)
