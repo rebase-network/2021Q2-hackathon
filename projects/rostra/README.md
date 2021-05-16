@@ -15,3 +15,4 @@ Rostra 是一个 DAS（Decentralized Autonomous School，去中心化自治学�
 
 - 项目 Github: [https://github.com/luckyyang/rostra](https://github.com/luckyyang/rostra)
 - Rostra 演示幻灯片：https://pan.baidu.com/s/1OeHIArkaH3Fw5bD1tzRHPA 提取码: g4v1
+- 文档：https://shimo.im/docs/XcWhXQcpcYtyQh3q/ 《Rostra：去中心化自治学校 》
