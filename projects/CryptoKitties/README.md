@@ -10,7 +10,7 @@ fintech 先锋
 
 队员：
 
-uababa https://github.com/uababa
+新星 https://github.com/uababa
 
 
 
@@ -18,12 +18,13 @@ uababa https://github.com/uababa
 
 ## 作品信息
 
-
+保单委托抵押和收益
 
 
 
 
 Github: 
 
+https://github.com/uubaba/insurDao
 
 
