@@ -11,7 +11,7 @@ Rostra
 
 ## 接收奖励的地址
 
-0x8D07CFb29762A7561f004D042DDd47648640B23f
+0x531a3b90dc49f62d939a8a30daf8a5fa2cacd285
 
 ## 作品信息
 
