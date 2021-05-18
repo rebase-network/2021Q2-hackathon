@@ -13,6 +13,7 @@ prophetyy18 https://github.com/prophetyy18
 
 ## 接受奖励地址(用于接收 ERC20 USDT)
 0x2fb8024912db7be5eaf991992686e0c6daa17ef6
+
 0x6e4817076B1F1628c3F16aE0F096C86171c03AB6
 
 ## 团队介绍
