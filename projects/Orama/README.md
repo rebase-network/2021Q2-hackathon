@@ -4,10 +4,10 @@
 The Hermitian Team
 
 ### 成员
-Nate
-Luke
-Ares
-Sicong
+Nate  
+Luke  
+Ares  
+Sicong  
 E. Huang
 
 ## 接受奖励地址 (用于接收ETH)
