@@ -1,13 +1,17 @@
-# 编号 9
+# 作品编号 9
 
-## 队名 Rostra
+Rostra
 
-队员：
+## 成员
 
 - [刘吉洋](https://github.com/luckyyang)
 - [张雪松](https://github.com/zhang6321615)
 - [曾广富](https://github.com/zeng3234)
 - [向文文](https://github.com/icepy)
+
+## 接收奖励的地址
+
+0x8D07CFb29762A7561f004D042DDd47648640B23f
 
 ## 作品信息
 
