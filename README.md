@@ -1,9 +1,28 @@
 # 2021Q2 Rebase Hackathon
 
+## 黑客松获奖信息
+
+**一等奖**   
+
+#12 Commitbale  
+
+**二等奖**  
+
+#16 ShitPlanet  
+#18 Pixel  
+
+**三等奖**  
+
+#9 Rostra  
+#4 DeBalance  
+#7 RankingChain  
+
+
+---
+
 办一场 Hacker 们的聚会是作为松散 Hacker 组织的一个想法! 于是诞生了这次 Rebase Hackathon。  
 
 **一场 Hacker 们为 Hacker 们举办的一场「五城同时开赛，线上跨城互动」的黑客松**
-
 
 **时间：**  
 2021年5月14日 到 2021年5月16日
@@ -51,6 +70,30 @@
     ```
 
 **该提交流程为方便整个沟通工作，提升多城之间的协同效率。**  
+
+以下为范例
+```
+# 作品编号 1
+## 队伍信息
+### 队伍名称
+CryptoKittes
+
+### 成员
+
+Frozen Rebase的码农一名 sdfsadfsdf https://github.com/xrdavies
+
+Harry Rebase的码农一名 asdfasdf https://github.com/harry
+
+## 接受奖励地址(用于接收 ERC20 USDT)
+0xasdfasdfsdfsdasdfsadfsadfasdfasdfsadf
+
+## 作品信息
+
+CryptoKittes 是一款创造 ERC721 协议的游戏，具备跨时代的意义
+
+作品代码仓库：https://github.com/cryptokitties/
+
+```
 
 
 ## 评审流程  
