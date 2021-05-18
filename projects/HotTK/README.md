@@ -19,6 +19,4 @@ PR: https://shimo.im/presentation/dPkpKQbgWEC9ZzqO/
 
 体验地址: http://47.108.205.145/#/home
 
-相关体验币领取及领取步骤请加群
-
-<img src="http://47.108.205.145/info.jpg" />
+ETH 地址: 0x4cc828Ea25B62F1551e3C8B502E6A885B212c26e
