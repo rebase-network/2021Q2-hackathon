@@ -65,7 +65,7 @@ Frozen Rebase的码农一名 sdfsadfsdf https://github.com/xrdavies
 
 Harry Rebase的码农一名 asdfasdf https://github.com/harry
 
-## 接受奖励地址
+## 接受奖励地址(用于接收 ERC20 USDT)
 0xasdfasdfsdfsdasdfsadfsadfasdfasdfsadf
 
 ## 作品信息
