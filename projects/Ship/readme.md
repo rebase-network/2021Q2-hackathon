@@ -10,7 +10,6 @@ https://github.com/ship-chain
 # 项目背景
 5.12 决定参赛
 5.14 决定项目
-5.15 
 
 # 要解决的关键问题
 1. 资产上链，需证明链下资产属于该链上用户 => SHIP规范、非对称加密、链上铸币交易验证，
@@ -31,3 +30,21 @@ https://github.com/ship-chain
 5. X 网站：调用SHIP提供的函数Listen，监听链上交易，如果发现链上资产转移，X网站就需要对链下资产转移。
 6. 链上用户:addresB 买了 UserA（addressA）NFT。去X网站兑现资源，X 网站前端会调用SHIP 提供的函数validate，确认addressB拥有该NFT，将资源释放给addressB对应的（新）账号UserB。UserB在X网站使用该资源。
 
+
+
+
+
+
+
+
+
+
+
+1. Ship提供一个去中心化公共账本
+2. X 网站前端调用Ship util提供的函数 CreateToken（resourceKey, origin）。resourceKey：代表该资源的key，根据业务自己实现；origin：Ship会向该域名的特定接口获取签名
+    1. CreateToken向origin指向的X网站接口获取 签名 + 公钥 + 上链信息，（后端需要确保调用该接口的用户已登录，防止冒领签名）
+    2. Ship util调用浏览器插件，获取链上用户交易签名，将X网站签名过的信息上链。上链信息 + 验证 + 链上用户地址
+
+3. X 网站调用Ship Util提供的监听函数，对链上交易做出响应
+3. 用户链上交易
+4. 资产承兑时
