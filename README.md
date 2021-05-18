@@ -52,6 +52,30 @@
 
 **该提交流程为方便整个沟通工作，提升多城之间的协同效率。**  
 
+以下为范例
+```
+# 作品编号 1
+## 队伍信息
+### 队伍名称
+CryptoKittes
+
+### 成员
+
+Frozen Rebase的码农一名 sdfsadfsdf https://github.com/xrdavies
+
+Harry Rebase的码农一名 asdfasdf https://github.com/harry
+
+## 接受奖励地址
+0xasdfasdfsdfsdasdfsadfsadfasdfasdfsadf
+
+## 作品信息
+
+CryptoKittes 是一款创造 ERC721 协议的游戏，具备跨时代的意义
+
+作品代码仓库：https://github.com/cryptokitties/
+
+```
+
 
 ## 评审流程  
 参加最终评审的作品将以PR更新时间不超过 2021 年 5 月 16 日 中午 12:00 为准，筹备小组会依据现场情况适当调整。  
