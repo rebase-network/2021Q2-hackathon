@@ -1,9 +1,28 @@
 # 2021Q2 Rebase Hackathon
 
+## 黑客松获奖信息
+
+**一等奖**   
+
+#12 Commitbale  
+
+**二等奖**  
+
+#16 ShitPlanet  
+#18 Pixel  
+
+**三等奖**  
+
+#9 Rostra  
+#4 DeBalance  
+#7 RankingChain  
+
+
+---
+
 办一场 Hacker 们的聚会是作为松散 Hacker 组织的一个想法! 于是诞生了这次 Rebase Hackathon。  
 
 **一场 Hacker 们为 Hacker 们举办的一场「五城同时开赛，线上跨城互动」的黑客松**
-
 
 **时间：**  
 2021年5月14日 到 2021年5月16日
