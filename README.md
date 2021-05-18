@@ -10,7 +10,9 @@ tx: https://etherscan.io/tx/0x01534cd7c72fec380512830c36157cf21bba52f7819e99edf9
 
 **二等奖**  
 
-#16 ShitPlanet 未知 
+#16 ShitPlanet  
+0x7762463CB6Cc85fEF363BCE4D24fA2786500bdaE  
+tx: https://etherscan.io/tx/0x87734357a297e2e3e85e16bb76ae11dd77f5e6a473822ec2ed3231389c752bc3  
 
 #18 Pixel  
 0x0941dd4cc974a7c3ece87dc26316a3a2a6288029  
