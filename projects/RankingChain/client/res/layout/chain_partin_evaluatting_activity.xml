@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/FilmCard"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="3dp"
+    android:layout_marginLeft="3dp"
+    android:layout_marginRight="3dp"
+    android:background="@drawable/home01_bg_card"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="评定"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:textStyle="italic"
+            android:textColor="@color/brack"/>
+
+    </RelativeLayout>
+
+
+    <!--图片部分-->
+    <RelativeLayout
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal">
+        <ImageView
+            android:contentDescription="@null"
+            android:id="@+id/film_pic"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/cat"/>
+
+        <!--图片中的布局看是否需要加一个渐进的背景，如淘票票一样-->
+
+        <!--参赛人数-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="参评人数"
+                android:textColor="@color/white"
+                android:gravity="center_vertical|left"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                />
+            <TextView
+                android:id="@+id/part_in_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12000"
+                android:layout_marginStart="5dp"
+                android:textColor="@color/white"
+                android:gravity="center_vertical"
+                android:textSize="15sp"
+                android:textStyle="bold|italic"
+                />
+
+        </LinearLayout>
+
+        <!--热度-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_alignParentEnd="true"
+
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="参评热度"
+                android:textColor="@color/red_for_text"
+                android:gravity="center_vertical|left"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                />
+            <TextView
+                android:id="@+id/hot_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5"
+                android:textColor="@color/red_for_text"
+                android:layout_marginStart="5dp"
+                android:gravity="center_vertical"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:padding="10dp" >
+
+
+        <TextView
+            android:id="@+id/my_film_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:textColor="@color/brack"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            android:text="金刚大战哥斯拉"/>
+
+
+
+        <LinearLayout
+            android:id="@+id/film_profit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/my_film_name"
+            android:layout_marginTop="5dp"
+
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="主观评定"
+                android:textColor="@color/brack"
+                android:layout_gravity="center_vertical"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                />
+
+            <EditText
+                android:id="@+id/subjectivity_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="1"
+                android:inputType="number"
+                android:textColor="@color/brack"
+                android:gravity="center_vertical"
+                android:textSize="25sp"
+                android:layout_marginStart="10dp"
+                android:textStyle="italic"
+                />
+
+
+            <!--基于当前评分机制，不需要把主观评分进行细分，细不细分本质没有什么区别-->
+
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginStart="15dp"-->
+                <!--android:orientation="vertical">-->
+
+
+                <!--&lt;!&ndash;剧情&ndash;&gt;-->
+                <!--<LinearLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center_vertical"-->
+                        <!--android:text="剧情"-->
+                        <!--android:textColor="@color/brack"-->
+                        <!--android:gravity="center_vertical"-->
+                        <!--android:textSize="12sp"-->
+                        <!--android:layout_marginStart="10dp"-->
+                        <!--android:textStyle="italic"-->
+                        <!--/>-->
+                    <!--<EditText-->
+                        <!--android:id="@+id/film_story"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center_vertical"-->
+                        <!--android:text="6"-->
+                        <!--android:textColor="@color/brack"-->
+                        <!--android:gravity="center_vertical"-->
+                        <!--android:textSize="15sp"-->
+                        <!--android:layout_marginStart="10dp"-->
+                        <!--android:textStyle="italic"-->
+                        <!--/>-->
+
+                <!--</LinearLayout>-->
+
+                <!--&lt;!&ndash;演员表现&ndash;&gt;-->
+                <!--<LinearLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center_vertical"-->
+                        <!--android:text="演员表现"-->
+                        <!--android:textColor="@color/brack"-->
+                        <!--android:gravity="center_vertical"-->
+                        <!--android:textSize="12sp"-->
+                        <!--android:layout_marginStart="10dp"-->
+                        <!--android:textStyle="italic"-->
+                        <!--/>-->
+                    <!--<EditText-->
+                        <!--android:id="@+id/role_display"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center_vertical"-->
+                        <!--android:text="6"-->
+                        <!--android:textColor="@color/brack"-->
+                        <!--android:gravity="center_vertical"-->
+                        <!--android:textSize="15sp"-->
+                        <!--android:layout_marginStart="10dp"-->
+                        <!--android:textStyle="italic"-->
+                        <!--/>-->
+
+                <!--</LinearLayout>-->
+
+                <!--&lt;!&ndash;影视效果&ndash;&gt;-->
+                <!--<LinearLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center_vertical"-->
+                        <!--android:text="影视效果"-->
+                        <!--android:textColor="@color/brack"-->
+                        <!--android:gravity="center_vertical"-->
+                        <!--android:textSize="12sp"-->
+                        <!--android:layout_marginStart="10dp"-->
+                        <!--android:textStyle="italic"-->
+                        <!--/>-->
+                    <!--<EditText-->
+                        <!--android:id="@+id/film_effect"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center_vertical"-->
+                        <!--android:text="6"-->
+                        <!--android:textColor="@color/brack"-->
+                        <!--android:gravity="center_vertical"-->
+                        <!--android:textSize="15sp"-->
+                        <!--android:layout_marginStart="10dp"-->
+                        <!--android:textStyle="italic"-->
+                        <!--/>-->
+
+                <!--</LinearLayout>-->
+
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center_horizontal"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center_vertical"-->
+                        <!--android:text="主观分"-->
+                        <!--android:textColor="@color/brack"-->
+                        <!--android:gravity="center_vertical"-->
+                        <!--android:textSize="12sp"-->
+                        <!--android:layout_marginStart="10dp"-->
+                        <!--android:textStyle="italic"-->
+                        <!--/>-->
+                    <!--<TextView-->
+                        <!--android:id="@+id/subjectivity_score"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center_vertical"-->
+                        <!--android:text="6"-->
+                        <!--android:textColor="@color/brack"-->
+                        <!--android:gravity="center_vertical"-->
+                        <!--android:textSize="25sp"-->
+                        <!--android:layout_marginStart="10dp"-->
+                        <!--android:textStyle="italic"-->
+                        <!--/>-->
+
+                <!--</LinearLayout>-->
+
+            <!--</LinearLayout>-->
+
+        </LinearLayout>
+
+
+
+        <!--票房评定-->
+        <LinearLayout
+            android:id="@+id/box_office"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/film_profit"
+            android:layout_marginTop="5dp"
+
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="票房评定"
+                android:textColor="@color/brack"
+                android:layout_gravity="center_vertical"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                />
+            <EditText
+                android:id="@+id/forecast_box_office"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="1"
+                android:inputType="number"
+                android:textColor="@color/brack"
+                android:gravity="center_vertical"
+                android:textSize="25sp"
+                android:layout_marginStart="10dp"
+                android:textStyle="italic"
+                />
+
+        </LinearLayout>
+
+
+        <!--这个最好改为加减控件的方式 ！！！！！！-->
+
+        <LinearLayout
+            android:id="@+id/ticks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/box_office"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center_vertical"
+                android:textSize="12sp"
+                android:textColor="@color/rb_common_yellow_title"
+                android:text="参与票数"/>
+
+            <EditText
+                android:id="@+id/part_in_tick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/rb_common_yellow_title"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                android:text="1"
+                android:inputType="number"/>
+
+        </LinearLayout>
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_below="@+id/ticks"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:text="争夺合约发起方"
+                android:textSize="15dp"
+                android:textStyle="italic" />
+
+
+            <EditText
+
+                android:id="@+id/fight_sponsor"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:hint="0"
+                android:inputType="number"
+                android:textSize="20dp"
+                android:textStyle="italic"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:text="ETH"
+                android:textSize="20dp"
+                android:textStyle="italic"
+                />
+
+        </LinearLayout>
+
+
+
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/rb_common_yellow_title"
+            android:text="提交"
+            android:textSize="12sp"
+            android:textColor="#000"
+            android:layout_marginBottom="10dp"/>
+
+
+
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>

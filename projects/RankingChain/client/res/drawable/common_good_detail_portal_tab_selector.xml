@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+		移动通登陆成功后的入口activity的tabHost的item的selector实现.
+	-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    
+	<item android:state_pressed="true"
+		android:drawable="@drawable/common_good_detail_portal_item_pressed" />
+	<!-- 
+	<item android:state_selected="false"
+		android:drawable="@drawable/common_good_detail_portal_item" />
+		
+		 -->
+	<item android:state_selected="true"
+		android:drawable="@drawable/common_good_detail_portal_item_select" />
+</selector>
+

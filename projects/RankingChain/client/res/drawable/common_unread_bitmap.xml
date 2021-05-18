@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@drawable/common_unread_bg_img"
+    android:gravity="center">
+</bitmap>
+<!-- 重要说明：在某些高分辨率的手机上，直接使用这种标准圆形
+     背景图，会存在边缘被吃掉少许像素的问题（比如小米8SE上），
+     看起来很难看，使用本bimap资源的方式就可以解决这个问题（
+     即间接使用该图）。 -->
+<!-- 20190609注：此法无法实现.9的自动位伸，目前已废弃！-->

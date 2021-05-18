@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <com.eva.android.widget.CustomeTitleBar
+        android:id="@+id/common_web_view_activity_titleBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </com.eva.android.widget.CustomeTitleBar>
+
+    <ProgressBar
+        android:id="@+id/common_web_view_activity_progressbar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:clickable="false"
+        android:focusable="false"
+        android:max="100"
+        android:progress="0"
+        android:progressDrawable="@drawable/common_progress_bar_light" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <WebView
+            android:id="@+id/common_web_view2_webview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            />
+
+        <LinearLayout
+            android:id="@+id/common_web_view_activity_errorLL"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:background="@color/white"
+            >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/common_web_error_ico" />
+
+            <TextView
+                android:padding="0dp"
+                android:id="@+id/common_web_view_activity_titleView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/common_web_activity_load_error_title"
+                android:textColor="@color/gray_dark_for_title"
+                android:textSize="18sp" />
+
+            <TextView
+                android:padding="0dp"
+                android:id="@+id/common_web_view_activity_contentView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="200dp"
+                android:text="@string/common_web_activity_load_error_content"
+                android:textColor="@color/common_list_hint_text"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+
+
+    </FrameLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!--<cniao5.com.cniao5shop.widget.CNiaoToolBar-->
+        <!--android:id="@id/toolbar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="?attr/colorPrimary"-->
+        <!--android:minHeight="?attr/actionBarSize"-->
+        <!--app:isShowSearchView="false"-->
+        <!--app:contentInsetEnd="56dp"-->
+        <!--app:title="开始">-->
+    <!--</cniao5.com.cniao5shop.widget.CNiaoToolBar>-->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/rb_common_bg_blue" >
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_head"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#FFFFFF"
+            android:src="@drawable/all_evaluate_chain_icon">
+
+            <!--注意图标换成自己的,这个界面先放着，设计的不是很好-->
+
+        </de.hdodenhof.circleimageview.CircleImageView>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+       >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="账号登陆或注册"
+            android:textColor="@color/brown_for_register_form_text"
+
+            android:gravity="center_horizontal"
+            android:textSize="20sp"
+
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/account_login_button"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:background="@color/rb_common_text_bluesky1"
+                android:text="登陆"
+                android:textSize="20sp"/>
+            <Button
+                android:id="@+id/account_register_button"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="40dp"
+                android:background="@color/rb_common_text_bluesky1"
+                android:text="注册"
+                android:textSize="20sp"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="选择使用的钱包"
+            android:textColor="@color/brown_for_register_form_text"
+
+            android:gravity="center_horizontal"
+            android:textSize="20sp"
+
+            />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:dividerHeight="1dp"
+        android:divider="@color/windows_color"
+        >
+    </ListView>
+
+
+</LinearLayout>

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/FilmCard"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:orientation="horizontal"
+
+    android:layout_marginTop="2dp"
+    android:layout_marginLeft="2dp"
+    android:layout_marginRight="2dp"
+    android:background="@drawable/home01_bg_card"
+    >
+
+    <!--图片部分-->
+    <RelativeLayout
+        android:layout_width="170dp"
+        android:layout_height="match_parent">
+        <ImageView
+            android:contentDescription="@null"
+            android:id="@+id/my_film_pic"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/cat"/>
+
+        <!--图片中的布局看是否需要加一个渐进的背景，如淘票票一样-->
+
+        <!--参评人数-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="参评人数"
+                android:textColor="@color/white"
+                android:gravity="center_vertical|left"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                />
+            <TextView
+                android:id="@+id/my_part_in_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12000"
+                android:layout_marginStart="5dp"
+                android:textColor="@color/white"
+                android:gravity="center_vertical"
+                android:textSize="15sp"
+                android:textStyle="bold|italic"
+                />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:padding="10dp" >
+
+
+        <TextView
+            android:id="@+id/my_film_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:textColor="@color/brack"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            android:text="金刚大战哥斯拉"/>
+
+
+
+
+
+        <LinearLayout
+            android:id="@+id/box_office"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/my_film_name"
+            android:layout_marginTop="5dp"
+
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="票房"
+                android:textColor="@color/silver"
+                android:layout_gravity="center_vertical"
+                android:textSize="12sp"
+                android:textStyle="bold|italic"
+                />
+            <TextView
+                android:id="@+id/my_box_office"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="500000000"
+                android:textColor="@color/silver"
+                android:gravity="center_vertical"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold|italic"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/film_profit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/box_office"
+            android:layout_marginTop="5dp"
+
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="收益"
+                android:textColor="@color/orange"
+                android:layout_gravity="center_vertical"
+                android:textSize="12sp"
+                android:textStyle="bold|italic"
+                />
+            <TextView
+                android:id="@+id/my_film_profit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="+5000"
+                android:textColor="@color/orange"
+                android:gravity="center_vertical"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold|italic"
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/income_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/film_profit"
+            android:layout_marginTop="5dp"
+
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="收益率"
+                android:textColor="@color/silver"
+                android:layout_gravity="center_vertical"
+                android:textSize="12sp"
+                android:textStyle="bold|italic"
+                />
+            <TextView
+                android:id="@+id/my_incom_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="300%"
+                android:textColor="@color/silver"
+                android:gravity="center_vertical"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold|italic"
+                />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/income_rate"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center_vertical"
+                android:textSize="12sp"
+                android:textColor="@color/rb_common_yellow_title"
+                android:text="矿藏等级"/>
+
+            <TextView
+                android:id="@+id/my_treasure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/rb_common_yellow_title"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                android:text="银矿"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

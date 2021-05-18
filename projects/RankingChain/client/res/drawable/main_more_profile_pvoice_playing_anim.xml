@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:apk="http://schemas.android.com/apk/res/android" apk:oneshot="false">
+    <item apk:drawable="@drawable/main_more_profile_pvoice_anim_icons2" apk:duration="350" />
+    <item apk:drawable="@drawable/main_more_profile_pvoice_anim_icons3" apk:duration="350" />
+    <item apk:drawable="@drawable/main_more_profile_pvoice_anim_icons4" apk:duration="350" />
+</animation-list>

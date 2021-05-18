@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/create_contract"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="3dp"
+    android:layout_marginLeft="3dp"
+    android:layout_marginRight="3dp"
+    android:background="@drawable/home01_bg_card"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="创建评定合约"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:textStyle="italic"
+            android:textColor="@color/brack"/>
+
+    </RelativeLayout>
+
+
+    <!--图片部分-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+
+        >
+
+        <ImageView
+            android:contentDescription="@null"
+            android:id="@+id/film_pic"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/jtz"/>
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:layout_alignEnd="@+id/film_pic"
+            android:background="@color/green_light_for_text"
+            android:text="上传图片"
+            android:textSize="10dp"
+                />
+    </RelativeLayout>
+
+
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:padding="10dp"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/film_name"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="电影名"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:textColor="@color/brack"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:textSize="12sp"-->
+                <!--android:textStyle="italic"-->
+                <!--/>-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="15dp"-->
+                <!--android:text="发起奖金"-->
+                <!--android:textColor="@color/brack"-->
+                <!--android:textSize="12sp"-->
+                <!--android:textStyle="italic" />-->
+
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:layout_marginTop="30dp"-->
+                <!--android:text="评定执行期"-->
+                <!--android:textColor="@color/brack"-->
+                <!--android:textSize="12sp"-->
+                <!--android:textStyle="italic" />-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:text="用户IP"-->
+                <!--android:textColor="@color/rb_common_yellow_title"-->
+                <!--android:textSize="12sp" />-->
+
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:text="发起手续费"-->
+                <!--android:textColor="@color/rb_common_yellow_title"-->
+                <!--android:textSize="12sp" />-->
+
+
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginStart="15dp"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<Spinner-->
+                <!--android:id="@+id/select_film_name"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:entries="@array/data"-->
+                <!--android:gravity="center_horizontal"-->
+                <!--android:spinnerMode="dialog" />-->
+
+
+
+            <!--<EditText-->
+                <!--android:id="@+id/create_contract_bonus"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_vertical"-->
+
+                <!--android:gravity="center_vertical"-->
+                <!--android:text="5000"-->
+                <!--android:textColor="@color/brack"-->
+                <!--android:textSize="15sp"-->
+                <!--android:textStyle="italic" />-->
+
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--&lt;!&ndash;暂时就简单的用输入框来实现&ndash;&gt;-->
+                <!--<EditText-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="5dp"-->
+                    <!--android:hint="2021/3/30"-->
+                    <!--android:textStyle="italic" />-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:text="——"-->
+                    <!--android:textColor="@color/brack"-->
+                    <!--android:textSize="12sp"-->
+                    <!--android:textStyle="italic" />-->
+
+                <!--<EditText-->
+                    <!--android:id="@+id/end_cantract_deadtime"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="5dp"-->
+                    <!--android:hint="2021/4/30"-->
+                    <!--android:textStyle="italic" />-->
+
+                <!--&lt;!&ndash;//用时间选择功能来实现&ndash;&gt;-->
+
+                <!--&lt;!&ndash;<Spinner&ndash;&gt;-->
+                <!--&lt;!&ndash;android:id="@+id/spinner2"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:entries="@array/languages"&ndash;&gt;-->
+                <!--&lt;!&ndash;/>&ndash;&gt;-->
+            <!--</LinearLayout>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/user_account_ip"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_vertical"-->
+
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:text="fgdghh"-->
+                <!--android:textColor="@color/rb_common_yellow_title"-->
+                <!--android:textSize="12sp"-->
+                <!--android:textStyle="italic" />-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="22dp"-->
+                <!--android:layout_marginStart="0dp"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/part_in_tick"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:layout_marginStart="10dp"-->
+
+                    <!--android:text="1.2"-->
+                    <!--android:textColor="@color/rb_common_yellow_title"-->
+                    <!--android:textSize="12sp"-->
+                    <!--android:textStyle="italic" />-->
+
+                <!--<TextView-->
+
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:layout_marginStart="5dp"-->
+
+                    <!--android:text="ETH"-->
+                    <!--android:textColor="@color/rb_common_yellow_title"-->
+                    <!--android:textSize="12sp"-->
+                    <!--android:textStyle="italic" />-->
+
+            <!--</LinearLayout>-->
+
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+
+
+                <!--<Button-->
+                    <!--android:id="@+id/submit_button"-->
+                    <!--android:layout_width="80dp"-->
+                    <!--android:layout_height="30dp"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:layout_centerHorizontal="true"-->
+                    <!--android:layout_marginBottom="10dp"-->
+                    <!--android:background="@color/rb_common_yellow_title"-->
+                    <!--android:text="提交"-->
+                    <!--android:textColor="#000"-->
+                    <!--android:textSize="12sp" />-->
+
+
+
+            <!--</RelativeLayout>-->
+
+
+        <!--</LinearLayout>-->
+
+
+
+
+    <!--</LinearLayout>-->
+
+
+
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:id="@+id/film_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:orientation="horizontal">
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="电影名"
+            android:textColor="@color/brack"
+            android:layout_gravity="center"
+            android:textSize="15sp"
+            android:textStyle="italic"
+             />
+
+            <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_gravity="center"
+                >
+                <Spinner
+                    android:id="@+id/select_film_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:entries="@array/data"
+                    android:gravity="center_horizontal"
+                    android:spinnerMode="dialog" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--<TextView-->
+        <!--android:id="@+id/select_film_name"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textAlignment="center"-->
+        <!--android:textColor="@color/brack"-->
+        <!--android:text="金刚大战哥斯拉" />-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/my_film_name"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="2dp"-->
+        <!--android:textColor="@color/brack"-->
+        <!--android:gravity="center_horizontal"-->
+        <!--android:textSize="12sp"-->
+        <!--android:textStyle="italic"-->
+        <!--android:text="金刚大战哥斯拉"/>-->
+
+        <LinearLayout
+            android:id="@+id/film_profit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/film_name"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="发起奖金"
+                android:textColor="@color/brack"
+                android:textSize="12sp"
+                android:textStyle="italic" />
+
+            <EditText
+                android:id="@+id/create_contract_bonus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="15dp"
+                android:gravity="center_vertical"
+                android:text="5000"
+                android:textColor="@color/brack"
+                android:textSize="15sp"
+                android:textStyle="italic" />
+        </LinearLayout>
+
+
+        <!--票房评定-->
+        <LinearLayout
+            android:id="@+id/box_office"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/film_profit"
+            android:layout_marginTop="5dp"
+
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="评定执行期"
+                android:textColor="@color/brack"
+                android:textSize="12sp"
+                android:textStyle="italic" />
+
+            <!--暂时就简单的用输入框来实现-->
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+
+                android:text="2021-5-16"
+                android:textStyle="italic" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="~"
+                android:textColor="@color/brack"
+                android:textSize="12sp"
+                android:textStyle="italic" />
+
+            <EditText
+                android:id="@+id/end_cantract_deadtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+
+                android:text="2021-06-30"
+                android:textStyle="italic" />
+
+            <!--//用时间选择功能来实现-->
+
+            <!--<Spinner-->
+            <!--android:id="@+id/spinner2"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:entries="@array/languages"-->
+            <!--/>-->
+
+
+        </LinearLayout>
+
+
+        <!--这个最好改为加减控件的方式 ！！！！！！-->
+
+        <LinearLayout
+            android:id="@+id/user_ip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/box_office"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="用户IP"
+                android:textColor="@color/rb_common_yellow_title"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/user_account_ip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="35dp"
+                android:text="fgdghh"
+                android:textColor="@color/rb_common_yellow_title"
+                android:textSize="15sp"
+                android:textStyle="italic" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/user_ip"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="发起手续费"
+                android:textColor="@color/rb_common_yellow_title"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/part_in_tick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="2dp"
+                    android:text="1.2"
+                    android:textColor="@color/rb_common_yellow_title"
+                    android:textSize="12sp"
+                    android:textStyle="italic" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="2dp"
+                    android:text="ETH"
+                    android:textColor="@color/rb_common_yellow_title"
+                    android:textSize="12sp"
+                    android:textStyle="italic" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:background="@color/rb_common_yellow_title"
+            android:text="提交"
+            android:textColor="#000"
+            android:textSize="12sp" />
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+</LinearLayout>

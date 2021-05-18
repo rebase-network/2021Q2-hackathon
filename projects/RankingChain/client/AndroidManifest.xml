@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tang">
+
+    <permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
+    <permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- bugly -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <permission android:name="android.permission.READ_LOGS" />
+
+    <application
+        android:name=".AllEvaluateChainApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/all_evaluate_chain_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        >
+<!--android:usesCleartextTraffic="true" 注意这个是解除高版本android需要加密传输数据的开关，目前把这个要求关闭了，以后要补上-->
+
+        <activity android:name="com.tang.activity.StartActivity">
+
+
+            <!--闪现界面可以在这加入-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.tang.activity.PortalActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity android:name="com.tang.activity.ChainAcountActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+
+        <activity android:name="com.tang.activity.EvaluatingActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.tang.activity.EvaluatedBoardActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.tang.activity.MyPartInActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity android:name="com.tang.activity.PartInEvaluatttingFilmActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity android:name="com.tang.activity.CreateContractActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity android:name="com.tang.activity.LoginActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.tang.activity.RegActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.tang.activity.GatheringQRCodeActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.tang.activity.ModifyPasswordActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.tang.activity.QRCodeScannerActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.tang.activity.WalletDetailActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.tang.activity.PropertyDetailActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.tang.activity.TransactionDetailActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.tang.activity.SendActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+
+
+        <activity android:name="com.eva.android.widget.ImageViewActivity"
+        android:screenOrientation="portrait" android:configChanges="screenSize|keyboardHidden|orientation"
+        android:windowSoftInputMode="adjustUnspecified|stateHidden">
+        </activity>
+
+
+
+
+
+    </application>
+
+
+
+
+
+
+
+
+
+</manifest>
