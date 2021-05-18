@@ -17,7 +17,7 @@ prophetyy18 https://github.com/prophetyy18
 ## 团队介绍
 一群不懂区块链的程序员，尝试进入区块链的大门。
 - [Willin V0](https://github.com/willin)
-- [caoxmm](https://github.com/caoxmm)   eth: 0x6e4817076B1F1628c3F16aE0F096C86171c03AB6 
+- [caoxmm](https://github.com/caoxmm) 
 - [WKlili](https://github.com/WKlili)
 - [prophetyy18](https://github.com/prophetyy18)
 
