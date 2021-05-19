@@ -12,3 +12,7 @@
 ## Demo
 
 + [Demo地址](https://hackathon-anchordao.vercel.app/)got
+
+## 接受奖励地址
+
+0x6955fA345b177adD26ECC39D08Aca9dccfe6e11e
