@@ -12,7 +12,7 @@ fintech 先锋
 
 - 子艺 
 - 云帆
-- DD
+- DD. 0x204dcf0cf2ac171e2fcb01301d3bf0cf3412be21
 - 新星 https://github.com/uababa 0xBfd3c1D145C21df3E02737C20912e5Cee17Bf559
 
 
