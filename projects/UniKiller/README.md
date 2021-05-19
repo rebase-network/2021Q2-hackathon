@@ -12,3 +12,6 @@
 *若水* , smart contract开发者，区块链爱好者
 
 *yshen* , 金融研究员量化交易与数据分析从业多年
+
+### 接受ERC20奖金地址
+address：0x2Eea13555dCA2A19Dfdf2455B0B367FBbBF4eee5
