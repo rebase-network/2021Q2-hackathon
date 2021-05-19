@@ -1,0 +1,11 @@
+{
+    "name": "Anki Master Award Lv1",
+    "description": "Anki Master Award Lv1.",
+    "image_url": "https://github.com/nomadalex/2021Q2-hackathon/raw/main/projects/AnkiMaster/nftmetadata/awardlv1.png",
+    "attributes": [
+        {
+            "trait_type": "Level", 
+            "value": "1"
+        }
+    ]
+  }
