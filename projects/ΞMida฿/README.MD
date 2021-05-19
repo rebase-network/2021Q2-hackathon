@@ -8,6 +8,9 @@
 - Ryan  合约
 - Sundy 后端
 
+## 接受奖励地址(用于接收 ERC20 USDT)
+0xeda08a80c9eff425a29253e50c7e04f81b6ff119
+
 ## 作品信息
 
 作品名称：*DeBalance Finance*
