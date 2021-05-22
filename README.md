@@ -34,6 +34,35 @@ tx: https://etherscan.io/tx/0x60a861cf082fdfb529f8c57066a6918e313dc7d9304fb68975
 
 
 ---
+## 黑客松参赛作品和队伍
+
+- 03-justshot  
+- 04-DeBalance  
+- 05-智届  
+- 06-DAG Bridge
+- 07-RankingChain
+- 08-麻辣三国
+- 09-Rostra
+- 10-CoinerBlog
+- 11-AnkiMaster
+- 12-Committable
+- 13-GoatNFT
+- 14-订单簿交易系统
+- 15-Bit Futures
+- 16-ShitPlanet
+- 17-VoteDao
+- 18-Pixel
+- 19-保DAI
+- 20-AnchorDAO
+- 21-unikiller
+- 22-NFTSwap
+- 23-dogeam
+- 24-Orama
+- 25-ANFT
+- 26-mct音乐
+- 28-Ship
+
+---
 
 办一场 Hacker 们的聚会是作为松散 Hacker 组织的一个想法! 于是诞生了这次 Rebase Hackathon。  
 
