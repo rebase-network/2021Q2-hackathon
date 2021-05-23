@@ -1,0 +1,1001 @@
+<resources>
+    <string name="app_name">AllEvaluateChain</string>
+
+
+    <string name="create_wallet_name_hint">钱包名称</string>
+    <!--<string name="property_total_assets_cny">总资产(¥)</string>-->
+    <string name="property_total_assets_cny">总资产($)</string>
+    <string name="property_approximate">≈</string>
+
+
+
+
+
+    /////IM
+    <string name="general_prompt">Prompt</string>
+    <string name="general_are_u_sure">Are you sure</string>
+    <string name="general_got_it">Got it</string>
+    <string name="general_ok">OK</string>
+    <string name="general_cancel">Cancel</string>
+    <string name="general_yes">Yes</string>
+    <string name="general_no">No</string>
+    <string name="general_error">Error</string>
+    <string name="general_faild">Failed</string>
+    <string name="general_change">Change</string>
+    <string name="general_save">Save</string>
+    <string name="general_retry">Retry</string>
+    <string name="general_loading">Loading...</string>
+    <string name="general_wait">Wait...</string>
+    <string name="general_send">Sending...</string>
+    <string name="general_invild">Invalid</string>
+    <string name="general_delete">Delete</string>
+    <string name="general_back">Back</string>
+    <string name="general_tip">Tip</string>
+    <string name="general_add">Add</string>
+    <string name="general_lover_offline">{0} is offline!</string>
+    <string name="general_submitting">Submitting...</string>
+    <string name="general_connecting">Connecting...</string>
+    <string name="general_male">Male</string>
+    <string name="general_female">Female</string>
+    <string name="general_online">Online</string>
+    <string name="general_offline">Offline</string>
+    <string name="general_successfully">Successfully</string>
+    <string name="general_can_not_search_self">Unable to query yourself.</string>
+    <string name="general_image_desc">Image</string>
+    <string name="general_voice_desc">Voice</string>
+    <string name="general_bigfile_desc">File</string>
+    <string name="general_contact_desc">Contact</string>
+    <string name="general_location_desc">Location</string>
+    <string name="general_shortvideo_desc">Short Video</string>
+    <string name="general_gift_send_desc">Recieved gift</string>
+    <string name="general_gift_get_desc">Please give me gift</string>
+    <string name="general_all">All</string>
+    <string name="general_network_faild">Your network is unavailable!</string>
+    <string name="general_data_loading">Data loading...</string>
+
+    <string name="app_name2">ChainEvaluate</string>
+
+    <string name="app_notification_ticker">KChat is running...</string>
+    <string name="app_notification_content_title">KChat {0}is running ...</string>
+    <string name="app_notification_content_text">Click to return KChat.</string>
+
+    <string name="login_form_hint_loginname">Your ID or Email</string>
+    <string name="login_form_hint_loginpassword">Login password</string>
+    <string name="login_form_btn_register">Register</string>
+    <string name="login_form_btn_login">Log In</string>
+    <string name="login_form_cb_rememberpsw">Remember your name?</string>
+    <string name="login_form_btn_forgetpsw">Forgot password?</string>
+    <string name="login_form_version_info">Version: {0}({1})</string>
+    <string name="login_form_validate_login_name_empty">User name is necessary!</string>
+    <string name="login_form_validate_login_psw_length_less_six">Must compelete the password!</string>
+    <string name="login_form_have_latest_version">Have latest version</string>
+    <string name="login_form_have_latest_version_descrption">We strongly recommend that you update to the latest version in order to get better service. Continue to use the older version may cause problems. You can also e-mail us with \"surport@efeelink.com\".</string>
+    <string name="login_form_have_latest_version_update_now">Update now!</string>
+    <string name="login_form_have_latest_version_ignore">Ignore</string>
+    <string name="login_form_connect_to_chatserver_timeout_title">Timeout</string>
+    <string name="login_form_connect_to_chatserver_timeout_content">Login timeout, retry?</string>
+    <string name="login_form_connect_to_chatserver_timeout_retry">Retry</string>
+
+    <string name="register_form_title">Registeration</string>
+    <string name="register_form_notice">Welcome, register now!</string>
+    <string name="register_form_view_nickname">Enter your nickname *</string>
+    <string name="register_form_view_eMail">Enter your email *</string>
+    <string name="register_form_view_password">Your password * </string>
+    <string name="register_form_view_confirmpsw">Confirm your password * </string>
+    <string name="register_form_view_password_length_hint">* Must be 6 characters or longer!</string>
+    <string name="register_form_view_man">Male</string>
+    <string name="register_form_view_woman">Female</string>
+    <string name="register_form_view_agreelisence">I accepted </string>
+    <string name="register_form_view_look_caluse">Term and conditions</string>
+    <string name="register_form_view_look_caluse_simple">Term and conditions</string>
+    <string name="register_form_btn_submit">Register</string>
+    <string name="register_form_valid_nick_name">The nickname is necessary! </string>
+    <string name="register_form_valid_mail">Email is necessary!</string>
+    <string name="register_form_valid_psw">The password is necessary!</string>
+    <string name="register_form_valid_psw_not_same">The two passwords are different!</string>
+    <string name="register_form_valid_agree_role">Please read and accept the terms before registeration!</string>
+    <string name="register_form_error_mail_exist">Failed in registeration,the Email has been registered!</string>
+    <string name="register_form_error_message">Failed in registeration, unknown error!</string>
+    <string name="register_success_title">Succeeded!</string>
+
+    <!-- CropImage -->
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="saving_image">Saving image</string>
+    <string name="preparing_card">Preparing card</string>
+    <string name="no_storage_card">No storage card</string>
+    <string name="not_enough_space">Not enough space</string>
+
+    <!-- ForgetPassWordActivity -->
+    <string name="forget_password_title">Reset Password</string>
+    <string name="forget_password_save_mail_tip">Enter your registeration email associated with your account.</string>
+    <string name="forget_password_mail_address">Enter email address</string>
+    <string name="forget_password_mail_address_invalid">Invalid email address!</string>
+    <string name="forget_password_next_step">Send</string>
+    <!-- 鍙戦獙璇佷俊鐨勬椂鍊欓渶瑕侀獙璇佸綋鍓岴mail鏄惁娉ㄥ唽. -->
+    <string name="forget_password_send_request_message">  The Email has been sent,please check!</string>
+    <string name="register_success_content_text2">  To invite your friends and enjoy it!</string>
+    <string name="register_success_btn_go">Join now!</string>
+    <string name="register_success_content_text">ID:</string>
+    <string name="register_success_login_by_mail">Email:</string>
+    <string name="chat_activity_livestatus_onlie_desc">[Online...]</string>
+    <string name="chat_activity_livestatus_offline_desc">[Offline]</string>
+    <string name="s_chatting_other_tools_send_pic">Image</string>
+    <string name="s_chatting_other_tools_real_time_voice">Voice Chat</string>
+    <string name="s_chatting_other_tools_videochat_new">Video Chat</string>
+    <string name="s_chatting_other_tools_videochat">Video Chat</string>
+    <string name="s_chatting_other_tools_sendpic">Picture</string>
+
+    <!-- FriendListFormActivity -->
+    <string name="sns_friend_list_form_title">Search Result</string>
+    <string name="sns_friend_list_form_item_uid">ID</string>
+    <string name="sns_friend_list_form_item_status">Status:</string>
+    <string name="sns_friend_list_form_item_status_online">[Online]</string>
+    <string name="sns_friend_list_form_item_status_offline">[Offline]</string>
+    <string name="sns_friend_list_form_item_email">Email</string>
+
+    <!-- FindFriendFormActivity -->
+    <string name="sns_find_firend_form_title">Search Users</string>
+    <string name="sns_find_firend_form_add_uid">Lover\'s ID or Email</string>
+    <string name="sns_find_firend_form_submit">Search now!</string>
+    <string name="sns_find_firend_form_check_mail_format">Invalid Email!</string>
+    <string name="sns_find_firend_form_check_text_empty">Email/ID is empty!</string>
+    <string name="sns_find_firend_form_mail_not_exist">Invalid account!</string>
+    <string name="sns_find_firend_form_search_hint">Search name or ID or mail.</string>
+    <string name="sns_find_firend_form_search_strict_hint">Search ID or mail</string>
+    <string name="sns_find_firend_form_condition_male">Find male</string>
+    <string name="sns_find_firend_form_condition_female">Find female</string>
+    <string name="sns_find_firend_form_condition_all">Find all</string>
+    <string name="sns_find_firend_form_random_search">Random Search</string>
+    <string name="sns_find_firend_form_strict_search">Exact Search</string>
+    <string name="sns_find_firend_form_mail_not_exist_tip">Invalid account!</string>
+    <string name="sns_find_firend_form_invite_uid">Invite</string>
+    <string name="sns_find_firend_form_uid_not_exist_tip">Invalid ID!</string>
+    <string name="sns_find_firend_form_random_search_hint">Only {0} lovers allowed currently.</string>
+    <string name="sns_find_firend_form_random_search_isonline_condition">Please choose whether or not online</string>
+    <string name="sns_find_firend_form_random_search_gender_condition">Please select the gender</string>
+
+
+    <!-- FriendInfoFormActivity -->
+    <string name="sns_friend_info_form_title">About Lover</string>
+    <string name="sns_friend_info_form_add_self_tip">Can\'t add yourself!</string>
+    <string name="sns_friend_info_form_has_friend_tip">{0} has been your lover already!</string>
+    <string name="sns_friend_info_form_request_success"> The request has been sent,please wait...</string>
+    <string name="sns_friend_info_form_request_fialure">Failed to send the request!</string>
+    <string name="sns_friend_info_form_info_sex_male">Male</string>
+    <string name="sns_friend_info_form_info_sex_female">Female</string>
+    <string name="sns_friend_info_form_info_sex">Gender</string>
+    <string name="sns_friend_info_form_info_register_time">Registered Time</string>
+    <string name="sns_friend_info_form_info_last_login_time">Recently Login</string>
+    <string name="sns_friend_info_form_info_add_friend">To Be Lover</string>
+    <string name="sns_friend_info_form_info_temporay_chat">Say hi</string>
+    <string name="sns_friend_info_form_info_temporay_chat_ex">Instant Message</string>
+    <string name="sns_friend_info_form_info_say_hi_text">Greetings:</string>
+    <string name="sns_friend_info_form_info_say_hi_title">Greeting to {0}</string>
+    <string name="sns_friend_info_form_info_say_hi_send">Send</string>
+    <string name="sns_friend_info_form_info_say_hi_successd">Succeed to send</string>
+    <string name="sns_friend_info_form_info_say_hi_failure">Fail to send</string>
+    <string name="sns_friend_info_form_tempchat_self_tip">Can\'t send message to yourself!</string>
+    <string name="sns_friend_info_form_tempchat_hasadd_tip">{0} is already your friend, please close this page and go to \"Lover\" page, enjoy it!</string>
+    <string name="sns_friend_info_form_info_more_than_one_hint_title">Have {0} lover only!</string>
+    <string name="sns_friend_info_form_info_more_than_one_hint_msg">Only {0} lover allowed currently!</string>
+    <string name="sns_friend_info_form_info_myphotos">Photos</string>
+    <string name="sns_friend_info_form_info_myvoices">Voices</string>
+    <string name="sns_friend_info_form_info_guest_flag">Stranger</string>
+
+    <!-- FriendReqProcessActivity -->
+    <string name="sns_friend_request_send_form_title">To be lover</string>
+    <string name="sns_friend_request_send_form_submit_btn_txt">Send request</string>
+    <string name="sns_friend_request_send_form_request_saysomething_hint">Say something to {0}...</string>
+    <string name="sns_friend_request_send_form_text_count_hint">* You can enter 100 characters</string>
+    <string name="sns_friend_request_process_form_title">Verification</string>
+    <string name="sns_friend_request_process_form_request_friend_message">I want you!</string>
+    <string name="sns_friend_request_process_form_no_desc">Please accept me, thank you.</string>
+    <string name="sns_friend_request_process_form_agree_request">Agree</string>
+    <string name="sns_friend_request_process_form_refuse_request">Refuse</string>
+    <string name="sns_friend_request_process_form_tip">Attention:the account is already in the list!</string>
+    <string name="sns_friend_request_process_form_only_one_friend_tip">Have {0} lover only!</string>
+    <string name="sns_friend_request_process_form_only_one_friend_message">One Person,{0} Lover!</string>
+    <string name="sns_friend_request_process_form_send_request_failure_tip">Agreement with the request has been failed to send!</string>
+    <string name="sns_friend_request_process_form_refuse_friend_request">Refused request from {0}({1})successfully.</string>
+    <string name="sns_friend_request_process_form_refuse_friend_request_failure">Refused request from{0}({1}) failed to send!</string>
+    <string name="sns_friend_request_process_form_extra_info">Extra information:</string>
+
+    <!-- StrangeMessageActivity -->
+    <!-- <string name="sns_friend_strange_message_form_title">Stranger Message</string> -->
+    <string name="sns_friend_strange_message_form_title">Stranger</string>
+    <string name="sns_friend_strange_message_form_from">{0} said:</string>
+    <string name="sns_friend_strange_message_form_replay_title">Reply {0}</string>
+    <string name="sns_friend_strange_message_form_reply">Reply</string>
+    <string name="sns_friend_strange_message_form_add_lover">Add Lover</string>
+
+    <!-- InviteFriendFormActivity -->
+    <string name="sns_invite_friend_form_title">Invite</string>
+    <string name="sns_invite_friend_form_validate_mail_not_format">Invalid Email!</string>
+    <string name="sns_invite_friend_form_send_invite_success_message">  The invitation has been send out,please wait.</string>
+    <string name="sns_invite_friend_form_send_mail">Please complete the email address:</string>
+    <string name="sns_invite_friend_form_send_message">Send...</string>
+    <string name="sns_invite_friend_form_send_mail_hint">Input email address...</string>
+
+    <!-- AboutActivity -->
+    <string name="main_about_title">About</string>
+    <string name="main_about_version">Version{0}({1})</string>
+    <string name="main_about_publish_by">Producted by Jack Jiang</string>
+    <string name="main_about_version_detail">Version -</string>
+    <string name="main_about_terms_conditions">Terms and Conditions</string>
+    <string name="main_about_privacy_policy">Privacy policy</string>
+    <string name="main_about_facebook">Facebook</string>
+    <string name="main_about_twitter">Twitter</string>
+    <string name="main_about_tumblr">Tumblr</string>
+    <string name="main_about_official_website">Official site</string>
+    <string name="main_about_mail">Mail feedback</string>
+
+    <string name="main_about_weibo">Weibo</string>
+    <string name="main_about_douban">Douban</string>
+
+    <!-- SendMailActivity -->
+    <string name="main_about_send_mail_title">Feedback</string>
+    <string name="main_about_send_mail_content">The email content can not be empty!</string>
+
+    <!-- AlarmsActivity -->
+    <string name="main_alarms_list_view_no_new_tip">No new reminder</string>
+    <string name="main_alarms_list_view_help_title">Help</string>
+    <string name="main_alarms_list_view_help_text">&#160;Welcome!</string>
+    <string name="main_alarms_list_view_qna_title">FAQ</string>
+    <string name="main_alarms_list_view_qna_text">&#160;List of FAQ.</string>
+    <string name="main_alarms_list_view_cant_delete_systemdefine">System messages can not be deleted!</string>
+    <string name="main_alarms_list_view_item_title_flag_guest">Guest</string>
+    <string name="main_alarms_list_view_delete_item_hint">Will delete all chatting history with this, are you sure?</string>
+
+    <!-- DeviceActivity -->
+    <!--<string name="main_device_title">Device Management</string>-->
+
+    <!-- LoginActivity -->
+    <string name="login_form_exit_app_tip">Are you sure to exit?</string>
+    <string name="login_form_contecting_service">Connecting the server,please wait...</string>
+    <string name="login_form_error_message">Login failed!</string>
+    <string name="login_form_error">Error connecting to the server and login,result==null</string>
+    <string name="login_form_loading_login">Logging...</string>
+    <string name="login_form_version_error">Update version error.</string>
+    <string name="login_form_connect_service_error">Error connecting to the server, errorCode={0}</string>
+    <string name="login_form_login_service_error">Error logging to the server, errorCode={0}</string>
+    <string name="login_form_begin_update_version">Prepare an updated client version.</string>
+    <string name="login_form_error_psw_tip">Error</string>
+    <string name="login_form_error_psw_message">Invalid login information, please check your login name and password.</string>
+    <string name="login_form_send_data_successful">Send successfully</string>
+    <string name="login_form_connect_chat_server">Connecting to chat server.</string>
+
+    <!-- MoreActivity -->
+    <string name="main_more_setting_current_user">Profile</string>
+    <string name="main_more_setting_config_video">Video Configuration</string>
+    <string name="main_more_setting_auto_send">Message Tone</string>
+    <string name="main_more_setting_news_tip">New Message</string>
+    <string name="main_more_setting_this_version">Version: </string>
+    <string name="main_more_setting_recommend_app">More App</string>
+    <string name="main_more_setting_about_us">About Us</string>
+    <string name="main_more_setting_rate_us">Rate Us</string>
+    <string name="main_more_setting_help">Help</string>
+    <string name="main_more_setting_exit_system">Exit</string>
+    <string name="main_more_version_check_loading">Loading...</string>
+    <string name="main_more_version_check_is_latest">Your APP version is latest!</string>
+    <string name="main_more_msg_tone_hint">Will prompt you with sound and vibrate etc.</string>
+    <string name="main_more_msg_tone_opend_hint">Opened: Will notificate you at all.</string>
+    <string name="main_more_msg_tone_closed_hint">Closed: Will not notificate you at all.</string>
+    <string name="main_more_msg_tone_exit_to_login">Will exit current account and to login form, are you sure?</string>
+
+    <!-- MoreActivity -->
+    <!--<string name="main_more_app_title">More App</string>-->
+    <string name="main_more_lauch_help_go">Go</string>
+
+    <!-- PortalActivity -->
+    <string name="portal_activity_news">Message</string>
+    <string name="portal_activity_partner">Lover</string>
+    <string name="portal_activity_mall">Mall</string>
+    <!-- 鍥炬爣闇€瑕佹洿鏀?-->
+    <string name="portal_activity_more">More</string>
+    <!-- 鍥炬爣闇€瑕佹洿鏀?-->
+
+    <!-- VerificationActivity -->
+    <string name="verification_reminders_title">Verifications</string>
+    <string name="verification_reminders_norequests_hint">No more verification</string>
+    <string name="verification_reminders_goto_friendinfo_invalid_data">Invalid data!</string>
+
+    <!-- FindFriendResultActivity -->
+    <string name="fint_result_no_result">No datas</string>
+    <string name="find_result_refresh">Are you sure refresh?</string>
+
+    <!-- ThemeActivity -->
+    <!--<string name="main_theme_manage">Theme Management</string>-->
+
+    <!-- UserActivity -->
+    <string name="user_info_title">Profile</string>
+    <string name="user_info_sex_male">Male</string>
+    <string name="user_info_sex_female">Female</string>
+    <string name="user_info_nick_name">Nickname</string>
+    <string name="user_info_update_nick_name_title">Change Nickname</string>
+    <string name="user_info_user_uid">Chat ID</string>
+    <string name="user_info_sex">Gender</string>
+    <string name="user_info_update_gender_male">Male</string>
+    <string name="user_info_update_gender_female">Female</string>
+    <string name="user_info_update_gender_title">Change Gender</string>
+    <string name="user_info_change_psw">Change Password</string>
+    <string name="user_info_update_user_nickname">Nickname</string>
+    <string name="user_info_update_user_psw_old_psw">Password</string>
+    <string name="user_info_update_user_psw_new_psw">New Password</string>
+    <string name="user_info_update_user_psw_invalid_hint1">Old password must input!</string>
+    <string name="user_info_update_user_psw_invalid_hint2">New password must input!</string>
+    <string name="user_info_update_user_psw_invalid_hint3">Confirm password must input!</string>
+    <string name="user_info_update_user_psw_repeat_new_psw">Confirm Password</string>
+    <string name="user_info_update_user_psw_new_psw_not_equal">Error Confirmation!</string>
+    <string name="user_info_update_user_psw_old_equal_new">The new password is the same as the old! </string>
+    <string name="user_info_update_user_psw_old_psw_false">Error Password!</string>
+    <string name="user_info_update_user_psw_length">less than 6 characters!</string>
+    <string name="user_info_update_success">Update successfully</string>
+    <string name="user_info_update_failure">Update failed.</string>
+    <string name="user_info_update_nick_name_placehold">Enter you nickname</string>
+    <string name="user_info_update_nick_name_validate">Nickname is necessary.</string>
+    <string name="user_info_update_psw_title">Change Password</string>
+    <string name="user_info_profile_photo">Profile Photo</string>
+    <string name="user_info_what_s_up_enter_hint">Say something...</string>
+    <string name="user_info_what_s_up">What\'s Up</string>
+    <string name="user_info_other_caption_hint">Enter other caption...</string>
+    <string name="user_info_other_caption">Other caption</string>
+    <string name="user_info_take_photo">Take Photo</string>
+    <string name="user_info_choose_photo">Choose Photo</string>
+    <string name="user_info_avatar_uploading">Avatar uploading...</string>
+    <string name="user_info_avatar_upload_faild1">Avatar update faild, please check your sdcard!</string>
+    <string name="user_info_avatar_upload_faild2">Sorry, your avatar update failed (image is so large)!</string>
+    <string name="user_info_avatar_upload_faild3">Sorry, your avatar update failed (OOM)!</string>
+    <string name="user_info_avatar_upload_faild4">Sorry, your avatar update failed!</string>
+    <string name="user_info_avatar_upload_sucess">Your avatar update sucess!</string>
+    <string name="user_info_avatar_image_not_exists">Avatar not found!</string>
+    <string name="user_info_myphotos">My photos</string>
+    <string name="user_info_myvoices">My voices</string>
+    <string name="user_info_other_caption_form_text_count_hint">* You can enter 250 characters</string>
+    <string name="user_info_other_whatsup_form_text_count_hint">* You can enter 60 characters</string>
+    <string name="user_info_new_password_length_hint">* Must be 6 characters or longer!</string>
+
+    <!-- BluetoothInteractRequestComeDialog -->
+    <string name="chatting_bluetooth_interact_request_permission">Require your device</string>
+    <string name="chatting_bluetooth_interact_request_refuse">Refuse</string>
+    <string name="chatting_bluetooth_interact_request_receive">Agree</string>
+
+    <!-- FriendChattingActivity -->
+    <string name="chat_message_send_error">Your network is unavailable!</string>
+    <!--<string name="chat_message_send_error">Error message!,code={0}</string>-->
+    <string name="chat_message_input_hint">Enter message</string>
+    <string name="chat_init_to_friend_data_empty">Failed to switch!</string>
+    <string name="chat_friend_on_line">{0} is coming</string>
+    <string name="chat_friend_off_line">{0} is gone</string>
+    <string name="chat_send_message">Send</string>
+    <!--<string name="chat_message_wave">Rhythm</string>-->
+    <string name="chat_message_face">Icon</string>
+    <string name="chat_reply_message">Message</string>
+    <string name="chat_voice_actor">Voice</string>
+    <string name="chat_message_background">Scene</string>
+    <string name="chat_has_been_not_lover_hint">Chat ID:{0} is has been not your lovers, can\'t to chat.</string>
+    <string name="chat_sendpic_choice_takephoto">Take Photo</string>
+    <string name="chat_sendpic_choice_choosephoto">Choose Photo</string>
+    <string name="chat_resend_prompt_title">Prompt</string>
+    <string name="chat_resend_prompt_msg">This message send fail, retry?</string>
+
+    <!-- ImageViewActivity -->
+    <string name="chat_sendpic_image_view_multitouch_hint">Tip: Supports multi-touch zoom in and out image</string>
+    <string name="chat_sendpic_image_view_sendpic">Send image</string>
+    <string name="chat_sendpic_image_view_imageloading">Image loading...</string>
+    <string name="chat_sendpic_image_view_title">View image</string>
+    <string name="chat_sendpic_image_view_oom_for_rotate">Insufficient memory to rotate the picture is not successful, you can restart the program and try again!</string>
+    <string name="chat_sendpic_image_view_file_path_not_valid">Image path is not valid, please try again after checking the SD card!</string>
+    <string name="chat_sendpic_image_view_image_not_valid">Image not valid or be removed, failed to load.</string>
+    <string name="chat_sendpic_image_view_imageloading2">Image loading...</string>
+    <string name="chat_sendpic_image_view_imagebig_for_memery">Image is so large, you can restart the program and try again!</string>
+    <string name="chat_sendpic_image_view_imagedata_not_valid">Image date is not valid, please try again!</string>
+
+    <!-- PreviewAndSendActivity -->
+    <string name="chat_sendpic_preview_and_send_title">Preview and send</string>
+    <string name="chat_sendpic_preview_and_send_compressfailed">Image compress failed, send not sucess!</string>
+    <string name="chat_sendpic_preview_and_send_oom">Insufficient memory, you can restart the program and try again!</string>
+    <string name="chat_sendpic_send_status_sencondary_hint_pending">Pending</string>
+    <string name="chat_sendpic_send_status_sencondary_hint_error">Error!</string>
+    <string name="chat_sendpic_send_status_sencondary_hint_sending">Sending</string>
+    <string name="chat_sendpic_send_status_sencondary_hint_faild">Failed!</string>
+    <string name="chat_sendpic_image_is_so_big">Image is too large, failed to send!</string>
+    <string name="chat_sendpic_image_oom">Memory is not enough, you can restart the program and try again!</string>
+    <string name="chat_sendpic_image_sdcar_error">Your sdcard has problems, please try again!</string>
+
+    <!-- voice -->
+    <string name="chat_sendvoice_voice_is_so_big">Voice file is too large, failed to send!</string>
+    <string name="chat_sendvoice_voice_oom">Memory is not enough, you can restart the program and try again!</string>
+    <string name="chat_sendvoice_voice_file_not_exists">Voice file does not exist, has been canceled sent!</string>
+    <string name="chat_sendvoice_voice_is_small">Voice is too short, sending has been canceled!</string>
+    <string name="chat_sendvoice_voice_rename_faild">Voice file renaming fails, please check the SD card!</string>
+    <string name="chat_sendvoice_voice_send_faild">Voice sent failure!</string>
+    <string name="chat_sendvoice_startup_recorder_faild">Has error when start recording!</string>
+    <string name="chat_sendvoice_voice_file_invalid">Invalid voice file, please check the SD card!</string>
+    <string name="chat_playvoice_play_faild">Playback Failed!</string>
+    <string name="chat_playvoice_play_faild2">Voice data has lapsed or removed!</string>
+    <string name="chat_playvoice_play_faild3">Playback Failed(after download)!</string>
+    <string name="chat_playvoice_play_faild4">Voice download Failed!</string>
+    <string name="chat_playvoice_send">Send now</string>
+    <string name="chat_playvoice_cancel">Cancel</string>
+    <string name="chat_playvoice_send_for_at_max">Send</string>
+    <string name="chat_playvoice_send_for_at_max_hint">Has exceeded the maximum recording time limit, recording stops automatically, you need to send voice it?</string>
+
+    <!-- TempChattingActivity -->
+    <!-- <string name="temp_chat_make_sure_add_friend">Are you sure to send a lover request to {0}?</string> -->
+    <string name="temp_chat_has_already_be_friend">{0} is already your lover, please close this page and go to \"Lover\" page!</string>
+    <string name="temp_chat_has_already_be_friend_confirm_title">Switch to friend chatting</string>
+    <string name="temp_chat_has_already_be_friend_confirm">{0} is already your lover, please click\"OK\" to friend chatting!</string>
+    <string name="temp_chat_titile_hint_txt">[ Stranger chatting... ]</string>
+    <string name="temp_chat_list_view_hint_txt">Real-time voice&#38;video chat are not available in stranger chat mode, the device can not be used as well.</string>
+    <string name="temp_chat_list_view_hint_addFriendBtn_txt">Add Friend</string>
+
+    <!-- ChattingBluetoothMgrWrapper -->
+    <!--<string name="chatting_bluetooth_mgr_process_title">Connecting</string>
+    <string name="chatting_bluetooth_mgr_process_contecting">Connecting device,please wait...</string>
+    <string name="chatting_bluetooth_mgr_process_wiating_friend">Request has been sent!</string>
+    <string name="chatting_bluetooth_mgr_friend_send_into_chat1">{0} Data sending,please response in the chat mode!</string>
+    <string name="chatting_bluetooth_mgr_friend_send_into_chat2">{0} Device shaking,please response in the chat mode!</string>
+    <string name="chatting_bluetooth_mgr_tip8">Connecting recent device{0}({1})...</string>
+    <string name="chatting_bluetooth_mgr_tip9">Connecting recent device...</string>
+    <string name="chatting_bluetooth_mgr_tip10">{0} connected!</string>
+    <string name="chatting_bluetooth_mgr_tip11">Device connected!</string>
+    <string name="chatting_bluetooth_mgr_tip12">Local device connected.</string>
+    <string name="chatting_bluetooth_mgr_tip17">Local device failed connection.</string>
+    <string name="chatting_bluetooth_mgr_tip18">Local device disconnected.</string>
+    <string name="chatting_bluetooth_mgr_tip21">Device power is less than {0}%,recharge soon!</string>
+    <string name="chatting_bluetooth_opr_native">Local</string>
+    <string name="chatting_bluetooth_opr_opposite">Lover</string>
+    <string name="chatting_bluetooth_opr_ask_interaction">Play</string>
+    <string name="chatting_bluetooth_opr_cancle_interaction">Cancel</string>
+    <string name="chatting_bluetooth_opr_native_disconnect">Local device is not connected</string>
+    <string name="chatting_bluetooth_mgr_received_prompt_local_notconected_part1">Prompt: You have not connect device, and can\'t interactive with your lover.</string>
+	<string name="chatting_bluetooth_mgr_received_prompt_local_notconected_part2">Your lover\'s wave data is sending...</string>
+    <string name="chatting_bluetooth_mgr_received_prompt_local_notconected_part3">Your lover\'s device is shaking...</string>
+    <string name="chatting_bluetooth_mgr_received_prompt_local_notconected_part4">(strength is {0}).</string>
+    <string name="chatting_bluetooth_mgr_hint_device_connected">{0} connected device {1}</string>
+    <string name="chatting_bluetooth_mgr_hint_device_disconnected">{0} disconnected device </string>
+    <string name="chatting_bluetooth_mgr_device_connection_faild">Device connection Failed!</string>
+    <string name="chatting_bluetooth_mgr_device_connection_faild2">Device {0} connection Failed!</string>
+    <string name="chatting_bluetooth_mgr_device_connection_ok_for_toast_onvideo">Your lover has been connected to {0}.</string>
+    -->
+
+    <!-- chatting scence -->
+    <!--<string name="chat_scence_tool_change_scence_failure">Failed in scene switching!</string>
+    <string name="chat_scence_tool_mgr_title">Role</string>
+    <string name="chat_scence_mgr_native">Local</string>
+    <string name="chat_scence_mgr_mall_shop">Cloud</string>
+    <string name="chat_scence_tool_make_sure_load">Are you sure to download {0}\n(Size:{1})?</string>
+    <string name="chat_scence_tool_load_failure">Load failed!</string>
+    <string name="chat_scence_tool_role_loaded">The role exists download again?</string>
+    <string name="chat_scence_tool_online_data_error"> Role data error,{0}</string>
+    <string name="chat_scence_tool_load_role_detail">{0}({1})is downloading...</string>
+    <string name="chat_scence_tool_load_role_save_path_andy">Download successfully,saved path is{0}</string>
+    <string name="chat_scence_tool_delete_role_success">{0} deleted successfully.</string>
+    <string name="chat_scence_tool_delete_role_failure">{0} failed to delete!</string>
+    <string name="chat_scence_tool_load_role_success">{0}({1})download successfully!</string>
+    <string name="chat_scence_tool_unzip_resource_error">Error in zipping:{0},{1}.</string>
+    <string name="chat_scence_tool_load_role_failure">Failed to download{0},the reason is:{1}</string>
+    <string name="chat_scence_tool_load_online_list_is_empty">Online data is null,failed to load the list.</string>
+    <string name="chat_scence_tool_pager_update_background_error">Failed to send order to update scene to{0},error code={1}</string>
+    <string name="chat_scence_tool_pager_send_update_background_error">Error in sending order to update scene to{0},{1}</string>
+    <string name="chat_scence_tool_pager_update_face_error">Failed to send icon to {0},error code={1}</string>
+    <string name="chat_scence_tool_pager_send_update_face_error">Failed to send icon to{0},{1}</string>
+    <string name="chat_scence_tool_pager_reply_failure">Failed to send {1} to {0},error code={2}</string>
+    <string name="chat_scence_tool_pager_reply_error">Failed to send {1} to {0},{2}</string>
+    <string name="chat_scence_tool_pager_send_sound_failure">Failed in sending{1} to {0},error code={2}</string>
+    <string name="chat_scence_tool_pager_send_sound_failure2">Failed in sending {1} to {0},{2}</string>
+    <string name="chat_scence_tool_pager_wave_selected_obj">Object={0}</string>
+    <string name="chat_scence_tool_pager_send_wave_error">Error in sending rhythm data message,code={0}|currentWaveType_big={1},currentWaveType_small={2},shakeStrength={3}</string>
+    <string name="chat_tools_waves_wave_strength">Intensity</string>
+    <string name="chat_tools_waves_wave_shake">Shaking</string>
+    <string name="chat_tools_waves_wave_a">RhythmA</string>
+    <string name="chat_tools_waves_wave_b">RhythmB</string>
+    -->
+    <!--<string name="chat_tools_waves_baffle_blutooth$interact$permission_request_btn">Require</string>
+    <string name="chat_tools_waves_baffle_blutooth$interact$permission_s1">Require the right of lover\'s device</string>
+    <string name="chat_tools_waves_baffle_blutooth$interact$permission_s3">Remind lover to connect the device</string>
+    <string name="chat_tools_waves_baffle_blutooth$interact$friend_device_no_connect">Remind</string>
+    <string name="chat_tools_waves_baffle_blutooth$interact$friend_device_no_connect_remind_hint">Your lover dosen\'t connect device, please remind him/her.</string>
+    <string name="chat_tools_waves_baffle_blutooth$interact$friend_device_no_connect_remind">Please connect your device</string>-->
+    <!-- 娣诲姞涓€涓猂emind 鎸夐挳 -->
+
+    <string name="chat_tools_waves_wave_preview">Preview</string>
+    <string name="chat_scence_mgr_download_count">Download:</string>
+    <string name="chat_scence_mgr_file_size">Size:</string>
+
+    <!-- RosterActivity -->
+    <string name="roster_list_friend_on_line">{0} is coming!</string>
+    <string name="roster_list_friend_off_line">{0} is gone!</string>
+    <string name="roster_list_custome_title">Invite</string>
+    <string name="roster_list_delete_title">Delete Confirm</string>
+    <string name="roster_list_delete_confirm_message">Delete {0}?</string>
+    <string name="roster_list_delete_return_success">{0} has been delated successfully.</string>
+    <string name="roster_list_delete_return_failure">{0} delated in failure,{1}!</string>
+    <!--<string name="roster_list_try_connect_used">Connecting the device{0}({1})...</string>-->
+    <!--<string name="roster_list_conn_success_detail">Device {0} has been connected successfully!</string>
+    <string name="roster_list_conn_failure_message">Failed to connect {0}({1}).</string>
+    <string name="roster_list_disconnect_detail">{0} disconnected.</string>
+    <string name="roster_list_view_connect_device_message">Waiting for connect.</string>
+    <string name="roster_list_view_connect_your_device">Please Connect Device</string>-->
+    <string name="roster_list_view_invite">Invite friends</string>
+    <string name="roster_list_view_search">Add friends</string>
+    <string name="roster_list_view_delete">Delete friend</string>
+    <string name="roster_list_view_delete_no_lover">No friend. Add one?</string>
+    <!--<string name="roster_list_view_my_role">My Role</string>-->
+    <string name="roster_list_view_add_partner">No Lover</string>
+    <!--<string name="roster_list_view_connect_device">Connect Device</string>-->
+    <!--<string name="roster_list_view_my_device">My Device</string>
+    <string name="roster_list_view_connected">Connected</string>
+    <string name="roster_list_view_disconnect">Disconnect</string>
+    <string name="roster_list_view_power">Power</string>-->
+    <!-- <string name="roster_list_view_item_my_partner">My Lover</string> -->
+    <string name="roster_list_view_add_partner_tip">Please click to find a friend</string>
+    <string name="roster_list_view_myfriend_count">You have {0} friends</string>
+
+
+    <!-- VideoActivity -->
+    <string name="video_call_common_hint">Video and voice chatting...</string>
+    <string name="video_call_title">Video chatting with{0}</string>
+    <string name="video_call_send_voice_instruct">Voice chat order has been sent to {0}.</string>
+    <string name="video_call_send_voice_instruct_failure">Failed to send voice chat order to {0}({1},{2}) </string>
+    <string name="video_call_send_voice_instruct_success">Voice and Video chat order has been sent to {0}.</string>
+    <string name="video_call_send_voice_video_instruct_failure">Failed to send voice and video chat t0 {0}({1},{2})!</string>
+    <string name="video_call_voice_video_close">Lover has changed to voice chat(off)...</string>
+    <string name="video_call_voice_running">Voice chatting(Video is shut off)...</string>
+    <string name="video_call_exit_talking_confirm">Do you want to end video chat?</string>
+    <string name="video_call_send_exit_instruct">The command to end video chat has been sent to {0}.</string>
+    <string name="video_call_send_exit_instruct_failure">The order to end video chat has been sent in failure to {0}({1},{2})!</string>
+    <string name="video_call_over">Disconnect with Lover.</string>
+    <string name="video_call_talking_running">Chat is going on...</string>
+    <string name="video_call_come_agree">Agree</string>
+    <string name="video_call_come_disagree">Refuse</string>
+    <string name="video_call_room_tip">Both can\'t be seen,Please click to toggle button.</string>
+    <string name="video_call_room_exit_voice_video">End</string>
+    <string name="video_call_room_face">Icon</string>
+    <string name="video_call_room_reply">Response</string>
+    <string name="video_call_room_voice_artor">Voice</string>
+    <string name="video_call_room_wave">Rhythm</string>
+    <string name="video_call_come_handle_invite">Invite you to voice chat...</string>
+    <string name="video_call_come_refuse">Refuse</string>
+    <string name="video_call_come_answer">Answer</string>
+    <string name="video_call_out_wait_answer">Waiting...</string>
+    <string name="video_call_out_over">Finish</string>
+    <string name="video_call_come_cancle_ask">Lover has canceled video chat request.</string>
+    <string name="video_call_come_ask_time_out">Time is out,please wait another request.</string>
+    <string name="video_call_come_asking">Voice and video chat is in...</string>
+    <string name="video_call_come_invite_to">An invitation to voice and video chat...</string>
+    <string name="video_call_come_refuse_invite">Voice and video chat request abort, exiting...</string>
+    <string name="video_call_come_send_refuse_failure">\"Refuse\" failed to send.</string>
+    <string name="video_call_come_received">Agreed.</string>
+    <string name="video_call_come_receive_failure">\"Agree\" failed to send,please try again.</string>
+    <string name="video_call_out_invite_refused">Request has been refused.</string>
+    <string name="video_call_out_invite_received">Request has been agreed,chat now...</string>
+    <string name="video_call_out_respone_unkown">Obtained the feedback,but responseCode={0},unkown parameter!</string>
+    <string name="video_call_out_invite_time_out">Time is out,please try again later.</string>
+    <string name="video_call_out_inviting">Voice and video chat is out...</string>
+    <string name="video_call_out_wait_connect_to_anychat">Initializing...</string>
+    <string name="video_call_out_wait_respone">Request has been sent out,please wait...</string>
+    <string name="video_call_out_send_invite_failure">Request is failed to send,please try again later.</string>
+    <string name="video_call_out_cancle_invite">Canceled request.</string>
+    <string name="video_call_out_send_cancle_failure">Canceled request is failed to send.</string>
+    <string name="video_chat_scence_load_success">Scene{0} is loaded successfully.</string>
+    <string name="video_chat_scence_load_failure">The scene is failed to load!</string>
+    <string name="video_call_out_initing">Initializing, please wait...</string>
+
+    <string name="video_chat_request_at_real_time_chating">Recieved real time voice chat request from {0}, you can end real time voice chatting and try again.</string>
+    <string name="video_chat_request_at_video_chating">Recieved video chat request from {0}, you can end video chatting and try again.</string>
+    <string name="real_time_chat_request_at_real_time_voice_chating">Recieved real time voice chat request from {0}, you can end real time voice chatting and try again.</string>
+    <string name="real_time_chat_request_at_real_time_voice_chating_for_source">You must end real time voice chatting and try again.</string>
+
+    <!-- 瀹炴椂璇煶鑱婂ぉ -->
+    <string name="real_time_chat_end_chatting">Real time voice chat is running, end it?</string>
+    <string name="real_time_chat_calling">Real time voice calling...</string>
+    <string name="real_time_chat_abort_calling">Abort</string>
+    <string name="real_time_chat_be_request">Request real time voice</string>
+    <string name="real_time_chat_be_request_agree">Agree</string>
+    <string name="real_time_chat_be_request_reject">Refuse</string>
+    <string name="real_time_chat_be_request_from_notification_timeout_hint">This real-time voice chat request because there is no treatment failures for too long, you can remind each other and then send again.</string>
+    <string name="real_time_chat_be_request_from_notification_timeout_hint_btn">Again</string>
+    <string name="real_time_chat_be_request_from_notification_timeout_hint_message">Just real-time voice chat request i have not received, please resend again.</string>
+    <string name="real_time_chat_be_request_from_notification_duplicate_be_calling">You are be calling, can not be repeated!</string>
+    <string name="real_time_chat_be_request_cancel">Lover has canceled real time request.</string>
+    <string name="real_time_chat_be_request_timeout">Request process timeout.</string>
+    <string name="real_time_chat_be_request_abort">Real time voice request abort, exiting...</string>
+    <string name="real_time_chat_be_request_abort_faild">\"Refuse\" failed to send.</string>
+    <string name="real_time_chat_be_request_agree_faild">\"Agree\" failed to send,please try again.</string>
+    <string name="real_time_chat_request_be_refused">Request has been refused.</string>
+    <string name="real_time_chat_request_be_agree">Request has been agreed, chat now...</string>
+    <string name="real_time_chat_request_timeout">Request timeout, please try again later.</string>
+    <string name="real_time_chat_request_send_faild">Request is failed to send,please try again later.</string>
+    <string name="real_time_chat_request_canceled">Canceled request.</string>
+    <string name="real_time_chat_request_canceled_request_send_faild">Canceled request is failed to send.</string>
+    <string name="real_time_chat_has_been_end">Lover {0}has been end real time voice.</string>
+    <string name="real_time_chat_end_btn_text">End</string>
+    <string name="real_time_chat_tailking_label_text">Talking:</string>
+
+    <!-- BaseEventListener -->
+    <string name="connect_service_failure">Failed to connect to server,reconnected later...</string>
+    <string name="net_connect_close">The network connection is closed.</string>
+    <string name="login_failure_by_code">Logon failed,error code:{0}</string>
+
+    <!-- BluetoothProviderEx -->
+    <!--<string name="confirm_connect_device_title">Connect Device?</string>
+    <string name="confirm_connect_device_message">Haven\'t connected device,enter the list of management?</string>
+    <string name="confirm_connect_device_yes">Connect</string>
+    <string name="confirm_connect_device_no">Later</string>
+    <string name="confirm_disconnect_device_title">Disconnect?</string>
+    <string name="confirm_disconnect_device_message">Disconnect the device?</string>
+    <string name="confirm_disconnect_device_yes">Disconnect</string>-->
+
+    <!-- ScenseCmdExcuteProxy -->
+    <!--<string name="auto_download_scence_cache_play_unrealized">{0} is not saved locally,Failed to play {1}.</string>
+    <string name="change_background_in_cache_failure">{1} does not exist in {0},failed to switch the scene!</string>
+    <string name="auto_download_scence_cache_change_unrealized">{0} is not saved locally,failed to switch the scene automatically.</string>
+    <string name="play_voice_in_cache_failure">{1} does not exist in {0},Failed to play {1} automatically!</string>
+    <string name="partner_resource_downloading">{0} is loading,please wait...</string>
+    <string name="confirm_wait_partner_resource_downloading">{0} need to be loaded online,yes?</string>
+    <string name="partner_role_downloading">Lover\'s role data is downloading...</string>
+    <string name="partner_one_role_downloading">Role {0} is downloading</string>
+    <string name="delete_friend_resource_success">{0} deleted successfully.</string>
+    <string name="delete_friend_resource_failure">{0} failed to delete.</string>
+    <string name="partner_role_download_success">{0} downloaded successfully!</string>
+    <string name="unzip_friend_resource_error">Error in upzipping {0} in original file .</string>
+    <string name="download_friend_role_error">Data of role {0} failed to download,the reason is:{1}</string>
+    <string name="download_friend_default_success">Original data of {0} downloaded successfully,the saved path is:{1}</string>
+    -->
+
+    <!-- TransDataListener -->
+    <string name="partnet_exit_talk">Lover is out of chat,video chat is over.</string>
+
+    <!-- AlarmsProvider -->
+    <string name="alarms_provider_bluetooth_control_title">Bluetooth interactive control</string>
+    <!-- <string name="alarms_provider_message_say">{0} say:</string> -->
+    <string name="alarms_provider_message_say">{0}</string>
+    <string name="alarms_provider_scence_cmd_title">The role order received</string>
+    <string name="alarms_provider_scence_cmd_message">The role order from {0} is received,enter chat interface.</string>
+    <string name="alarms_provider_add_friend_refuse_title">Request refused</string>
+    <string name="alarms_provider_add_friend_refuse_message">Sorry, {0} refused your request.</string>
+    <string name="alarms_provider_add_friend_chk_title">Verification reminder</string>
+    <string name="alarms_provider_add_friend_chk_message">{0} invite you to be a lover</string>
+    <string name="alarms_list_view_net_faild_hint">Network connection failed, please check settings.</string>
+
+    <!-- Notification -->
+    <string name="notification_sns_add_friend_reauest_ticker_text">Received a request to be lover from {0}...</string>
+    <string name="notification_sns_add_friend_reauest_info_title">A request to be lover</string>
+    <string name="notification_sns_add_friend_reauest_info_text">Received a request to be lover from {0}, Please handle it.</string>
+    <string name="notification_sns_add_friend_response_from_server_error_ticker_text">Failed information</string>
+    <string name="notification_sns_add_friend_response_from_server_error_info_title">Failed when adding a friend</string>
+    <string name="notification_sns_add_friend_success_ticker_text">Successfully completed to add a new lover {0}</string>
+    <string name="notification_sns_add_friend_success_info_title">The new lover has been verified successfully</string>
+    <string name="notification_sns_add_friend_success_info_text">{0} has been your lover already, happy time now!</string>
+    <string name="notification_sns_add_friend_reject_ticker_text">{0} refused your lover request</string>
+    <string name="notification_sns_add_friend_reject_info_title">Adding rejection</string>
+    <string name="notification_sns_add_friend_reject_info_text">Sorry, {0} refused your lover request</string>
+    <string name="notification_video_and_voice_chat_request_ticker_text">{0} requests you to audio and video chat</string>
+    <string name="notification_video_and_voice_chat_request_info_title">Audio and video chat request</string>
+    <string name="notification_video_and_voice_chat_request_info_text">Note:{0} is asking you for audio and video chat, please reponse in the interface.</string>
+    <string name="notification_text_chatting_message_ticker_text">{0} said: {1}</string>
+    <string name="notification_text_chatting_message_info_title">{0} said:</string>
+    <string name="notification_temp_text_chatting_message_ticker_text">Recieve a stanger message</string>
+    <string name="notification_temp_text_chatting_message_info_title">Stanger Message</string>
+    <string name="notification_temp_text_chatting_message_info_text">{0} said:{1}</string>
+    <string name="notification_bbs_text_chatting_message_ticker_text">Recieve a BBS message</string>
+    <string name="notification_bbs_text_chatting_message_info_title">BBS Message</string>
+    <string name="notification_bbs_text_chatting_message_info_text">{0} said:{1}</string>
+    <string name="notification_real_time_chat_request_ticker_text">{0} request for real time voice</string>
+    <string name="notification_real_time_chat_request_info_title">Request for real time voice</string>
+    <string name="notification_real_time_chat_request_info_text">Note:{0} is asking you for audio and video chat, please reponse in the interface.</string>
+
+    <!-- MoreAppActivity -->
+    <string name="more_app_desc_content">KFeel：A music palyer with pleasant features!</string>
+
+    <!-- BBSChatActivity -->
+    <string name="bbs_chatting_list_view_title">World Chanel</string>
+    <string name="bbs_chatting_list_view_tip">Welcome, all people online can receive your message.</string>
+    <string name="bbs_alarm_click_hint_title">World Chanel</string>
+    <string name="bbs_alarm_click_hint_content">\"To look for your lover!\"</string>
+    <string name="bbs_alarm_click_hint_right_txt">BBS ></string>
+    <string name="bbs_send_message_prohibit_hint">You have sent too many messages, please try again later.</string>
+
+    <!-- 上传照片 -->
+    <string name="main_more_profile_photo_image_is_so_big">Image is too large, failed to upload!</string>
+    <string name="main_more_profile_photo_image_oom">Memory is not enough, you can restart the program and try again!</string>
+    <string name="main_more_profile_photo_image_sdcar_error">Your sdcard has problems, please try again!</string>
+    <string name="main_more_profile_photo_viewforme">My Photos</string>
+    <string name="main_more_profile_photo_viewforother">Photos</string>
+    <string name="main_more_profile_photo_previewandupload_title">View and upload</string>
+    <string name="main_more_profile_photo_previewandupload_uploadbtn">Upload this photo</string>
+    <string name="main_more_profile_photo_previewandupload_uploading">Photo uploading, please wait...</string>
+    <string name="main_more_profile_photo_previewandupload_uploadfaild">Photo upload failed.</string>
+    <string name="main_more_profile_photo_previewandupload_uploadok">Photo upload sucess.</string>
+    <string name="main_more_profile_photo_viewphoto_title">View photo</string>
+    <string name="main_more_profile_photo_viewphoto_deletebtn">Delete this photo</string>
+    <string name="main_more_profile_photo_viewphoto_deletehint">Are you sure delete this photo?</string>
+    <string name="main_more_profile_photo_viewphoto_deletewaiting">Photo deleting, please wait...</string>
+    <string name="main_more_profile_photo_previewandupload_uploadopr">Upload photo now!</string>
+    <string name="main_more_profile_photo_list_nodata_hint">No photos</string>
+
+    <!-- 上传我的证明音介绍 -->
+    <string name="main_more_profile_pvoice_viewall_forme_title">My Voices</string>
+    <string name="main_more_profile_pvoice_viewall_forother_title">Voices</string>
+    <string name="main_more_profile_pvoice_viewall_uploading">Voice uploading, please wait...</string>
+    <string name="main_more_profile_pvoice_viewall_uploadfaild">Voice upload failed.</string>
+    <string name="main_more_profile_pvoice_viewall_uploadok">Voice upload sucess.</string>
+    <string name="main_more_profile_pvoice_viewall_deletehint">Are you sure delete this voice?</string>
+    <string name="main_more_profile_pvoice_viewall_deleting">Voice deleting, please wait...</string>
+    <string name="main_more_profile_pvoice_upload_validpath">Invalid voice file, please check the SD card!</string>
+    <string name="main_more_profile_pvoice_upload_startfaild">Has error when start recording!</string>
+    <string name="main_more_profile_pvoice_upload_timesolong_send">Send</string>
+    <string name="main_more_profile_pvoice_upload_timesolong_hint">Has exceeded the maximum recording time limit, recording stops automatically, you need to upload voice it?</string>
+    <string name="main_more_profile_pvoice_list_nodata_hint">No voices</string>
+
+    <!-- 礼品相关 -->
+    <string name="chatting_gift_history_title">Gifts record</string>
+    <string name="chatting_gift_before_send_hint">Are you sure to send gift to him/her?(It will cost K-coins：{0})?</string>
+    <string name="chatting_gift_after_send_hint">{0}has been sent out!</string>
+    <string name="chatting_gift_send_for_score_not_enough">K-coins is not enough, recharge now?</string>
+    <string name="chatting_gift_send_for_faild">{0}is failed to send, please try again?</string>
+    <string name="chatting_gift_send_for_faild2">The gift is failed to send，the reason is localRee==null!</string>
+    <string name="chatting_gift_score_exchanging">Gift is exchanging to K-coin...</string>
+    <string name="chatting_gift_score_exchang_hint">Are you sure to exchange the gifts in your bag to K-coin?</string>
+    <string name="chatting_gift_score_exchang_sucess"> The gifts are succeded to exchange to K-coin.</string>
+    <string name="chatting_gift_score_exchang_faild">The gifts are failded to exchange to K-coin, you may try again!</string>
+    <string name="chatting_gift_score_exchang_packageisempty_hint">Your bag is empty, no gifts to exchange.</string>
+    <string name="chatting_gift_opr_btn_send">Gifts</string>
+    <string name="chatting_gift_opr_btn_get">Demand</string>
+    <string name="chatting_gift_opr_btn_package">Received gifts</string>
+    <string name="chatting_gift_opr_btn_goto_chongzhi">Recharge</string>
+    <string name="chatting_gift_opr_btn_goto_exchangejifen">Exchange</string>
+    <string name="chatting_gift_opr_hint_current_jifen">Current K-coins:</string>
+    <string name="chatting_gift_opr_package_null_hint1">Your bag is empty!</string>
+    <string name="chatting_gift_opr_package_null_hint2">Ask your friend to send gifts!</string>
+    <string name="chatting_gift_received_hint">Receive gift {0} (worth {1} K-coins), has been placed in your bag!</string>
+
+    <!-- CommonWebActivity2 -->
+    <!--<string name="common_web_activity_faq_title">FAQ</string>-->
+    <string name="common_web_activity_more_choice_reload">Reload</string>
+    <string name="common_web_activity_more_choice_copy">Copy link</string>
+    <string name="common_web_activity_more_choice_open_with">Open in system browser</string>
+    <string name="common_web_activity_more_choice_copy_ok_hint">Copy success</string>
+    <string name="common_web_activity_more_choice_safe_hint">For safe, this page has forbidden this function.</string>
+    <string name="common_web_activity_load_error_title">Can not load this page</string>
+    <string name="common_web_activity_load_error_content">Click to reload ...</string>
+
+    <!-- widget_title_bar -->
+    <string name="widget_title_bar_left_setting">Setting()</string>
+    <string name="widget_title_bar_setting">Setting</string>
+
+    <!-- 小视频录制 -->
+    <string name="short_video_dir_not_prepared">Invalid params, please check your sdcard!</string>
+    <string name="short_video_recording_complete_alert_title">Recording complete</string>
+
+    <!-- 位置消息 -->
+    <string name="get_location_is_null">No selected location.</string>
+    <string name="get_location_goto_3rd_baidu">Baidu Map</string>
+    <string name="get_location_goto_3rd_tencent">Tencent Map</string>
+    <string name="get_location_goto_3rd_gaode">Gaode Map</string>
+    <string name="get_location_goto_3rd_fail">Can not goto the thrid party app!</string>
+
+
+    <!-- ########################### 商城子模块相关资源 START ################################# -->
+    <string name="common_general_male">Male</string>
+    <string name="common_general_female">Female</string>
+
+    <!-- DataRender -->
+    <string name="transfer_status_cannot_sent">Unable to dispatch</string>
+    <string name="transfer_status_not_payment">Unpaid</string>
+    <string name="transfer_status_shipping">Shipping</string>
+    <string name="transfer_status_shipped">Shipped</string>
+    <string name="transfer_status_receipted">Receipted</string>
+
+    <!-- RechargeActivity -->
+    <string name="common_mall_recharge_title">Recharging</string>
+    <string name="common_mall_recharge_user_uid">Your K No.</string>
+    <string name="common_mall_recharge_score_your_score_count">Your K Coins:</string>
+    <string name="common_mall_recharge_score_count">Recharge K Coins:</string>
+    <string name="common_mall_recharge_score_amount">Amount:</string>
+    <string name="common_mall_recharge_history_top_5">Recharge Record (Last 5 times)</string>
+    <string name="common_mall_recharge_info_pay">Pay Now</string>
+    <string name="common_mall_recharge_score_count_tip">Please Enter the Number of \"K Coins\" Need to Recharge.</string>
+    <string name="common_mall_recharge_score_pay_success">Recharge Success.</string>
+    <string name="common_mall_recharge_score_pay_failure">Recharge Failure.</string>
+
+    <!-- RechargeHistoryActivity -->
+    <string name="common_mall_recharge_history_title">Recharge Record</string>
+    <string name="common_mall_recharge_history_order_id">Order No.</string>
+    <string name="common_mall_recharge_history_token">K Coins:</string>
+    <string name="common_mall_recharge_history_amount">Sum:</string>
+    <string name="common_mall_recharge_history_create_time">Recharge Time:</string>
+
+    <!-- OrderConfirmShippingAddressActivity -->
+    <string name="common_mall_consignee_info_title">Shipping Info</string>
+    <string name="common_mall_consignee_info_address">Shipping Information</string>
+    <string name="common_mall_consignee_info_address_suname">Last Name</string>
+    <string name="common_mall_consignee_info_address_name">First Name</string>
+    <string name="common_mall_consignee_info_address_country">Country</string>
+    <string name="common_mall_consignee_info_address_city">City</string>
+    <string name="common_mall_consignee_info_address_addr">Address</string>
+    <string name="common_mall_consignee_info_address_code">Zip Code</string>
+    <string name="common_mall_consignee_info_address_mail">Mailbox</string>
+    <string name="common_mall_consignee_info_address_phone">Tel</string>
+    <string name="common_mall_consignee_info_address_appender">Remark</string>
+    <string name="common_mall_consignee_info_address_suname_validate">The \"Last Name\" Can Not Be Empty.</string>
+    <string name="common_mall_consignee_info_address_name_validate">The \"First Name\" Can Not Be Empty.</string>
+    <string name="common_mall_consignee_info_address_city_validate">The \"City\" Can Not Be Empty.</string>
+    <string name="common_mall_consignee_info_address_addr_validate">The \"Address\" Can Not Be Empty.</string>
+    <string name="common_mall_consignee_info_address_code_validate">The \"Zip Code\" Can Not Be Empty.</string>
+    <string name="common_mall_consignee_info_address_mail_validate_isnull">The \"mailbox\" Can Not Be Empty.</string>
+    <string name="common_mall_consignee_info_address_phone_validate">The \"Tel\" Can Not Be Empty.</string>
+    <string name="common_mall_consignee_info_address_mail_validate_isok">Please Input Mailbox.</string>
+    <string name="common_mall_consignee_info_address_submit">Confirm</string>
+
+    <!-- GoodDetailActivity -->
+    <string name="common_mall_shop_good_detail_title1">{0} Detail</string>
+    <string name="common_mall_shop_good_detail_title2">Product Detail</string>
+    <string name="common_mall_shop_good_detail_add_shop_car_toast">{0} Added to Cart Successfully, the Current Total Number is {1}.</string>
+    <string name="common_mall_shop_good_detail_select_color_toast">Please Select a Color.</string>
+    <string name="common_mall_shop_good_detail_price">Price:</string>
+    <string name="common_mall_shop_good_detail_target_sex">For </string>
+    <string name="common_mall_shop_good_detail_color">Color:</string>
+    <string name="common_mall_shop_good_detail_add_shop_car">Add To Cart</string>
+    <string name="common_mall_shop_good_detail_pay">Purchase Now</string>
+    <string name="common_mall_shop_good_detail_device_name">Device Name:</string>
+    <string name="common_mall_shop_good_detail_sale_info">Promotions</string>
+    <string name="common_mall_shop_good_detail_basic_info">Basic Information</string>
+    <string name="common_mall_shop_good_detail_portal_detail">Detail</string>
+    <string name="common_mall_shop_good_detail_portal_normal">Basic</string>
+    <string name="common_mall_shop_good_detail_portal_evaluate">Evaluate</string>
+
+    <!-- GoodDetailEvaluateActivity -->
+    <string name="common_mall_shop_good_detail_evaluate_title">Comment</string>
+
+    <!-- GoodDetailDetailActivity -->
+    <string name="common_mall_shop_good_detail_detail_title">Detail</string>
+
+    <!-- OrderComfirmActivity -->
+    <string name="common_mall_shop_order_confirm_title">Order Detail</string>
+    <string name="common_mall_shop_order_confirm_good_list_validate">The Goods is Empty, the Order Submission Failed.</string>
+    <string name="common_mall_shop_order_confirm_good_reciever_validate">Please Complete the Shipping Information, the Order Submission Failed.</string>
+    <string name="common_mall_shop_order_confirm_transfer_fare_validate">Please Complete the Logistics Information, the Order Submission Failed.</string>
+    <string name="common_mall_shop_order_confirm_submit_data">Data Processing Now.</string>
+    <string name="common_mall_shop_order_confirm_submit_success">Place Order Successfully.</string>
+    <string name="common_mall_shop_order_confirm_submit_failure">Place Order Unsuccessfully.</string>
+    <string name="common_mall_shop_order_confirm_consignee_info">Shipping Information</string>
+    <string name="common_mall_shop_order_confirm_consignee_info_addr_is_null"></string>
+    <string name="common_mall_shop_order_confirm_consignee_info_country_city_is_null"></string>
+    <string name="common_mall_shop_order_confirm_consignee_info_suname_is_null">Shipping Information is Not Filled.</string>
+
+    <!--
+    <string name="common_mall_shop_order_confirm_consignee_info_addr_is_null">Delivery address is not filled.</string>
+    <string name="common_mall_shop_order_confirm_consignee_info_country_city_is_null">CountryAndCity is not filled.</string>
+    <string name="common_mall_shop_order_confirm_consignee_info_suname_is_null">Name is not filled.</string>
+     -->
+
+    <string name="common_mall_shop_order_confirm_transfer_info">Shipping Method</string>
+    <string name="common_mall_shop_order_confirm_transfer_name">Name:</string>
+    <string name="common_mall_shop_order_confirm_transfer_amount">Cost:</string>
+    <string name="common_mall_shop_order_confirm_good_info">Order Information</string>
+    <string name="common_mall_shop_order_confirm_good_total_amount">Subtotal</string>
+    <string name="common_mall_shop_order_confirm_amount_transferFareCurrency">Express Fee</string>
+    <string name="common_mall_shop_order_confirm_amount_totalAmountCurrency">Total</string>
+    <string name="common_mall_shop_order_confirm_create_so">Place Order</string>
+    <string name="common_mall_shop_order_confirm_good_list_count_validate">Please Choose The Quantity of Products.</string>
+    <string name="common_mall_shop_order_confirm_good_list_item_color">Color:</string>
+    <string name="common_mall_shop_order_confirm_good_list_amount">Price:</string>
+
+    <!-- OrderConfirmResultActivity -->
+    <string name="common_mall_shop_order_confirm_result_title">Submit Results</string>
+    <string name="common_mall_shop_order_confirm_result_success">The Order has been Accepted.</string>
+    <string name="common_mall_shop_order_confirm_result_order_id">Order Number:</string>
+    <string name="common_mall_shop_order_confirm_result_amount">Total Amount:</string>
+    <string name="common_mall_shop_order_confirm_result_pay">Pay Online</string>
+    <string name="common_mall_shop_order_confirm_result_to_list">Order Review</string>
+    <string name="common_mall_shop_order_confirm_result_tip"><Data><![CDATA[ <b><font color="#ff0000">Note:</font></b> ]]></Data>Please Complete The Payment Within 24 Hours,Otherwise,Orders Will Be Canceled.</string>
+    <string name="common_mall_shop_order_confirm_result_pay_success">Payment Success</string>
+    <string name="common_mall_shop_order_confirm_result_pay_faliure">Payment Failure</string>
+
+    <!-- OrderManageActivity -->
+    <string name="common_mall_shop_order_manage_title">My Order</string>
+    <string name="common_mall_shop_order_manage_order_pay_success">Payment Success.</string>
+    <string name="common_mall_shop_order_manage_order_pay_failure">Payment Failure.</string>
+    <string name="common_mall_shop_order_manage_good_list_item_order_id">Order No.</string>
+    <string name="common_mall_shop_order_manage_good_list_item_order_status">Order Status:</string>
+    <string name="common_mall_shop_order_manage_good_list_item_order_total">Total Amount:</string>
+    <string name="common_mall_shop_order_manage_good_list_item_order_pay_time">Transaction Time:</string>
+    <string name="common_mall_shop_order_manage_good_list_item_order_to_pay">Pay</string>
+    <string name="common_mall_shop_order_manage_good_list_item_order_to_comment">Comment</string>
+    <string name="common_mall_shop_order_manage_good_list_item_order_nororders">No data</string>
+
+    <!-- OrderConfirmDetailActivity -->
+    <string name="common_mall_shop_order_confirm_detail_title">My Order</string>
+    <string name="common_mall_shop_order_confirm_detail_order_id">Order No.</string>
+    <string name="common_mall_shop_order_confirm_detail_sum">Total of {0}.</string>
+    <string name="common_mall_shop_order_confirm_detail_total">Total:</string>
+    <string name="common_mall_shop_order_confirm_detail_consignee_address">Shipping Address:</string>
+    <string name="common_mall_shop_order_confirm_detail_consignee_name">Consignee:</string>
+    <string name="common_mall_shop_order_confirm_detail_transfer_info">Transfer:</string>
+    <string name="common_mall_shop_order_confirm_detail_create_time">Order Time:</string>
+    <string name="common_mall_shop_order_confirm_detail_comment_success">Comment Succeed.</string>
+
+    <!-- OrderConfirmCommentActivity -->
+    <string name="common_mall_shop_order_confirm_comment_title">Comment</string>
+    <string name="common_mall_shop_order_confirm_comment_product_name">Product Name:</string>
+    <string name="common_mall_shop_order_confirm_comment_count">{0} Item</string>
+    <string name="common_mall_shop_order_confirm_comment_review">Product Reviews</string>
+    <string name="common_mall_shop_order_confirm_comment_help_info1">Please click on the corresponding rating score</string>
+    <string name="common_mall_shop_order_confirm_comment_review_msg">Your Review</string>
+    <string name="common_mall_shop_order_confirm_comment_submit">Submit</string>
+    <string name="common_mall_shop_order_confirm_comment_tip">Please give goods(1~5).</string>
+    <string name="common_mall_shop_order_confirm_comment_tip2">Please enter a comment.</string>
+    <string name="common_mall_shop_order_confirm_comment_submitting">Submitting...</string>
+
+    <!-- ShopCarActivity -->
+    <string name="common_mall_shop_shop_car">My Cart</string>
+    <string name="common_mall_shop_shop_car_sure_delete">Are You Sure to Delete It?</string>
+    <string name="common_mall_shop_shop_car_sure_delete_all">Are You Sure to Delete All?</string>
+    <string name="common_mall_shop_shop_car_good_list_count_validate">Please Choose The Quantity of Products.</string>
+    <string name="common_mall_shop_shop_car_good_price">Subtotal:</string>
+    <string name="common_mall_shop_shop_car_to_pay">Check Out</string>
+    <string name="common_mall_shop_shop_car_is_empty">The Cart is Empty.</string>
+    <string name="common_mall_shop_shop_car_list_item_color">Color:</string>
+    <string name="common_mall_shop_shop_car_list_item_target_sex">For </string>
+    <string name="common_mall_shop_shop_car_list_amount">Price:</string>
+
+    <!-- MainActivity -->
+    <string name="common_mall_main_entrance_title">Mall</string>
+    <string name="common_mall_main_entrance_buy_score">K Coins Recharge</string>
+    <string name="common_mall_main_entrance_refresh">Refresh</string>
+    <string name="common_mall_main_entrance_now_socre">K Coins Balance:</string>
+    <string name="common_mall_main_entrance_to_pay">Recharge</string>
+    <string name="common_mall_main_entrance_score_history">Record</string>
+    <string name="common_mall_main_entrance_buy_machine">Device Purchase</string>
+    <string name="common_mall_main_entrance_order_manage">My Order</string>
+    <string name="common_mall_main_entrance_loading_data">Data Loading,Please Wait...</string>
+    <string name="common_mall_main_entrance_list_item_target_sex">For </string>
+    <!-- ########################### 商城子模块相关资源 END ################################# -->
+
+    <!-- 动态权限相关 -->
+    <string name="rb_permission_setting_title">Permission apply</string>
+    <string name="rb_permission_setting_btn_go">Setting</string>
+    <string name="rb_permission_setting_content">Go \"Setup-Application-{0}-Permission\", and grant \"{1}\", in order to use.</string>
+    <string name="rb_permission_fail_to_exite">Go \"Setup-Application-{0}-Permission\" and grant \"{1}\", in order to use.</string>
+    <string name="rb_permission_fail_to_cancel">Can not get permission\"{0}\", cancel this task.</string>
+    <string name="rb_message_notification_rationale">Go \"Setup-Application-{0}-Permission\", and grant \"{1}\", in order to use notification.</string>
+    <string name="rb_message_notification_fail">Notification permission dinnied, you will can not use it.</string>
+
+    <!-- ############### 此部分为程序代码使用，无需国际化！！！！！！！！！！ Services Ident START -->
+    <!-- 服务的ident必须要唯一，而这里的字符串在程序时里作为id引用时的常量在全局是唯一的，是不错的ident选择，仅此而已 -->
+    <string name="ident_genius_services_started">__ident_genius_services_started__</string>
+
+
+
+
+    <string name="gathering_qrcode_gathering_money">收款金额</string>
+    <string name="gathering_qrcode_copy_gathering_address">复制收款地址</string>
+    <string name="gathering_qrcode_copy_success">已复制</string>
+    <string name="saving_wallet_tip">保存钱包中…</string>
+    <string name="transfer_ether_unit">&#160;ether</string>
+
+
+    <string name="sent">转出</string>
+    <string name="create">创建合约</string>
+    <string name="received">转入</string>
+    <string name="btn_confirm">确认</string>
+
+    <string name="property_detail_title">ETC</string>
+    <string name="property_detail_transfer">转账</string>
+    <string name="property_detail_gathering">收款</string>
+
+
+    <!-- Subtitles -->
+    <string name="subtitle_from">付款地址</string>
+    <string name="subtitle_to">收款地址</string>
+    <string name="subtitle_gas_fee">矿工费</string>
+    <string name="label_gas_limit">Gas Limit</string>
+    <string name="label_gas_price">Gas Price</string>
+    <string name="subtitle_transaction_num">交易号 #</string>
+    <string name="subtitle_transaction_time">交易时间</string>
+    <string name="subtitle_block_num">区块 #</string>
+    <string name="action_more_details">在区块浏览器中参看详细信息</string>
+</resources>

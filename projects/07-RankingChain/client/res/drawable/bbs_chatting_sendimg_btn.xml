@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+     <item android:state_focused="true" android:state_pressed="true" android:drawable="@drawable/chatting_list_view_tempchat_sendimage_pressed_icon" />
+    <item android:state_focused="false" android:state_pressed="true" android:drawable="@drawable/chatting_list_view_tempchat_sendimage_pressed_icon" />
+    <item android:state_selected="true" android:drawable="@drawable/chatting_list_view_tempchat_sendimage_pressed_icon"></item>
+    <item android:state_selected="false" android:drawable="@drawable/bbs_chatting_sendimg_btn_icon_normal" />
+</selector>
+

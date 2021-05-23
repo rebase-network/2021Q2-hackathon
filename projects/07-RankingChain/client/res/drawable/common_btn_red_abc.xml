@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true" android:drawable="@drawable/chatting_gifttools_head_btn_normal_icon" />
+    <item android:state_checked="false" android:drawable="@drawable/chatting_gifttools_head_btn_inpressedl_icon" />
+    <item android:drawable="@drawable/chatting_gifttools_head_btn_inpressedl_icon" />
+</selector>

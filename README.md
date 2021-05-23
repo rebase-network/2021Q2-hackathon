@@ -1,9 +1,72 @@
 # 2021Q2 Rebase Hackathon
 
+## 黑客松获奖信息
+
+**一等奖**   
+
+#12 Commitbale  
+0x44d04eF6E4d937A4AaA43e015f2f10c6380Edf7d  
+tx: https://etherscan.io/tx/0x01534cd7c72fec380512830c36157cf21bba52f7819e99edf9b75f6a57bf035e  
+
+**二等奖**  
+
+#16 ShitPlanet  
+0x7762463CB6Cc85fEF363BCE4D24fA2786500bdaE  
+tx: https://etherscan.io/tx/0x87734357a297e2e3e85e16bb76ae11dd77f5e6a473822ec2ed3231389c752bc3  
+
+#18 Pixel  
+0x0941dd4cc974a7c3ece87dc26316a3a2a6288029  
+tx: https://etherscan.io/tx/0x0a4756b8879250aed4c6c0893d37172f438529cd18f2ef06ff5fcdbf537aed6b  
+
+**三等奖**  
+
+#9 Rostra  
+0x531a3b90dc49f62d939a8a30daf8a5fa2cacd285  
+tx: 火币内部快速提币
+
+#4 DeBalance 未知 
+0xeda08a80c9eff425a29253e50c7e04f81b6ff119  
+tx: https://etherscan.io/tx/0x9ebb35f73b6ac25c61e3c99187d8e1334369fa810d973d248865cfb3bb48f1a0  
+
+#7 RankingChain  
+0xe35f0e7bd64410bb8cd53db7933ebe0a64ac0e5b  
+tx: https://etherscan.io/tx/0x60a861cf082fdfb529f8c57066a6918e313dc7d9304fb689755e9566e41adfac  
+
+
+---
+## 黑客松参赛作品和队伍
+
+- 03-justshot  
+- 04-DeBalance  
+- 05-智届  
+- 06-DAG Bridge
+- 07-RankingChain
+- 08-麻辣三国
+- 09-Rostra
+- 10-CoinerBlog
+- 11-AnkiMaster
+- 12-Committable
+- 13-GoatNFT
+- 14-订单簿交易系统
+- 15-Bit Futures
+- 16-ShitPlanet
+- 17-VoteDao
+- 18-Pixel
+- 19-保DAI
+- 20-AnchorDAO
+- 21-unikiller
+- 22-NFTSwap
+- 23-dogeam
+- 24-Orama
+- 25-ANFT
+- 26-mct音乐
+- 28-Ship
+
+---
+
 办一场 Hacker 们的聚会是作为松散 Hacker 组织的一个想法! 于是诞生了这次 Rebase Hackathon。  
 
 **一场 Hacker 们为 Hacker 们举办的一场「五城同时开赛，线上跨城互动」的黑客松**
-
 
 **时间：**  
 2021年5月14日 到 2021年5月16日
@@ -51,6 +114,30 @@
     ```
 
 **该提交流程为方便整个沟通工作，提升多城之间的协同效率。**  
+
+以下为范例
+```
+# 作品编号 1
+## 队伍信息
+### 队伍名称
+CryptoKittes
+
+### 成员
+
+Frozen Rebase的码农一名 sdfsadfsdf https://github.com/xrdavies
+
+Harry Rebase的码农一名 asdfasdf https://github.com/harry
+
+## 接受奖励地址(用于接收 ERC20 USDT)
+0xasdfasdfsdfsdasdfsadfsadfasdfasdfsadf
+
+## 作品信息
+
+CryptoKittes 是一款创造 ERC721 协议的游戏，具备跨时代的意义
+
+作品代码仓库：https://github.com/cryptokitties/
+
+```
 
 
 ## 评审流程  

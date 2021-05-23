@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<!-- 可异步载入的图片查看组件AsynLoadableImageView的布局文件 -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="fill_parent" android:layout_width="fill_parent"
+	android:id="@+id/frameLayout1" android:layout_gravity="center">
+	<LinearLayout android:layout_height="fill_parent"
+		android:layout_width="fill_parent" android:id="@+id/widget_asynloadable_imageview_pblayout"
+		android:gravity="center">
+		<ProgressBar android:id="@+id/widget_asynloadable_imageview_pb"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"></ProgressBar>
+
+		<TextView
+			android:padding="0dp" android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:id="@+id/widget_asynloadable_imageview_msg" android:text="正在读取图片数据，请稍候..."></TextView>
+	</LinearLayout>
+	<ImageView android:id="@+id/widget_asynloadable_imageview_content"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:layout_gravity="center"></ImageView>
+</FrameLayout>
+

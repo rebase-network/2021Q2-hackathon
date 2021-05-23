@@ -1,0 +1,28 @@
+|--- feature_0 <= 8.50
+|   |--- feature_2 <= 5.50
+|   |   |--- feature_3 <= 5.50
+|   |   |   |--- feature_1 <= 5.50
+|   |   |   |   |--- feature_0 <= 5.50
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- feature_0 >  5.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |--- feature_1 >  5.50
+|   |   |   |   |--- feature_0 <= 6.50
+|   |   |   |   |   |--- class: 5
+|   |   |   |   |--- feature_0 >  6.50
+|   |   |   |   |   |--- class: 2
+|   |   |--- feature_3 >  5.50
+|   |   |   |--- class: 5
+|   |--- feature_2 >  5.50
+|   |   |--- feature_0 <= 5.50
+|   |   |   |--- class: 5
+|   |   |--- feature_0 >  5.50
+|   |   |   |--- feature_3 <= 5.50
+|   |   |   |   |--- class: 5
+|   |   |   |--- feature_3 >  5.50
+|   |   |   |   |--- feature_1 <= 5.50
+|   |   |   |   |   |--- class: 5
+|   |   |   |   |--- feature_1 >  5.50
+|   |   |   |   |   |--- class: 4
+|--- feature_0 >  8.50
+|   |--- class: 3
