@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 一个通用的自定义activity标题布局实现 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:layout_margin="0dp"
+    android:padding="0dp" >
+
+    <FrameLayout
+        android:id="@+id/widget_title_bar"
+        style="@style/widget_title_bar_style"
+        android:padding="0dp" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center"
+            android:orientation="horizontal">
+
+            <!-- 左按钮区布局 -->
+            <LinearLayout
+                android:id="@+id/widget_title_leftBtnLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/widget_title_left_backBtn"
+                    style="@style/widget_title_bar_backBtn_style"
+                    android:layout_width="50dp"
+                    android:layout_marginLeft="0dp"
+                    android:paddingLeft="0dp" />
+
+            </LinearLayout>
+
+            <!-- 中间标题文本区布局 -->
+            <LinearLayout
+                android:id="@+id/widget_title_textLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:orientation="horizontal" >
+
+                <!-- 本组件仅用于为标题的显示留白占位（一般在没有左边返回按钮
+                时，显示本占位，否则不显示），用这个控件而不在代码中动态设置
+                 widget_title_textView的marginLeft的目的是因为这样更简单实用-->
+                <View
+                    android:id="@+id/widget_title_leftGapView"
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/widget_title_textView"
+                    style="@style/widget_title_bar_titleView_style"
+                    android:text="你好啊" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- 右按钮区布局 -->
+        <LinearLayout
+            android:id="@+id/widget_title_rightBtnLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/widget_title_left_generalBtn"
+                style="@style/widget_title_bar_generalBtn_style"
+                android:layout_marginLeft="0dp"
+                android:text="" />
+
+            <Button
+                android:id="@+id/widget_title_right_generalBtn"
+                style="@style/widget_title_bar_generalBtn_style"
+                android:layout_marginRight="0dp"
+                android:text="" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- 标题栏背景下方的横线 -->
+	<LinearLayout
+        android:orientation="horizontal"
+		android:id="@+id/widget_title_bottomShadowLine_ll"
+        android:background="@color/common_widget_title_bottom_line_color"
+		android:layout_width="fill_parent"
+        android:layout_height="1px" />
+
+</LinearLayout>

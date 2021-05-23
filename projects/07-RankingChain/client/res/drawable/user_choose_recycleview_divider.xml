@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:insetLeft="73dp"
+    android:insetRight="0dp"><!-- "android:insetLeft"值表示列表的分隔线左边的留白 -->
+
+    <shape android:shape="rectangle">
+        <!-- 此divider用于listview时，不需要size元素，但如果用于recyclerview时则必须要，不然不显示分隔线 -->
+        <size android:width="1dp" android:height="0.5dp" />
+        <solid android:color="@color/common_list_custom_divider"/>
+    </shape>
+
+</inset>

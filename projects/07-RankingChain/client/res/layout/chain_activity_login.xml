@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color">
+
+    <!--<cniao5.com.cniao5shop.widget.CNiaoToolBar-->
+        <!--android:id="@id/toolbar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="?attr/colorPrimary"-->
+        <!--android:minHeight="?attr/actionBarSize"-->
+        <!--app:title="钱包导入        "-->
+        <!--app:navigationIcon="@drawable/icon_back_32px"-->
+        <!--/>-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/evaluatting_title"
+        android:background="@color/rb_common_bg_blue">
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:src="@drawable/backbutton"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            />
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="钱包创建"
+            android:textSize="15sp"
+            android:textStyle="italic"
+            android:typeface="monospace"
+            android:textColor="@color/brack"
+            android:scaleType="centerCrop" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/selector_view_block"
+        android:padding="@dimen/largePadding">
+        <!--<com.tang.widget.ClearEditText-->
+            <!--android:id="@+id/user_account"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:drawableLeft="@drawable/sns_friend_list_form_item_uid_icon"-->
+            <!--android:drawablePadding="40dp"-->
+            <!--android:hint="输入用户账户"-->
+            <!--style="@style/editText_base"-->
+            <!--android:inputType="text"-->
+            <!--/>-->
+
+
+
+        <com.tang.widget.ClearEditText
+            android:id="@+id/etxt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/icon_edit_32"
+            android:drawablePadding="20dp"
+            android:hint="输入钱包名"
+            style="@style/editText_base"
+            android:inputType="text"
+            />
+
+        <View
+            style="@style/line_vertical"/>
+        <com.tang.widget.ClearEditText
+            android:id="@+id/etxt_pk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/icon_edit_32"
+            android:drawablePadding="20dp"
+            android:hint="请输入私钥"
+            style="@style/editText_base"
+            android:inputType="text"
+            />
+
+        <View
+            style="@style/line_vertical"/>
+
+        <com.tang.widget.ClearEditText
+            android:id="@+id/etxt_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/icon_lock"
+            android:drawablePadding="20dp"
+            android:hint="请输入密码"
+            style="@style/editText_base"
+            android:inputType="textPassword"
+            />
+
+        <com.tang.widget.ClearEditText
+            android:id="@+id/etxt_pwd_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/icon_lock"
+            android:drawablePadding="20dp"
+            android:hint="请重复密码"
+            style="@style/editText_base"
+            android:inputType="textPassword"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="点击 导入 按钮，表示您同意《云与鱼用户协议》"
+        android:textColor="@color/border_color"
+        android:textSize="12sp"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="@dimen/largePadding"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:padding="@dimen/largePadding"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:visibility="invisible"
+            android:indeterminateDrawable="@drawable/progressbar"/>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/bigBlueButton"
+            android:text="导 入"
+            android:layout_marginTop="30dp"
+            android:layout_margin="10dp"
+            android:onClick="progressBar_Login"
+            />
+
+        <Button
+            android:id="@+id/btn_register_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/bigGreyButton"
+            android:text="没有钱包?  创建"
+            android:layout_margin="10dp"
+            />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

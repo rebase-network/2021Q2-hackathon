@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff111111"
+    android:orientation="vertical" >
+
+    <com.eva.android.widget.CustomeTitleBar
+        android:id="@+id/common_image_view_layout_titleBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </com.eva.android.widget.CustomeTitleBar>
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" >
+
+        <FrameLayout
+            android:id="@+id/common_image_view_layout_viewImageFL"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:visibility="gone" >
+
+            <com.eva.android.widget.TouchableImageView
+                android:id="@+id/common_image_view_viewImage"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:src="@null" />
+            <!-- android:scaleType="centerInside" -->
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical" >
+
+                <LinearLayout
+                    android:id="@+id/video_room_userHintViewLL"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|center"
+                    android:gravity="center_vertical"
+                    android:padding="8dp" ><!--android:background="@drawable/video_room_charge_hint_bg_normal"-->
+
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/common_image_view_image_hint_ico" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:text="@string/chat_sendpic_image_view_multitouch_hint"
+                        android:textColor="#ff9f9f9f"
+                        android:textSize="12sp"
+                        android:padding="0dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/common_image_view_layout_ajuster_select_ll"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|right"
+                    android:gravity="right"
+                    android:layout_marginRight="11dp"
+                    android:orientation="horizontal"
+                     >
+
+                    <!--
+                     <Button
+                    android:id="@+id/common_image_view_layout_btnRotate"
+                    style="@style/common_image_view_RotateButton"
+                    android:layout_marginRight="8dp" />
+                    -->
+
+                    <Button
+                        android:id="@+id/common_image_view_rotate_btnNi"
+                        style="@style/common_image_view_rotateNiButton" />
+
+                    <Button
+                        android:id="@+id/common_image_view_rotate_btnShun"
+                        style="@style/common_image_view_rotateShunButton"
+                        android:visibility="gone"/>
+                </LinearLayout>
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/common_image_view_saveToGaleryBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                style="@style/ButtonBase"
+                android:background="@drawable/common_image_view_save_to_galary_btn" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/common_image_view_layout_noImageLL"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#ff222222"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/common_image_view_layout_noImage_viewHintIco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/common_image_view_image_unload_ico_2019"/>
+
+            <ProgressBar
+                android:id="@+id/common_image_view_layout_noImage_progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="120dp"
+                android:layout_height="10dp"
+                android:layout_marginBottom="5dp"
+                android:max="100"
+                android:progress="0"
+                android:progressDrawable="@drawable/common_progress_bar_green"
+                 /><!--common_progress_bar_green-->
+
+            <TextView
+                android:id="@+id/common_image_view_layout_noImage_viewHintText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="0dp"
+                android:text="@string/chat_sendpic_image_view_imageloading"
+                android:textColor="@color/medium_gray2"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/common_image_view_layout_operator_ll"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/common_image_view_layout_function_bar_ll"
+                android:layout_width="fill_parent"
+                android:layout_height="54dp"
+                android:background="@color/common_transparent_black"
+                android:gravity="right|center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"><!-- common_image_view_btns_button_bg-->
+
+                <Button
+                    android:id="@+id/common_image_view_layout_btnFunction1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:gravity="center"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/common_btn_lightgreen_2019"
+                    android:paddingBottom="4.0dip"
+                    android:paddingLeft="12.0dip"
+                    android:paddingRight="12.0dip"
+                    android:paddingTop="4.0dip"
+                    style="@style/ButtonBase"
+                    android:text="Operation btn"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

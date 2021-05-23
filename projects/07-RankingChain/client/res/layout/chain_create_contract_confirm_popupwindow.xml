@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent">
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="23dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@color/windows_color">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="10dp">
+            <TextView
+                android:id="@+id/confirm_contract_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="合约创建确认"
+                android:textSize="25dp"
+                android:gravity="center"
+                android:textStyle="italic"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="60dp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="从"
+                    android:textSize="20dp"
+                    android:layout_marginTop="30dp"
+                    android:textStyle="italic"
+                    />
+
+                <TextView
+                    android:id="@+id/sponsor_account_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="fsajkgbrooig323243"
+                    android:textSize="15sp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginStart="40dp"
+                    android:gravity="center_vertical"
+                    android:textStyle="italic"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="转"
+                        android:textSize="20dp"
+                        android:layout_gravity="center"
+                        android:textStyle="italic"
+                        />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="15dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center_vertical"
+                            android:text="发起奖金"
+                            android:textSize="15dp"
+                            android:textStyle="italic"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center_vertical"
+                            android:text="手续费"
+                            android:textSize="15dp"
+                            android:textStyle="italic"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="20dp">
+
+                        <TextView
+                            android:id="@+id/sponsor_bonus"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:text="200"
+                            android:textSize="20dp"
+                            android:gravity="center_vertical"
+                            android:textStyle="italic"
+                            />
+                        <TextView
+                            android:id="@+id/sponsor_fee"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:text="2"
+                            android:textSize="20dp"
+                            android:gravity="center_vertical"
+                            android:textStyle="italic"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="20dp">
+
+                        <TextView
+                            android:id="@+id/token_symbol"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:text="ETH"
+                            android:textSize="15dp"
+                            android:gravity="center_vertical"
+                            android:textStyle="italic"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:text="ETH"
+                            android:textSize="15dp"
+                            android:gravity="center_vertical"
+                            android:textStyle="italic"
+                            />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="到"
+                        android:textSize="20dp"
+                        android:gravity="center"
+                        android:textStyle="italic"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="合约"
+                        android:textSize="20dp"
+                        android:gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_gravity="center"
+                        android:textStyle="italic"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="合约日期"
+                        android:textSize="15dp"
+                        android:gravity="center"
+                        android:textStyle="italic"
+                        />
+                    <TextView
+                        android:id="@+id/contract_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="2021-03-12~2021-04-03"
+                        android:textSize="20dp"
+                        android:gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_gravity="center"
+                        android:textStyle="italic"
+                        />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="60dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/confirm_button"
+                    android:layout_width="75dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:textSize="15dp"
+                    android:text="确认"/>
+                <Button
+                    android:id="@+id/cancell_button"
+                    android:layout_width="75dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="40dp"
+                    android:gravity="center"
+                    android:textSize="15dp"
+                    android:text="取消"/>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+
+
+</LinearLayout>
