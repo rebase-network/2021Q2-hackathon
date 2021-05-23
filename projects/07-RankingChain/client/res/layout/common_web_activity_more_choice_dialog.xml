@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/common_web_activity_more_choice_dialog_pop_layout"
+        style="@style/ChoiceItemPopWindow_bg_style" >
+
+        <Button
+            android:id="@+id/common_web_activity_more_choice_dialog_btn_reload"
+            style="@style/ChoiceItemPopWindow_top_btn_style"
+            android:text="@string/common_web_activity_more_choice_reload"/>
+        <ImageView style="@style/settings_item_seperator0dp_h_2019"/>
+
+        <Button
+            android:id="@+id/common_web_activity_more_dialog_btn_pick_copy"
+            style="@style/ChoiceItemPopWindow_common_btn_style"
+            android:text="@string/common_web_activity_more_choice_copy"/>
+        <ImageView style="@style/settings_item_seperator0dp_h_2019"/>
+
+        <Button
+            android:id="@+id/common_web_activity_more_dialog_btn_pick_openwith"
+            style="@style/ChoiceItemPopWindow_common_btn_style"
+            android:text="@string/common_web_activity_more_choice_open_with"/>
+        <ImageView style="@style/settings_item_seperator0dp_h_2019"/>
+
+        <ImageView style="@style/settings_item_seperator0dp_h_2019"
+            android:layout_marginTop="8dp"/>
+        <Button
+            android:id="@+id/common_web_activity_more_dialog_btn_cancel"
+            style="@style/ChoiceItemPopWindow_cancel_btn_style"
+            android:text="@string/general_cancel"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

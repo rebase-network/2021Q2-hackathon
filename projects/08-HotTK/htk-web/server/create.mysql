@@ -1,0 +1,12 @@
+CREATE DATABASE crowdfund;
+use crowdfund;
+
+CREATE TABLE joins(
+  id INT UNIQUE AUTO_INCREMENT,
+  address VARCHAR(42) UNIQUE,
+  price FLOAT NOT NULL,
+  tx VARCHAR(66) NOT NULL,
+  block_no INT NOT NULL,
+  created_at datetime,
+  PRIMARY KEY (id)
+);

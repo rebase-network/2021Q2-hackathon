@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:apk="http://schemas.android.com/apk/res/android" apk:oneshot="false">
+    <item apk:drawable="@drawable/common_short_video_recordvideo_start_amination_light" apk:duration="500" />
+    <item apk:drawable="@drawable/common_short_video_recordvideo_start_amination_null" apk:duration="500" />
+</animation-list>

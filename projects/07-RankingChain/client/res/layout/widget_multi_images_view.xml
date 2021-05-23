@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<!-- 多张图片查看组件MultiImagesView的布局文件 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<com.eva.android.widget.ViewFlipperEx
+		android:layout_width="fill_parent" android:paddingLeft="0dip"
+		android:paddingRight="0dip" android:layout_height="wrap_content"
+		android:id="@+id/widget_multi_images_view_vf" android:layout_weight="1">
+	</com.eva.android.widget.ViewFlipperEx>
+	<RelativeLayout android:layout_height="wrap_content"
+		android:layout_width="fill_parent" android:id="@+id/relativeLayout1"
+		android:layout_weight="0">
+		<Button android:layout_height="30dip" android:text="上一张"
+			android:id="@+id/widget_multi_images_view_preBtn"
+			android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
+			style="@style/blue_btn_style"
+			android:textSize="14sp" android:paddingTop="0dip"
+			android:paddingBottom="0dip" android:layout_marginLeft="5dip" android:layout_marginTop="5dip"></Button>
+		<Button android:layout_height="30dip" android:text="下一张"
+			android:id="@+id/widget_multi_images_view_nextBtn"
+			android:layout_alignParentTop="true" android:layout_alignParentRight="true"
+			style="@style/blue_btn_style"
+			android:textSize="14sp" android:paddingTop="0dip"
+			android:paddingBottom="0dip" android:layout_marginRight="5dip" android:layout_marginTop="5dip"></Button>
+		<TextView
+			android:padding="0dp"
+			android:layout_height="wrap_content" android:text="共?张图片" android:textSize="13sp"
+			android:layout_width="wrap_content" android:id="@+id/widget_multi_images_view_pageCountView"
+			android:layout_centerVertical="true" android:layout_centerHorizontal="true" android:textColor="@color/white"></TextView>
+	</RelativeLayout>
+
+</LinearLayout>

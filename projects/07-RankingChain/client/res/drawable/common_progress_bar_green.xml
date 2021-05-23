@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background">
+        <nine-patch android:src="@drawable/common_progress_bar_bg_green_background_2019" />
+    </item>
+    <item android:id="@android:id/secondaryProgress">
+        <clip>
+            <nine-patch android:src="@drawable/common_progress_bar_bg_green_foraground2019" />
+        </clip>
+    </item>
+    <item android:id="@android:id/progress">
+        <clip>
+            <nine-patch android:src="@drawable/common_progress_bar_bg_green_foraground2019" />
+        </clip>
+    </item>
+</layer-list>

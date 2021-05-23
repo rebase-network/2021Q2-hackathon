@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="data">
+        <item>李焕英</item>
+        <item>我的姐姐</item>
+        <item>人草汹涌</item>
+        <item>唐探三</item>
+        <item>璀璨钻石</item>
+        <item>超凡大师</item>
+        <item>最强王者</item>
+    </string-array>
+</resources>
