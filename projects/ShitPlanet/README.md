@@ -6,6 +6,9 @@ Created by Kasperrsky(卡巴斯基) Team
 # 接受奖励地址(用于接收ERC-20 token)
 0x7762463CB6Cc85fEF363BCE4D24fA2786500bdaE
 
+# 接受补充奖励地址(用于接收ERC-20 token)
+0x7762463CB6Cc85fEF363BCE4D24fA2786500bdaE
+
 ## Product
 
 - [App Websites](https://shitplanet.world/)
