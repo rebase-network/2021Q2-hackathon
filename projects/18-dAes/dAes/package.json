@@ -9,10 +9,16 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "axios": "1.15.0",
+    "socket.io-client": "4.8.3"
+  },
   "devDependencies": {
     "@nomiclabs/hardhat-waffle": "^2.0.1",
     "@openzeppelin/contracts": "^4.1.0",
+    "axios": "1.15.0",
     "chai": "^4.3.4",
-    "hardhat": "^2.2.1"
+    "hardhat": "^2.2.1",
+    "socket.io-client": "4.8.3"
   }
 }

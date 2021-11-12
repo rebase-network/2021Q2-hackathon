@@ -25,6 +25,7 @@
     "@oclif/plugin-help": "^3",
     "@oclif/plugin-not-found": "^1.2.3",
     "@typechain/ethers-v4": "^4.0.0",
+    "axios": "1.15.0",
     "chalk": "^4.1.0",
     "cli-ux": "^5.5.0",
     "debug": "^4.3.1",
@@ -32,6 +33,7 @@
     "inquirer": "^7.3.3",
     "patch-package": "^6.4.7",
     "shelljs": "^0.8.3",
+    "socket.io-client": "4.8.3",
     "ts-generator": "^0.1.1",
     "tslib": "^2.1.0",
     "typechain": "^4.0.1"

@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "1.15.0",
     "ethereumjs-wallet": "^0.6.0",
     "react": "^16.4.0",
     "react-bootstrap-validation": "^0.1.11",
     "react-dom": "^16.4.0",
     "react-scripts": "1.1.4",
     "reactstrap": "^8.9.0",
+    "socket.io-client": "4.8.3",
     "truffle-contract": "^3.0.5",
     "truffle-wallet-provider": "0.0.5",
     "web3": "^1.2.9"
